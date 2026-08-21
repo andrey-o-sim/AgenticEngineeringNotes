@@ -21,9 +21,22 @@
 }
 .next-icon-button:hover:not(:disabled){transform:translateX(2px)}
 .next-icon-button:disabled{opacity:.35;cursor:not-allowed}
+.notes-table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14px}
+.notes-table th,.notes-table td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+.notes-table th{background:var(--panel2)}
+.glossary-layout{grid-template-columns:minmax(0,1fr)}
+.glossary-page{max-width:1100px;margin:0 auto;width:100%}
+.glossary-intro{color:var(--muted);margin-top:-8px;margin-bottom:32px}
+.glossary-section{margin-top:38px}
+.glossary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.glossary-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.glossary-card h3{font-size:16px;margin:0 0 8px;color:var(--accent)}
+.glossary-card p{margin:0;color:#d6dae3;font-size:14px}
+@media(max-width:760px){.glossary-grid{grid-template-columns:1fr}}
+
 
 </style></head><body>
-<header class="topbar"><div class="topbar-inner"><div class="brand">Agentic Engineering · Повторение</div><button class="tab" data-lesson="l1">Урок 1</button><button class="tab" data-lesson="l2">Урок 2</button><button class="tab" data-lesson="l3">Урок 3</button></div></header>
+<header class="topbar"><div class="topbar-inner"><div class="brand">Agentic Engineering · Повторение</div><button class="tab" data-lesson="l1">Урок 1</button><button class="tab" data-lesson="l2">Урок 2</button><button class="tab" data-lesson="l3">Урок 3</button><button class="tab glossary-tab" data-lesson="glossary">Glossary</button></div></header>
 <div class="layout"><aside class="sidebar"><div class="card">
 <h3>Текущий проход</h3>
 <div class="progress-row"><span>Вопрос</span><b id="currentQuestionNumber">1 / 20</b></div>
@@ -91,7 +104,7 @@ Embedding layer
   ↓
 Transformer</code></pre>
 <p>Посмотреть, как токенизаторы OpenAI разбивают текст на токены, можно в интерактивном инструменте:</p>
-<p><a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer">https://platform.openai.com/tokenizer</a></p>
+<p>https://platform.openai.com/tokenizer</p>
 <p>Он полезен для сравнения языков, кода, URL, редких слов и разных формулировок prompt.</p>
 <h2 id="2-vocabulary-откуда-берутся-допустимые-токены">2. Vocabulary: откуда берутся допустимые токены</h2>
 <p>У токенизатора есть <strong>vocabulary</strong> — конечный набор токенов, которые он умеет выдавать. Vocabulary формируется заранее при построении токенизатора и фиксируется для конкретной модели или семейства моделей.</p>
@@ -136,7 +149,7 @@ Embedding table
 <p>Счётчик отдельной строки может показать меньше токенов, чем usage реального Chat API. В model input могут входить system/developer instructions, роли сообщений, история, tool definitions, tool results, документы, изображения и служебное форматирование API.</p>
 <p>Для production-расчётов лучше использовать token-counting endpoint или фактический <code>usage</code> выбранного провайдера.</p>
 <h2 id="9-четыре-стадии-обработки-как-токены-проходят-через-модель">9. Четыре стадии обработки: как токены проходят через модель</h2>
-<p>Слайд выделяет четыре логические стадии:</p>
+<p>Обработку удобно разделить на четыре логические стадии:</p>
 <pre><code>1. Tokenization
       ↓
 2. Embedding
@@ -154,7 +167,7 @@ Embedding table
 token
    ↓
 [42318]</code></pre>
-<p>ID <code>42318</code> на слайде — иллюстративный пример: реальное значение зависит от конкретного tokenizer.</p>
+<p>ID <code>42318</code> здесь является иллюстративным примером: реальное значение зависит от конкретного tokenizer.</p>
 <p>На этой стадии нет понимания значения слова:</p>
 <pre><code>text → tokens → token IDs</code></pre>
 <h3 id="2-embedding">2. Embedding</h3>
@@ -164,7 +177,7 @@ token
 Embedding table
   ↓
 [0.23, -0.87, ..., N dimensions]</code></pre>
-<p>Число <code>1536</code> на слайде следует воспринимать как пример размерности; реальная размерность зависит от архитектуры модели.</p>
+<p>Размерность <code>1536</code> здесь приведена только как пример; реальная размерность зависит от архитектуры модели.</p>
 <p>Важно различать:</p>
 <pre><code>Token     = текстовый фрагмент
 Token ID  = числовой ID в vocabulary
@@ -194,7 +207,7 @@ Embedding = числовой вектор для нейросети</code></pre>
 следующий шаг генерации</code></pre>
 <p>Генерация autoregressive: каждый новый токен становится частью контекста для следующего шага.</p>
 <h3 id="когда-генерация-останавливается">Когда генерация останавливается</h3>
-<p>На слайде показаны три типичных причины:</p>
+<p>Типичные причины остановки генерации:</p>
 <ol>
 <li>Достигнут лимит <code>max_tokens</code> / <code>max_output_tokens</code>.</li>
 <li>Модель считает ответ завершённым и генерирует соответствующее завершение.</li>
@@ -202,7 +215,7 @@ Embedding = числовой вектор для нейросети</code></pre>
 </ol>
 <p>Конкретное имя параметра и поведение зависят от API.</p>
 <h3 id="что-происходит-после-ответа">Что происходит после ответа</h3>
-<p>Слайд также подчёркивает: промежуточные вычисления конкретного inference не являются долговременной памятью модели.</p>
+<p>Промежуточные вычисления конкретного inference не являются долговременной памятью модели.</p>
 <p>Упрощённо:</p>
 <pre><code>request
   ↓
@@ -227,8 +240,16 @@ response</code></pre>
 <p>Короткая эвристика:</p>
 <pre><code>Не “сколько здесь слов?”,
 а “сколько токенов реально увидит модель и зачем каждый из них нужен?”.</code></pre>
+<h2 id="источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
+<ul>
+<li>OpenAI, <strong>Tokenizer</strong>: <a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer">https://platform.openai.com/tokenizer</a></li>
+<li>OpenAI, <strong>tiktoken</strong>: <a href="https://github.com/openai/tiktoken" target="_blank" rel="noopener noreferrer">https://github.com/openai/tiktoken</a></li>
+<li>OpenAI Cookbook, <strong>How to count tokens with tiktoken</strong>: <a href="https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken" target="_blank" rel="noopener noreferrer">https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken</a></li>
+<li>Sennrich, Haddow, Birch, <strong>Neural Machine Translation of Rare Words with Subword Units</strong>: <a href="https://arxiv.org/abs/1508.07909" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1508.07909</a></li>
+</ul>
 </article>
-<article class="lesson" data-lesson="l2"><h1>Урок 2. Input vs Output токены: разница в цене и лимитах</h1>
+<article class="lesson" data-lesson="l2">
+<h1>Урок 2. Input vs Output токены: разница в цене и лимитах</h1>
 <h2 id="1-что-относится-к-input-tokens">1. Что относится к input tokens</h2>
 <p><strong>Input tokens</strong> — токены контекста, которые модель должна обработать. Это не только последняя фраза пользователя. В типичном API-запросе сюда могут входить system/developer instructions, история, текущий user message, tool definitions, результаты инструментов и документы.</p>
 <p>Если приложение каждый раз отправляет всю историю, эта история снова входит в input текущего запроса.</p>
@@ -240,10 +261,42 @@ response</code></pre>
 <p>Первую фазу inference обычно называют <strong>prefill</strong>. Модель получает известную заранее последовательность input tokens, прогоняет её через Transformer и формирует внутреннее состояние, включая данные для <strong>KV cache</strong>.</p>
 <pre><code>input tokens → Transformer / Prefill → KV cache → первый output token</code></pre>
 <p>Поскольку input известен заранее, prefill хорошо поддаётся параллельным вычислениям на ускорителе. Это не означает, что длинный input «бесплатен»: с ростом контекста растут вычисления, latency и память.</p>
-<h2 id="4-decode-генерация-output">4. Decode: генерация output</h2>
-<p>После prefill начинается <strong>decode</strong>. На каждом шаге модель использует текущий контекст и KV cache, вычисляет logits следующего токена, выбирает токен и добавляет его к последовательности.</p>
-<pre><code>Prefill → token 1 → Decode → token 2 → Decode → token 3 → ...</code></pre>
-<p>Полностью вычислить будущий output заранее нельзя: token N+1 зависит от токенов 1..N. Это одна из фундаментальных причин, почему генерация имеет другой вычислительный профиль, чем prefill.</p>
+<h2 id="4-decode-последовательная-генерация-output">4. Decode: последовательная генерация output</h2>
+<p>После prefill начинается <strong>decode</strong> — фаза, в которой модель последовательно генерирует новые токены.</p>
+<p>На каждом шаге модель:</p>
+<ol>
+<li>использует текущий контекст и KV cache;</li>
+<li>вычисляет logits для следующего токена;</li>
+<li>получает распределение вероятностей;</li>
+<li>выбирает следующий token ID;</li>
+<li>добавляет новый токен в последовательность;</li>
+<li>повторяет процесс.</li>
+</ol>
+<pre><code>Prefill
+  ↓
+output token 1
+  ↓
+decode step
+  ↓
+output token 2
+  ↓
+decode step
+  ↓
+output token 3</code></pre>
+<p>Ключевая асимметрия Transformer inference:</p>
+<pre><code>Input  → prefill → известные заранее токены можно обрабатывать параллельно
+Output → decode  → новые токены генерируются последовательно</code></pre>
+<p>Именно поэтому длинный output обычно сильнее влияет на latency, чем такое же количество input tokens.</p>
+<h3 id="decode-в-inference-и-tokenizer-decoding-разные-вещи">Decode в inference и tokenizer decoding — разные вещи</h3>
+<p>Слово <code>decode</code> используется в двух близких, но разных контекстах.</p>
+<p><strong>Decode phase / decoding в LLM inference</strong> — последовательная генерация новых токенов моделью после prefill.</p>
+<p><strong>Tokenizer decode / detokenization</strong> — обратное преобразование token IDs в байты/текст:</p>
+<pre><code>token IDs
+   ↓
+tokenizer decode / detokenization
+   ↓
+bytes / UTF-8 text</code></pre>
+<p>Поэтому утверждение «decode — это перевод токена в UTF-8» верно только в контексте <strong>tokenizer decoding</strong>, но не в контексте фаз LLM inference. В теме <code>prefill vs decode</code> под decode имеется в виду именно <strong>генерация output tokens</strong>.</p>
 <h2 id="5-kv-cache">5. KV cache</h2>
 <p>Без кэша при каждом новом токене пришлось бы повторно пересчитывать attention-представления для всего уже обработанного префикса. <strong>KV cache</strong> хранит ранее вычисленные key/value представления attention-слоёв.</p>
 <p>Упрощённо:</p>
@@ -288,46 +341,187 @@ total = $0.122085</code></pre>
 <p>Современные API могут поддерживать <strong>prompt caching</strong>. Это полезно, когда большой префикс повторяется:</p>
 <pre><code>неизменная инструкция + большой документ + маленький новый вопрос</code></pre>
 <p>Кэш может изменить стоимость и latency повторной обработки. Однако cached input не перестаёт быть частью логического контекста модели: caching и context capacity — разные понятия.</p>
-<h2 id="12-практические-стратегии-оптимизации">12. Практические стратегии оптимизации</h2>
-<p>Полезно не отправлять ненужную историю, суммаризировать старые диалоги, ограничивать tool results, применять retrieval вместо загрузки всей базы, использовать prompt caching и ставить реалистичный output limit.</p>
-<p>Главная идея — оптимизировать весь <strong>token budget</strong> запроса и ответа, а не только количество слов в prompt.</p>
-<h2 id="best-practices-2">Прикладные выводы / Best Practices</h2>
-<p>Главный практический вывод урока — стоимость LLM-вызова определяется не только размером prompt, но и выбранной моделью, длиной output и сложностью задачи.</p>
-<ol>
-<li><strong>Не используйте самую мощную модель автоматически для каждого запроса.</strong> Выбирайте модель по сложности задачи и требуемому качеству.</li>
-<li><strong>В рамках таблицы моделей на слайде урока:</strong></li>
-</ol>
+<h2 id="12-thinking-tokens-скрытая-часть-output">12. Thinking tokens: скрытая часть output</h2>
+<p>Reasoning-модели могут генерировать внутренние <strong>thinking tokens</strong> до финального текстового ответа.</p>
+<p>Для биллинга важно:</p>
+<pre><code>billed output
+=
+thinking tokens
++
+final response tokens</code></pre>
+<p>То есть короткий видимый ответ не гарантирует маленький output bill.</p>
+<p>Пример:</p>
+<pre><code>final response:   500 tokens
+thinking:      10 000 tokens
+--------------------------------
+billed output: 10 500 tokens</code></pre>
+<p>При цене Opus 4.6 <code>$25 / 1M output tokens</code>:</p>
+<pre><code>без thinking:
+500 / 1_000_000 × $25 = $0.0125
+
+с 10 000 thinking tokens:
+10 500 / 1_000_000 × $25 = $0.2625</code></pre>
+<p>Точный рост:</p>
+<pre><code>10 500 / 500 = 21×</code></pre>
+<p>Если промежуточные суммы округлять до центов (<code>$0.01</code> и <code>$0.26</code>), визуально можно получить другое отношение, поэтому для расчётов лучше использовать неокруглённые значения.</p>
+<h3 id="summarized-thinking-не-означает-оплату-только-за-summary">Summarized thinking не означает оплату только за summary</h3>
+<p>Claude может возвращать пользователю краткое summary reasoning вместо полного внутреннего reasoning. При этом тарифицируется <strong>полный объём thinking tokens</strong>, использованный моделью, а не только видимое summary.</p>
+<p>То же относится к <code>display: &quot;omitted&quot;</code>: скрытие thinking из ответа может уменьшить time-to-first-text-token, но не отменяет оплату полного внутреннего thinking.</p>
+<p>Для наблюдаемости Claude API предоставляет breakdown thinking tokens внутри общего output usage; общий <code>output_tokens</code> остаётся авторитетной величиной для биллинга.</p>
+<h2 id="13-adaptive-thinking-и-effort-levels">13. Adaptive thinking и effort levels</h2>
+<p>Для Claude Opus 4.6 и Sonnet 4.6 рекомендуемый режим — <strong>adaptive thinking</strong>:</p>
+<pre><code>{
+  &quot;thinking&quot;: { &quot;type&quot;: &quot;adaptive&quot; },
+  &quot;output_config&quot;: { &quot;effort&quot;: &quot;medium&quot; }
+}</code></pre>
+<p>Модель сама решает, нужно ли ей рассуждать и сколько reasoning использовать для конкретного запроса.</p>
+<p><code>effort</code> задаёт мягкую стратегию глубины вычислений:</p>
+<table class="notes-table">
+<tr><th>Effort</th><th>Практический смысл</th></tr>
+<tr><td><code>low</code></td><td>минимизировать вычисления; простые задачи, дешёвые subagents</td></tr>
+<tr><td><code>medium</code></td><td>баланс скорости, цены и качества</td></tr>
+<tr><td><code>high</code></td><td>сложный reasoning, coding и agentic-задачи; для Claude 4.6 это default</td></tr>
+<tr><td><code>max</code></td><td>максимальная глубина для самых сложных задач; стоимость и latency могут существенно вырасти</td></tr>
+</table>
+<p>Важно: <code>effort</code> — <strong>не фиксированный token budget</strong>. Нельзя считать, что <code>low = 500</code>, <code>medium = 3000</code>, <code>high = 8000</code> токенов при каждом запросе. Реальный thinking usage зависит от задачи.</p>
+<h3 id="где-применим-минимум-1024-thinking-tokens">Где применим минимум 1024 thinking tokens</h3>
+<p>Минимум <code>1024</code> относится к <strong>manual extended thinking</strong>:</p>
+<pre><code>{
+  &quot;thinking&quot;: {
+    &quot;type&quot;: &quot;enabled&quot;,
+    &quot;budget_tokens&quot;: 1024
+  }
+}</code></pre>
+<p>Для такого режима <code>budget_tokens</code> должен быть не меньше <code>1024</code> и меньше <code>max_tokens</code>.</p>
+<p>Но для Claude Opus 4.6 и Sonnet 4.6 ручной <code>budget_tokens</code> уже deprecated. Для них следует предпочитать:</p>
+<pre><code>adaptive thinking + effort</code></pre>
+<p>Поэтому правило «thinking всегда минимум 1024 токена» нельзя переносить на adaptive thinking.</p>
+<h3 id="практический-смысл">Практический смысл</h3>
+<p>Thinking имеет смысл прежде всего там, где дополнительные вычисления действительно повышают качество:</p>
 <ul>
-<li><strong>Claude Opus 4.6</strong> — наиболее сильная модель; её лучше оставлять для задач, где глубина анализа оправдывает более высокую цену: проектирование архитектуры, сложный reasoning, глубокий анализ, разбор неоднозначных технических решений.</li>
-<li><strong>Claude Sonnet 4.6</strong> — баланс качества и скорости; основной выбор для большинства серьёзных инженерных задач: написание и анализ кода, code review, большие рабочие задачи.</li>
-<li><strong>Claude Haiku 4.5</strong> — наиболее быстрая модель в приведённой таблице; подходит для простых массовых операций: классификация, форматирование, извлечение простых полей и routing.</li>
+<li>сложный debugging;</li>
+<li>архитектурный анализ;</li>
+<li>математический или логический reasoning;</li>
+<li>длинные agentic-задачи;</li>
+<li>сложное code review.</li>
 </ul>
+<p>Для простой классификации, форматирования или короткого преобразования данных глубокий thinking может создавать ненужные расходы.</p>
+<h2 id="14-три-основных-способа-снизить-счёт">14. Три основных способа снизить счёт</h2>
+<h3 id="1-prompt-caching">1. Prompt caching</h3>
+<p>Если большой prefix повторяется между запросами, его можно кэшировать.</p>
+<p>Для стандартного 5-minute prompt cache у Claude:</p>
+<pre><code>cache write ≈ 1.25 × base input price
+cache read  ≈ 0.10 × base input price</code></pre>
+<p>Пример для Sonnet 4.6: повторяющийся prompt <code>50K</code> tokens, <code>100</code> запросов.</p>
+<p>Без cache:</p>
+<pre><code>50 000 × 100 / 1M × $3 = $15.00</code></pre>
+<p>С cache, если первый запрос создаёт cache, а следующие 99 являются hits:</p>
+<pre><code>cache write:
+50 000 / 1M × $3.75 = $0.1875
+
+99 cache reads:
+50 000 × 99 / 1M × $0.30 = $1.485
+
+total ≈ $1.67</code></pre>
+<p>Экономия — около <code>89%</code> относительно <code>$15</code>.</p>
+<p>Кэш особенно полезен для:</p>
+<ul>
+<li>больших стабильных system prompts;</li>
+<li>повторно используемых документов;</li>
+<li>длинных инструкций и few-shot examples;</li>
+<li>многошаговых workflows с большим неизменным prefix.</li>
+</ul>
+<h3 id="2-batch-api">2. Batch API</h3>
+<p>Batch API подходит для задач, которым не нужен интерактивный ответ прямо сейчас. Он даёт <strong>50% скидку</strong> и обрабатывает запросы асинхронно.</p>
+<p>Типичные сценарии:</p>
+<ul>
+<li>массовая генерация тестов;</li>
+<li>nightly processing;</li>
+<li>обработка большого набора документов;</li>
+<li>квартальные/ежедневные отчёты;</li>
+<li>offline evaluation.</li>
+</ul>
+<p>Batch не подходит для UI-сценариев, где пользователь ждёт ответ в реальном времени.</p>
+<h3 id="3-выбор-модели">3. Выбор модели</h3>
+<p>Используйте минимально достаточную модель:</p>
+<pre><code>простая классификация / форматирование
+→ Haiku
+
+большинство инженерных задач / code review
+→ Sonnet
+
+архитектура / самый сложный анализ
+→ Opus</code></pre>
+<p>Если 80% запросов не требуют максимального reasoning, нет смысла оплачивать Opus для всех запросов.</p>
+<h3 id="cache-и-batch-могут-комбинироваться">Cache и Batch могут комбинироваться</h3>
+<p>Pricing modifiers могут складываться. Для cache-hit input внутри Batch:</p>
+<pre><code>0.10 × cache read
+×
+0.50 batch
+=
+0.05 × base input price</code></pre>
+<p>То есть cache-hit input при подходящем batch-сценарии может стоить около <strong>5% базовой input-цены</strong>.</p>
+<p>Это не означает, что весь запрос стоит 5%: output и некэшированные части тарифицируются отдельно.</p>
+<h2 id="15-практические-стратегии-оптимизации">15. Практические стратегии оптимизации</h2>
+<p>Полезно:</p>
+<ul>
+<li>не отправлять ненужную историю;</li>
+<li>суммаризировать старые диалоги;</li>
+<li>ограничивать tool results;</li>
+<li>применять retrieval вместо загрузки всей базы;</li>
+<li>использовать prompt caching для повторяющегося prefix;</li>
+<li>использовать Batch API для offline workload;</li>
+<li>ставить реалистичный output limit;</li>
+<li>выбирать минимально достаточную модель;</li>
+<li>снижать <code>effort</code>, если задача не требует глубокого thinking;</li>
+<li>логировать input, output, thinking usage, latency и стоимость.</li>
+</ul>
+<p>Главная идея — оптимизировать весь <strong>token budget</strong> и вычислительную сложность запроса, а не только длину user prompt.</p>
+<h2 id="прикладные-выводы-best-practices">Прикладные выводы / Best Practices</h2>
 <ol>
-<li><strong>Сначала выбирайте минимально достаточную модель, затем повышайте класс модели только при необходимости.</strong></li>
-<li><strong>Контролируйте output.</strong> В таблице урока output тарифицируется в 5 раз дороже input для всех трёх приведённых моделей; кроме того, decode выполняется последовательно. Не запрашивайте длинный ответ, если достаточно нескольких строк или структурированного результата.</li>
-<li><strong>Ставьте реалистичный <code>max_output_tokens</code>.</strong> Это ограничивает худший сценарий по стоимости и latency.</li>
-<li><strong>Считайте стоимость на масштабе.</strong> Небольшая разница на одном запросе превращается в существенную на тысячах и миллионах вызовов.</li>
-<li><strong>Оптимизируйте повторяющийся input.</strong> Не отправляйте ненужную историю; используйте prompt caching, когда API и сценарий это поддерживают.</li>
-<li><strong>Разделяйте pipeline по сложности.</strong> Haiku может выполнять простую классификацию, Sonnet — типичную инженерную работу, Opus — редкий глубокий анализ.</li>
-<li><strong>Логируйте фактический usage.</strong> Для production полезно хранить модель, input/output tokens, latency и рассчитанную стоимость каждого типа запроса.</li>
-<li><strong>Язык output тоже влияет на token usage.</strong> Для внутренних промежуточных данных можно измерять более компактный язык/формат; пользовательский output должен соответствовать требованиям продукта.</li>
+<li><strong>Не используйте самую мощную модель автоматически.</strong> Выбирайте минимально достаточную модель под сложность задачи.</li>
+<li><strong>Claude Opus 4.6</strong> — кандидат для архитектуры, сложного reasoning и глубокого анализа.</li>
+<li><strong>Claude Sonnet 4.6</strong> — основной баланс качества, скорости и цены для большинства серьёзных инженерных задач, включая code review.</li>
+<li><strong>Claude Haiku 4.5</strong> — кандидат для массовой классификации, форматирования, routing и простых преобразований.</li>
+<li><strong>Input и output имеют разный вычислительный профиль:</strong> input обрабатывается на prefill параллельно, output генерируется последовательно в decode.</li>
+<li><strong>Не путайте decode phase с detokenization.</strong> Decode в inference — генерация; token IDs → текст — это tokenizer decoding.</li>
+<li><strong>Thinking tokens оплачиваются как output.</strong> Короткий видимый ответ может быть дорогим из-за большого скрытого reasoning.</li>
+<li><strong>Summarized/omitted thinking не уменьшает billed thinking tokens.</strong> Управляйте вычислениями через <code>effort</code>, а не через видимость reasoning.</li>
+<li><strong>Для Opus/Sonnet 4.6 используйте adaptive thinking + effort.</strong> Legacy <code>budget_tokens</code> для этих моделей deprecated.</li>
+<li><strong>Не воспринимайте effort как точный token budget.</strong> <code>low</code>, <code>medium</code>, <code>high</code>, <code>max</code> — поведенческие уровни.</li>
+<li><strong>Prompt caching</strong> используйте для большого повторяющегося prefix; cache hits существенно дешевле обычного input.</li>
+<li><strong>Batch API</strong> используйте для offline workload: скидка 50% оправдывает задержку, когда real-time не нужен.</li>
+<li><strong>Cache + Batch могут комбинироваться.</strong> При cache hit внутри batch стоимость соответствующего input может составлять около 5% базовой input-цены.</li>
+<li><strong>Ограничивайте output и thinking.</strong> Реалистичный <code>max_tokens</code> и подходящий <code>effort</code> защищают от неожиданного роста цены и latency.</li>
+<li><strong>Логируйте фактический usage.</strong> Для production храните модель, input/output/thinking tokens, cache usage, latency и стоимость.</li>
 </ol>
-<p>Практическая схема выбора:</p>
-<pre><code>Простая массовая операция
-        ↓
-      Haiku
+<p>Короткая схема:</p>
+<pre><code>простая массовая задача
+→ Haiku + low effort / без лишнего thinking
 
-Большая типичная инженерная задача
-        ↓
-      Sonnet
+типичная инженерная задача
+→ Sonnet + подходящий effort
 
-Архитектура / сложное решение / глубокий анализ
-        ↓
-       Opus</code></pre>
-<p>Названия моделей и цены со временем меняются. Устойчивый инженерный принцип — <strong>выбирать минимально достаточную модель под задачу</strong>.</p>
-<hr>
+архитектура / сложный reasoning
+→ Opus + high/max только когда это действительно нужно
+
+повторяющийся большой prefix
+→ Prompt Cache
+
+offline bulk workload
+→ Batch API</code></pre>
+<h2 id="источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
+<ul>
+<li>Anthropic, <strong>Pricing</strong>: <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/about-claude/pricing</a></li>
+<li>Anthropic, <strong>Extended thinking</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/extended-thinking" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/extended-thinking</a></li>
+<li>Anthropic, <strong>Thinking: steering and cost</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost</a></li>
+<li>Anthropic, <strong>Effort</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/effort" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/effort</a></li>
+<li>Anthropic, <strong>Prompt caching</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/prompt-caching</a></li>
+<li>Anthropic, <strong>Message Batches</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/batch-processing</a></li>
+</ul>
 </article>
-<article class="lesson" data-lesson="l3"><h1>Урок 3. Контекстное окно: что это, выгорание контекста и переполнение</h1>
+<article class="lesson" data-lesson="l3">
+<h1>Урок 3. Контекстное окно: что это, выгорание контекста и переполнение</h1>
 <h2 id="1-что-такое-контекст">1. Что такое контекст</h2>
 <p><strong>Контекст</strong> — информация, доступная модели при вычислении следующего токена. В чат-приложении он может включать system/developer instructions, предыдущие сообщения, текущий запрос, tool definitions/results, RAG-документы, вложения и уже сгенерированную часть ответа.</p>
 <p>Важно: модель не получает человеческую долговременную память только потому, что UI показывает старые сообщения. Чтобы факт повлиял на inference, платформа должна сделать его доступным модели — напрямую, через summary, retrieval, memory или другой механизм.</p>
@@ -371,17 +565,13 @@ total = $0.122085</code></pre>
 <p>Context window — это рабочая память текущего inference. Долговременное состояние лучше хранить во внешних системах: PostgreSQL, vector database, object storage, search index, application state.</p>
 <pre><code>External state → retrieve needed subset → Active context → Model</code></pre>
 <p>Хорошая agentic architecture не пытается превратить context window в базу данных.</p>
-<h2 id="12-практический-backend-пример">12. Практический backend-пример</h2>
-<p>Для анализа DNS-инцидента плохой подход — передать модели весь Slack за неделю, полный Grafana export и сотни тысяч строк логов.</p>
-<p>Лучше сначала ограничить временной диапазон, отфильтровать логи по сервисам/correlation IDs, агрегировать повторяющиеся ошибки, извлечь релевантные сообщения и только затем передать компактный evidence set.</p>
-<p>Цель — не «максимум данных», а <strong>максимум релевантного сигнала на один токен</strong>.</p>
-<h2 id="13-признаки-проблем-с-контекстом">13. Признаки проблем с контекстом</h2>
+<h2 id="12-признаки-проблем-с-контекстом">12. Признаки проблем с контекстом</h2>
 <p>Полезно отслеживать резкий рост input tokens, рост prefill latency, увеличение стоимости без роста качества, противоречия ранним требованиям, игнорирование деталей больших документов, context-length errors и ненужные tool calls после длинной истории.</p>
 <p>Это признаки того, что стоит улучшать context engineering, а не просто выбирать модель с ещё большим окном.</p>
-<h2 id="14-context-engineering">14. Context engineering</h2>
+<h2 id="12-context-engineering">12. Context engineering</h2>
 <p><strong>Context engineering</strong> — проектирование того, какая информация и в каком виде попадает в активный контекст. Сюда относятся system/developer instructions, подбор истории, RAG, memory retrieval, формат tool results, summaries, порядок документов и промежуточные результаты agentic workflow.</p>
 <p>Для agentic engineering это ключевой навык: качество системы зависит не только от модели, но и от качества информации, которую система показывает ей в конкретный момент.</p>
-<h2 id="15-общая-схема-трёх-уроков">15. Общая схема трёх уроков</h2>
+<h2 id="12-общая-схема-трёх-уроков">12. Общая схема трёх уроков</h2>
 <pre><code>Text
   ↓
 Tokenizer
@@ -406,35 +596,271 @@ Cost + latency + new context</code></pre>
 <li>Не заполняйте context window только потому, что это технически возможно.</li>
 <li>Управляйте контекстом как ограниченным вычислительным ресурсом.</li>
 </ol>
-<hr>
-<h1>Источники и дополнительная проверка</h1>
+<h2 id="12-практическая-ментальная-модель-процессор-ram-и-ос">12. Практическая ментальная модель: процессор, RAM и ОС</h2>
+<p>Для быстрого понимания agentic workflow полезна аналогия:</p>
+<pre><code>Модель   ≈ процессор
+Контекст ≈ RAM
+Ты / orchestration layer ≈ ОС</code></pre>
+<p>Это <strong>аналогия, а не буквальное устройство LLM</strong>.</p>
+<p>Она помогает запомнить распределение ответственности:</p>
+<ul>
+<li><strong>модель</strong> выполняет вычисления над тем, что ей доступно сейчас;</li>
+<li><strong>контекст</strong> — рабочая память текущего inference;</li>
+<li><strong>пользователь или agent harness</strong> решает, что загрузить в контекст, что удалить, что сохранить во внешнем storage и когда начать чистую сессию.</li>
+</ul>
+<p>Как и с RAM, больше объёма не означает автоматически лучшее выполнение. Если рабочая память заполнена шумом, устаревшими данными и конфликтующими инструкциями, полезная информация становится труднее доступной.</p>
+<h2 id="12-long-context-retrieval-большое-окно-не-гарантирует-одинаковое-качество">12. Long-context retrieval: большое окно не гарантирует одинаковое качество</h2>
+<p>Номинальный размер context window показывает, сколько токенов модель <strong>может принять</strong>, но не гарантирует одинаково качественное использование информации на любой длине.</p>
+<p>В benchmark <strong>MRCR v2, 8-needle</strong> для Claude 4.6 наблюдается заметная деградация retrieval при переходе от <code>256K</code> к <code>1M</code> input tokens:</p>
+<table class="notes-table">
+<tr><th>Модель</th><th>256K</th><th>1M</th></tr>
+<tr><td>Claude Opus 4.6</td><td>91.9%</td><td>78.3%</td></tr>
+<tr><td>Claude Sonnet 4.6</td><td>90.6%</td><td>65.1%</td></tr>
+<tr><td>Claude Sonnet 4.5</td><td>10.8%</td><td>18.5%</td></tr>
+</table>
+<h3 id="что-означают-проценты-в-таблице">Что означают проценты в таблице</h3>
+<p>Проценты — это <strong>не обычная доля полностью правильных ответов</strong>.</p>
+<p>MRCR v2 использует метрику <strong>Mean Match Ratio</strong>. Benchmark помещает в длинный контекст несколько очень похожих фрагментов (<code>needles</code>) и просит модель вернуть конкретный экземпляр — например, именно второй или четвёртый похожий ответ из большой истории.</p>
+<p><code>Match Ratio</code> показывает, насколько сгенерированный ответ совпал с эталонным содержимым. Итоговый показатель усредняется по задачам:</p>
+<pre><code>Mean Match Ratio
+=
+средняя степень совпадения ответа модели
+с правильным извлекаемым фрагментом</code></pre>
+<p>Поэтому <code>91.9%</code> означает <strong>средний match ratio 91.9% на наборе задач</strong>, а не буквально «91.9% вопросов полностью решены правильно».</p>
+<p>Чем выше показатель, тем надёжнее модель в этом benchmark находит и воспроизводит именно нужный фрагмент среди нескольких похожих.</p>
+<p>Главный вывод:</p>
+<pre><code>context window = вместимость
+effective context = насколько надёжно модель реально использует данные</code></pre>
+<p>Даже сильные long-context модели могут терять качество retrieval по мере роста input.</p>
+<p>В учебном benchmark snapshot также приводились внешние модели с более сильной деградацией на длинном контексте. Такие цифры следует воспринимать как результат конкретного benchmark/configuration, а не как постоянный рейтинг моделей: версии моделей и evaluation settings меняются.</p>
+<p>Это согласуется с общей идеей <strong>context rot</strong>: до hard limit ещё далеко, но полезность каждого дополнительного токена уже может снижаться.</p>
+<h2 id="12-три-практических-признака-деградации-контекста">12. Три практических признака деградации контекста</h2>
+<p>Context degradation часто проявляется не как явная ошибка API, а как изменение поведения агента.</p>
+<h3 id="1-игнорируются-ранние-инструкции">1. Игнорируются ранние инструкции</h3>
+<p>Например, в начале сессии было явно сказано:</p>
+<pre><code>не изменять X</code></pre>
+<p>а спустя длинную историю агент всё равно изменяет X.</p>
+<p>Это не обязательно означает, что модель «перестала уметь следовать инструкциям». Инструкция может быть плохо доступна среди большого количества конкурирующего контекста.</p>
+<h3 id="2-повторяются-уже-выполненные-действия">2. Повторяются уже выполненные действия</h3>
+<p>Типичные симптомы:</p>
+<ul>
+<li>повторно читается тот же файл;</li>
+<li>снова запускаются уже успешно пройденные тесты;</li>
+<li>повторно исследуется уже решённый вопрос;</li>
+<li>модель опять спрашивает информацию, которая раньше была известна.</li>
+</ul>
+<p>Это признак того, что рабочее состояние задачи стало менее заметным.</p>
+<h3 id="3-модель-противоречит-правилам-проекта">3. Модель противоречит правилам проекта</h3>
+<p>Например, агент начинает:</p>
+<ul>
+<li>генерировать код, нарушающий <code>CLAUDE.md</code>;</li>
+<li>путать имена и ранее принятые решения;</li>
+<li>нарушать архитектурные ограничения, которые раньше соблюдал.</li>
+</ul>
+<p>Полезно различать:</p>
+<pre><code>&quot;модель не может&quot;
+≠
+&quot;модель сейчас плохо видит нужную информацию в контексте&quot;</code></pre>
+<p>Перед выводом о capability модели стоит сначала проверить качество активного контекста.</p>
+<h2 id="12-что-делать-при-деградации-compact-clear-или-новая-сессия">12. Что делать при деградации: compact, clear или новая сессия</h2>
+<p>Для Claude Code есть несколько разных инструментов.</p>
+<h3 id="compact">`/compact`</h3>
+<pre><code>/compact</code></pre>
+<p>Суммаризирует текущую историю и освобождает context window, сохраняя ключевое состояние задачи.</p>
+<p>Используйте, когда:</p>
+<ul>
+<li>задача всё ещё та же;</li>
+<li>accumulated context стал слишком большим;</li>
+<li>важные решения нужно сохранить;</li>
+<li>агент начинает терять фокус.</li>
+</ul>
+<p>Можно дополнительно указать, что особенно важно сохранить:</p>
+<pre><code>/compact preserve API decisions, modified files and test results</code></pre>
+<h3 id="clear">`/clear`</h3>
+<pre><code>/clear</code></pre>
+<p>Начинает новую conversation с пустым conversation context.</p>
+<p>Используйте, когда:</p>
+<ul>
+<li>предыдущая задача закончена;</li>
+<li>вы переходите к другой теме;</li>
+<li>старый контекст скорее мешает, чем помогает.</li>
+</ul>
+<p>В Claude Code project memory (<code>CLAUDE.md</code> и другие persistent mechanisms) при этом может быть снова загружена отдельно от очищенной conversation history.</p>
+<h3 id="новая-session">Новая session</h3>
+<p>Новая независимая session полезна для отдельного этапа большой задачи или независимого subtask.</p>
+<p>Принцип:</p>
+<pre><code>та же задача, контекст перегружен
+→ compact
+
+задача изменилась
+→ clear / новая session</code></pre>
+<h2 id="12-пять-правил-контекстной-гигиены">12. Пять правил контекстной гигиены</h2>
+<h3 id="правило-1-compact-при-признаках-деградации">Правило 1. Compact при признаках деградации</h3>
+<p>Не обязательно ждать hard context limit.</p>
+<p>Если агент начинает повторяться, игнорировать ранние решения или путаться, compaction может быть полезнее продолжения той же разросшейся истории.</p>
+<h3 id="правило-2-clear-при-смене-задачи">Правило 2. Clear при смене задачи</h3>
+<p>Если одна задача закончилась и начинается другая, старые reasoning traces, tool results и обсуждения часто становятся шумом.</p>
+<p>Чистый контекст обычно лучше длинного контекста с накопленными коррекциями.</p>
+<h3 id="правило-3-держите-project-instructions-компактными">Правило 3. Держите project instructions компактными</h3>
+<p>Для <code>CLAUDE.md</code> полезно хранить действительно устойчивые правила:</p>
+<ul>
+<li>команды build/test;</li>
+<li>архитектурные ограничения;</li>
+<li>naming conventions;</li>
+<li>project-specific pitfalls;</li>
+<li>обязательные workflow rules.</li>
+</ul>
+<p>Не превращайте его в энциклопедию проекта.</p>
+<p>Практическая эвристика из курса — стремиться примерно к <strong>500–800 токенам</strong>, если этого достаточно для ключевых правил. Это не технический лимит Claude Code и не универсальный optimum.</p>
+<p>Почему размер важен:</p>
+<pre><code>2 000 tokens CLAUDE.md × 50 запросов
+≈ 100 000 token-позиций повторяющегося input</code></pre>
+<p>Это упрощённая оценка логического input без учёта prompt caching и особенностей биллинга, но она хорошо показывает накопительный эффект постоянного большого prefix.</p>
+<h3 id="правило-4-критически-важное-ближе-к-началу">Правило 4. Критически важное — ближе к началу</h3>
+<p>Исследование <strong>Lost in the Middle</strong> показало, что модели нередко лучше используют информацию в начале и конце длинного context, чем в середине.</p>
+<p>Поэтому критичные инструкции лучше:</p>
+<ul>
+<li>формулировать явно;</li>
+<li>не прятать среди большого массива деталей;</li>
+<li>держать ключевые constraints в устойчивой project memory;</li>
+<li>при необходимости повторно актуализировать перед важным шагом.</li>
+</ul>
+<p>Это не означает, что середина контекста «не читается» — речь о статистической деградации retrieval.</p>
+<h3 id="правило-5-делите-длинные-задачи-на-этапы">Правило 5. Делите длинные задачи на этапы</h3>
+<p>Для очень длинной coding-задачи полезно разделить lifecycle на несколько чистых рабочих фаз.</p>
+<p>Пример:</p>
+<pre><code>Рефакторинг модуля авторизации
+
+Session 1:
+analysis + plan
+        ↓
+      /clear
+
+Session 2:
+implementation part 1
+        ↓
+      /clear
+
+Session 3:
+implementation part 2 + verification</code></pre>
+<p>Эвристика <code>15–20 сообщений на session</code> может быть удобным ориентиром для конкретного workflow, но это <strong>не универсальный технический лимит</strong>. Решение о clear/compact лучше принимать по размеру и качеству контекста, а не только по числу сообщений.</p>
+<h2 id="12-subagents-как-способ-изолировать-контекст">12. Subagents как способ изолировать контекст</h2>
+<p>Большую задачу можно декомпозировать между subagents.</p>
+<p>Идея:</p>
+<pre><code>Main agent
+   ├─ subagent A → отдельный узкий анализ
+   ├─ subagent B → отдельная проверка
+   └─ subagent C → отдельный implementation task</code></pre>
+<p>Узкий subagent получает более сфокусированный контекст и меньше нерелевантной истории.</p>
+<p>Преимущества:</p>
+<ul>
+<li>меньше context pollution;</li>
+<li>проще специализировать инструкции;</li>
+<li>независимые исследования не засоряют main session;</li>
+<li>легче параллелить независимые части работы.</li>
+</ul>
+<p>Но subagents не бесплатны: каждый отдельный вызов имеет собственный token usage, а tool definitions и переданный context также занимают место. Декомпозиция должна уменьшать сложность, а не просто создавать больше агентов.</p>
+<h2 id="12-практическая-стратегия-для-длинной-coding-сессии">12. Практическая стратегия для длинной coding-сессии</h2>
+<p>Рабочая схема:</p>
+<pre><code>1. Сформулировать цель и ограничения
+2. Загрузить минимально нужные project instructions
+3. Сделать analysis + plan
+4. Выполнить один логический этап
+5. Зафиксировать состояние в коде/tests/files
+6. Проверить признаки context degradation
+7. При необходимости:
+      same task  → /compact
+      new task   → /clear
+8. Следующий этап начинать с чистого и проверяемого состояния</code></pre>
+<p>Главная идея:</p>
+<pre><code>Храните состояние проекта в файлах, Git, тестах и внешней памяти.
+Context window используйте как рабочую память для текущего шага.</code></pre>
+<h2 id="прикладные-выводы-best-practices">Прикладные выводы / Best Practices</h2>
 <ol>
-<li>Anthropic — Token counting: https://docs.anthropic.com/en/docs/build-with-claude/token-counting</li>
-<li>Anthropic — Context windows: https://docs.anthropic.com/en/docs/build-with-claude/context-windows</li>
-<li>Anthropic — Prompt caching: https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching</li>
-<li>Anthropic — Pricing: https://docs.anthropic.com/en/docs/about-claude/pricing</li>
-<li>Liu et al. — Lost in the Middle: How Language Models Use Long Contexts: https://arxiv.org/abs/2307.03172</li>
-</ol><h2 id="best-practices-3">Прикладные выводы / Best Practices</h2>
-<p>Контекст нужно воспринимать как ограниченный вычислительный ресурс, а не как место, куда следует складывать всё доступное состояние системы.</p>
-<ol>
-<li><strong>Не заполняйте context window только потому, что модель это позволяет.</strong> Больший input увеличивает стоимость и prefill latency, а дополнительный шум может мешать использовать важные данные.</li>
-<li><strong>Стремитесь к минимальному достаточному контексту.</strong> Передавайте модели только информацию, которая нужна для текущего шага.</li>
-<li><strong>Новая независимая задача — кандидат для нового чистого контекста.</strong> Не переносите длинную старую историю, если она не влияет на новое решение.</li>
-<li><strong>Длинные диалоги периодически compact/summarize.</strong> Summary должно сохранять решения, ограничения, идентификаторы, открытые вопросы и важные запреты.</li>
-<li><strong>Не используйте context window как долговременную БД.</strong> Состояние агента лучше хранить во внешнем state store и извлекать только нужную часть.</li>
-<li><strong>Фильтруйте tool results до передачи модели.</strong> Вместо десятков тысяч строк SQL или полного набора логов передавайте агрегации, нужные поля и релевантные записи.</li>
-<li><strong>Используйте RAG для больших наборов знаний.</strong> Retrieval должен выбирать небольшой набор релевантных фрагментов вместо загрузки всей базы в prompt.</li>
-<li><strong>Проверяйте retrieval quality.</strong> Если нужный факт не попал в retrieval или summary, модель не сможет надёжно использовать его.</li>
-<li><strong>Оставляйте token budget под output.</strong> При проектировании длинного input заранее учитывайте ожидаемую длину ответа.</li>
-<li><strong>Следите за признаками context rot:</strong> рост input tokens/latency, противоречия ранним требованиям, игнорирование деталей, повторное выяснение уже известных фактов и лишние tool calls.</li>
-<li><strong>Повышайте signal-to-noise ratio.</strong> Удаляйте дубли и устаревшие данные, структурируйте evidence и отделяйте факты от инструкций.</li>
-<li><strong>Context engineering — часть архитектуры агента.</strong> Качество системы зависит не только от модели, но и от того, какие данные приложение выбирает, хранит, сжимает и возвращает модели на каждом шаге.</li>
+<li><strong>Используйте аналогию <code>модель ≈ CPU</code>, <code>контекст ≈ RAM</code>, orchestration ≈ ОС` как рабочую ментальную модель</strong>, но не как буквальное описание архитектуры.</li>
+<li><strong>Context window — это вместимость, а не гарантия качества retrieval.</strong> На длинном input качество может деградировать задолго до hard limit.</li>
+<li><strong>Не путайте capability с visibility.</strong> Если агент игнорирует правило, повторяет действия или противоречит project instructions, сначала проверьте context degradation.</li>
+<li><strong>Три сигнала перегруженного контекста:</strong> игнорирование ранних инструкций, повтор уже выполненных действий, нарушение ранее соблюдавшихся project rules.</li>
+<li><strong><code>/compact</code> — для продолжения той же задачи</strong>, когда нужно сжать историю и сохранить ключевое состояние.</li>
+<li><strong><code>/clear</code> / новая session — для смены задачи</strong>, когда предыдущая history больше не нужна.</li>
+<li><strong>Не ждите hard limit.</strong> Context hygiene имеет смысл применять по качеству поведения, а не только по проценту заполнения окна.</li>
+<li><strong>Держите <code>CLAUDE.md</code> компактным и устойчивым.</strong> Храните там правила проекта, а не весь накопленный контекст.</li>
+<li><strong><code>500–800 tokens CLAUDE.md</code> — эвристика, а не технический лимит.</strong> Важнее signal-to-noise ratio.</li>
+<li><strong>Помещайте критические инструкции заметно и структурированно.</strong> Lost in the Middle показывает, что информация в середине длинного input может извлекаться хуже.</li>
+<li><strong>Делите большие задачи на логические этапы и фиксируйте состояние вне чата:</strong> код, tests, Git, TODO/state files.</li>
+<li><strong><code>15–20 сообщений на session</code> — только ориентир.</strong> Размер сообщений и tool results важнее количества turns.</li>
+<li><strong>Фильтруйте большие tool results.</strong> Не тащите в context десятки тысяч строк, если достаточно агрегатов или небольшого evidence set.</li>
+<li><strong>Используйте RAG/retrieval для больших knowledge bases</strong>, но отдельно контролируйте качество retrieval.</li>
+<li><strong>Subagents полезны для изоляции независимых subtasks</strong>, но у каждого есть собственная стоимость и context overhead.</li>
+<li><strong>Больший context не равен лучшему результату.</strong> Стремитесь к минимальному достаточному контексту.</li>
 </ol>
-<p>Короткая эвристика:</p>
-<pre><code>Context window ≠ база данных.
-Больше контекста ≠ больше качества.
-Нужен не максимальный объём, а максимальный релевантный сигнал.</code></pre>
-</article><section class="quiz card">
+<p>Короткое правило:</p>
+<pre><code>same task + context degraded → compact
+new task                  → clear / new session
+large independent subtask → focused subagent
+
+State → files / Git / DB / memory
+Context → только то, что нужно сейчас</code></pre>
+<h2 id="источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
+<ul>
+<li>Anthropic, <strong>Context windows</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/context-windows</a></li>
+<li>Anthropic, <strong>Claude Sonnet 4.6 System Card — Long context / MRCR v2</strong>: <a href="https://www.anthropic.com/claude-sonnet-4-6-system-card" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/claude-sonnet-4-6-system-card</a></li>
+<li>Anthropic, <strong>Claude Code commands (<code>/compact</code>, <code>/clear</code>)</strong>: <a href="https://code.claude.com/docs/en/commands" target="_blank" rel="noopener noreferrer">https://code.claude.com/docs/en/commands</a></li>
+<li>Anthropic, <strong>Claude Code best practices</strong>: <a href="https://code.claude.com/docs/en/best-practices" target="_blank" rel="noopener noreferrer">https://code.claude.com/docs/en/best-practices</a></li>
+<li>Liu et al., <strong>Lost in the Middle</strong>: <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2307.03172</a></li>
+<li>Vodrahalli et al., <strong>Michelangelo</strong>: <a href="https://arxiv.org/abs/2409.12640" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2409.12640</a></li>
+</ul>
+</article>
+<article class="lesson" data-lesson="glossary"><div class="glossary-page"><h1>Glossary</h1><p class="glossary-intro">Краткий справочник терминов из уроков 1–3.</p>
+<section class="glossary-section"><h2>Токены и представление текста</h2><div class="glossary-grid">
+<div class="glossary-card"><h3>Tokenizer</h3><p>Компонент, который преобразует исходный текст в последовательность токенов и token IDs по правилам конкретного vocabulary.</p></div>
+<div class="glossary-card"><h3>Token</h3><p>Дискретная текстовая единица после токенизации: слово, часть слова, знак пунктуации, пробел или другой фрагмент.</p></div>
+<div class="glossary-card"><h3>Token ID</h3><p>Числовой идентификатор токена в vocabulary конкретного tokenizer.</p></div>
+<div class="glossary-card"><h3>Vocabulary</h3><p>Фиксированный набор токенов, которым tokenizer сопоставляет token IDs.</p></div>
+<div class="glossary-card"><h3>Subword tokenization</h3><p>Подход, при котором частые последовательности могут быть крупными токенами, а редкие слова разбиваются на несколько частей.</p></div>
+<div class="glossary-card"><h3>BPE</h3><p>Один из алгоритмов subword tokenization, объединяющий часто встречающиеся соседние последовательности.</p></div>
+<div class="glossary-card"><h3>Embedding</h3><p>Числовой вектор, получаемый из token ID и используемый нейросетью для дальнейших вычислений.</p></div>
+<div class="glossary-card"><h3>Detokenization / tokenizer decoding</h3><p>Обратное преобразование token IDs в байты/текст. Это не decode phase LLM inference.</p></div>
+</div></section>
+<section class="glossary-section"><h2>Inference и генерация</h2><div class="glossary-grid">
+<div class="glossary-card"><h3>Inference</h3><p>Запуск уже обученной модели для обработки конкретного input и получения output. Во время обычного inference веса модели не переобучаются.</p></div>
+<div class="glossary-card"><h3>Prefill</h3><p>Фаза inference, в которой обрабатываются заранее известные input tokens и формируется состояние/KV cache.</p></div>
+<div class="glossary-card"><h3>Decode phase</h3><p>Последовательная autoregressive генерация новых output tokens после prefill.</p></div>
+<div class="glossary-card"><h3>Generation</h3><p>Процесс выбора и добавления следующих токенов до завершения ответа или достижения stop/output limit.</p></div>
+<div class="glossary-card"><h3>Logits</h3><p>Не-нормализованные оценки модели для возможных следующих токенов.</p></div>
+<div class="glossary-card"><h3>KV cache</h3><p>Кэш key/value представлений attention для уже обработанного prefix.</p></div>
+<div class="glossary-card"><h3>Thinking tokens</h3><p>Внутренние reasoning tokens, используемые reasoning-моделью и учитываемые в output billing.</p></div>
+<div class="glossary-card"><h3>Effort</h3><p>Мягкая настройка глубины reasoning; это не гарантированный фиксированный token budget.</p></div>
+</div></section>
+<section class="glossary-section"><h2>Контекст и память</h2><div class="glossary-grid">
+<div class="glossary-card"><h3>Context</h3><p>Информация, доступная модели в текущем inference.</p></div>
+<div class="glossary-card"><h3>Context window</h3><p>Максимальный токенный объём активного контекста, поддерживаемый моделью/API.</p></div>
+<div class="glossary-card"><h3>Context rot</h3><p>Практическая деградация способности надёжно использовать нужную информацию по мере роста/зашумления context.</p></div>
+<div class="glossary-card"><h3>Lost in the Middle</h3><p>Эффект, при котором информация в середине очень длинного context может извлекаться хуже, чем ближе к началу или концу.</p></div>
+<div class="glossary-card"><h3>MRCR</h3><p>Long-context benchmark для поиска и различения нескольких похожих фрагментов информации.</p></div>
+<div class="glossary-card"><h3>Mean Match Ratio</h3><p>Метрика MRCR: средняя степень совпадения ответа модели с целевым фрагментом; это не обычная accuracy полностью правильных ответов.</p></div>
+<div class="glossary-card"><h3>Compaction</h3><p>Сжатие длинной истории с сохранением наиболее важного рабочего состояния.</p></div>
+<div class="glossary-card"><h3>/compact</h3><p>Команда Claude Code для summarization текущей conversation history.</p></div>
+<div class="glossary-card"><h3>/clear</h3><p>Команда Claude Code для очистки conversation history перед новой независимой задачей.</p></div>
+<div class="glossary-card"><h3>External state</h3><p>Состояние вне активного context window: файлы, Git, БД, vector store и другие persistent storage.</p></div>
+</div></section>
+<section class="glossary-section"><h2>Retrieval и agentic engineering</h2><div class="glossary-grid">
+<div class="glossary-card"><h3>RAG</h3><p>Retrieval-Augmented Generation: поиск релевантных фрагментов во внешнем источнике и добавление выбранных данных в active context.</p></div>
+<div class="glossary-card"><h3>Retrieval</h3><p>Выбор информации, наиболее релевантной текущему запросу или этапу задачи.</p></div>
+<div class="glossary-card"><h3>Tool result</h3><p>Результат вызова внешнего инструмента, который может быть добавлен в context.</p></div>
+<div class="glossary-card"><h3>Subagent</h3><p>Отдельный агент/вызов с более узкой задачей и собственным context.</p></div>
+<div class="glossary-card"><h3>Context engineering</h3><p>Проектирование того, какие инструкции, history, retrieval results и tool outputs доступны модели на каждом шаге.</p></div>
+<div class="glossary-card"><h3>Signal-to-noise ratio</h3><p>Соотношение полезной информации к нерелевантному или устаревшему контексту.</p></div>
+</div></section>
+<section class="glossary-section"><h2>Стоимость и оптимизация</h2><div class="glossary-grid">
+<div class="glossary-card"><h3>Input tokens</h3><p>Токены контекста, которые модель обрабатывает как input.</p></div>
+<div class="glossary-card"><h3>Output tokens</h3><p>Токены, сгенерированные моделью; billed output reasoning-моделей может также включать thinking tokens.</p></div>
+<div class="glossary-card"><h3>Prompt caching</h3><p>Повторное использование большого неизменного prefix для снижения повторных вычислений/стоимости.</p></div>
+<div class="glossary-card"><h3>Cache hit</h3><p>Повторное использование уже закэшированного prefix.</p></div>
+<div class="glossary-card"><h3>Batch API</h3><p>Асинхронная массовая обработка запросов, подходящая для offline workloads.</p></div>
+<div class="glossary-card"><h3>Token budget</h3><p>Планируемый объём input, thinking и output с учётом context limit, стоимости и latency.</p></div>
+</div></section>
+</div></article><section class="quiz card">
 <div class="quiz-head">
   <div class="quiz-title-row">
     <h2>Тестирование</h2>
@@ -448,75 +874,9 @@ Cost + latency + new context</code></pre>
 </div>
 </section></main></div><script>
 const Q={
-l1:[
-['Что точнее всего описывает token ID?',['Числовой индекс токена в vocabulary конкретного токенизатора','Универсальный Unicode-код слова','Embedding фиксированной размерности','Вероятность появления токена'],0,'Token ID — дискретный идентификатор записи vocabulary. Векторное представление появляется позже.'],
-['Что произойдёт, если для редкого слова нет одного крупного токена?',['Запрос будет отклонён','Модель добавит новый токен','Строка будет представлена несколькими более мелкими токенами','Слово заменится синонимом'],2,'Vocabulary фиксирован во время inference; используются доступные меньшие единицы.'],
-['Какое утверждение про BPE наиболее корректно?',['Каждый merge объединяет два соседних элемента по выученным правилам','BPE всегда идёт строго слева направо','BPE работает внутри attention','BPE создаёт embeddings'],0,'BPE использует заранее выученные merge rules до Transformer.'],
-['Почему одинаковое число слов на двух языках может дать разное число токенов?',['Для каждого языка всегда отдельная нейросеть','Vocabulary покрывает последовательности с разной компактностью','Пробелы не считаются в английском','LLM сначала переводит всё в английский'],1,'Эффективность сегментации зависит от vocabulary и статистики токенизатора.'],
-['Где появляется контекстное векторное представление токена?',['В tokenizer vocabulary','В HTTP API','После embedding и Transformer-слоёв','В Unicode'],2,'Tokenizer выдаёт IDs; embedding и Transformer формируют векторные и контекстные представления.'],
-['Почему UUID может быть токенно дороже обычной фразы похожей длины?',['UUID всегда равен 128 токенам','Случайные последовательности могут хуже совпадать с крупными токенами','API удваивает цену цифр','LLM сначала хеширует UUID'],1,'Необычные последовательности часто дробятся на больше мелких токенов.'],
-['Tokenizer исправляет опечатку helol в hello?',['Всегда','Только при temperature=0','Нет; он кодирует вход, а смысл интерпретирует модель','Только в system prompt'],2,'Исправление смысла не является функцией токенизатора.'],
-['Что может увеличить input_tokens API относительно одной пользовательской строки?',['System instructions и история','TLS-сертификат','CSS интерфейса','Частота CPU клиента'],0,'API считает модельный контекст, а не только последнюю строку.'],
-['Какой вывод корректен из измерения 886 против 557 токенов?',['Первый язык всегда требует ровно ×1.59','Для этих текстов и токенизатора отношение ≈1.59','Кириллица всегда ×1.59','Output всегда даст то же отношение'],1,'Это результат конкретного измерения, а не универсальная константа.'],
-['Как связаны tokenizer и Transformer?',['Это один компонент','Tokenizer кодирует текст до входа в Transformer','Transformer строит vocabulary при каждом запросе','Tokenizer нужен только после генерации'],1,'Tokenizer — отдельная стадия подготовки дискретной последовательности.'],
-['Что точнее всего различает Token, Token ID и Embedding?',['Token — текстовый фрагмент; Token ID — его числовой ID в vocabulary; Embedding — вектор для нейросети','Token и Token ID — одно и то же, Embedding — текст','Token ID — часть слова, Token — числовой индекс, Embedding — строка','Embedding — vocabulary, Token ID — контекст, Token — attention'],0,'Это три последовательных уровня: текстовая единица, дискретный ID и числовой вектор.'],
-['Что лучше измерять для оценки стоимости LLM API?',['Строки','Слова','Фактический token usage конкретного API','Размер шрифта'],2,'Тарификация основана на правилах конкретного API.'],
-['Может ли одно слово токенизироваться по-разному у разных моделей?',['Нет','Да, если tokenizer/vocabulary различаются','Только в PDF','Только если слово длинное'],1,'Tokenization не стандартизована между всеми моделями.'],
-['Почему subword tokenization считается практической золотой серединой?',['Частые последовательности могут быть одним токеном, а редкие слова разбиваются на части','Каждое слово всегда становится одним токеном','Каждый символ всегда становится отдельным токеном','Subword полностью исключает vocabulary'],0,'Subword сохраняет компактность для частых последовательностей и позволяет представить редкие слова несколькими частями.'],
-['Какие четыре стадии обработки выделены в уроке?',['Tokenization → Embedding → Contextualization → Generation','Embedding → Generation → Tokenization → Storage','Tokenization → Training → Fine-tuning → Deployment','Vocabulary → HTTP → Context Window → Billing'],0,'Слайд выделяет токенизацию, embedding, контекстуализацию и генерацию.']
-,['Вы оцениваете стоимость нового LLM endpoint. Какой подход наиболее надёжный?',['Посчитать количество слов в user prompt','Посчитать символы и разделить на четыре','Измерить фактический token usage всего model input для выбранного API','Использовать коэффициент 1.59 для любого языка'],2,'Для production важен фактический usage конкретной модели/API, включая не только текст последнего user message.']
-,['Украинский prompt в одном тесте потребовал в 1.59 раза больше токенов, чем английский. Что делать в production?',['Всегда переводить все prompt на английский','Считать 1.59 универсальным коэффициентом','Измерять реальные тексты и использовать более компактный вариант только если он не ухудшает задачу','Игнорировать разницу, потому что язык не влияет на токены'],2,'Коэффициент из одного теста не универсален; решение должно опираться на измерения и требования к качеству и языку.']
-,['Как лучше передать модели 10 000 случайных UUID, если для задачи нужна только статистика по ним?',['Передать все UUID в prompt','Сначала агрегировать данные вне LLM и передать только нужную статистику','Добавить пробелы между символами UUID','Повторить UUID дважды для надёжности'],1,'Случайные идентификаторы могут быть токенно неэффективны; ненужные сырые данные лучше агрегировать до LLM.']
-,['На какой стадии слово «замок» получает конкретное значение из слов вроде «дверь» или «король»?',['Tokenization','Embedding lookup','Contextualization внутри Transformer','HTTP serialization'],2,'Tokenizer и исходный embedding не определяют конкретный смысл в предложении; контекст уточняется внутри Transformer.']
-,['Что может остановить генерацию согласно схеме урока?',['Только закрытие браузера','Output-лимит, естественное завершение или настроенная stop sequence','Только исчерпание vocabulary','Только смена языка'],1,'Типичные причины остановки — лимит output, естественное завершение или stop sequence/stop phrase.']
-
-],
-l2:[
-['Что такое prefill?',['Удаление истории','Обработка известного input-контекста перед последовательной генерацией','Декодирование IDs в текст','gzip ответа'],1,'Prefill обрабатывает input и формирует состояние/KV cache.'],
-['Почему decode нельзя полностью распараллелить по длине будущего ответа?',['Следующий токен зависит от уже сгенерированных','GPU не умеет матрицы','Tokenizer запрещает','HTTP передаёт один токен'],0,'Autoregressive dependency делает шаги decode последовательными.'],
-['Зачем нужен KV cache?',['Хранить API key','Не пересчитывать K/V всего префикса на каждом decode step','Сжимать токены','Переводить output'],1,'Кэш уменьшает повторные attention-вычисления.'],
-['Как посчитать input cost при цене за миллион?',['tokens × price','tokens / 1_000_000 × price','words / 1000 × price','chars × model size'],1,'Цена публикуется за миллион токенов.'],
-['При 82 input и 4867 output с условными $5/$25 за 1M что доминирует?',['Input','Output','Они равны','Нельзя определить'],1,'Output ≈ $0.121675, input ≈ $0.00041.'],
-['Что верно о pricing input/output?',['Output обязан стоить ровно ×5','Цены определяет провайдер и модель','Input всегда бесплатен','Цена зависит от C# или JS'],1,'Технический профиль отличается, но прайс — продуктовая политика.'],
-['Что может входить в input?',['История, system instructions, tool results','Только CSS','Только IP','Только последний user message'],0,'Контекст API обычно состоит из нескольких типов данных.'],
-['Что делает max_output_tokens?',['Гарантирует правильность','Ограничивает потенциальную длину, стоимость и latency','Увеличивает vocabulary','Убирает context window'],1,'Это верхняя граница генерируемой длины, а не гарантия качества.'],
-['Context window и maximum output — одно и то же?',['Да','Нет, это разные связанные ограничения','Только для BPE одно','Разница только в UI'],1,'Context capacity и предел новых токенов документируются отдельно.'],
-['Что происходит с памятью KV cache при росте последовательности?',['Обычно растёт','Всегда 1 КБ','Исчезает после каждого токена','Заменяет vocabulary'],0,'Кэш хранит данные для большего числа позиций.'],
-['Что полезно для большого неизменного префикса, если API это поддерживает?',['Добавлять случайный текст','Prompt caching','Перевести в картинку','Удалить system prompt'],1,'Кэширование может уменьшить повторную работу и/или цену.'],
-['Cached input перестаёт занимать логический context window?',['Всегда да','Нет, caching и context capacity различны','Только при temperature=0','Только для PDF'],1,'Кэш — оптимизация обработки, но информация остаётся частью контекста.'],
-['Почему длинный output может быть дорогим при коротком prompt?',['Каждый output token требует decode и тарифицируется как output','HTTP заранее длиннее','Tokenizer обучается заново','Input копируется 100 раз'],0,'Длинная генерация может доминировать в usage.'],
-['Разница токенизации языков может влиять на output?',['Нет, output не токенизируется','Да, generated text тоже состоит из токенов','Только для PDF','Только при tools'],1,'Input и output представлены токенами.'],
-['Какая стратегия оптимизации лучше?',['Всегда самая дорогая модель','Измерять usage и подбирать модель/контекст/лимиты','Всегда максимальный output','Всегда вся история'],1,'Оптимизация должна опираться на реальные паттерны нагрузки.']
-,['Нужно спроектировать архитектуру новой сложной системы с большим количеством компромиссов. Какой выбор соответствует практической таблице урока?',['Claude Haiku 4.5','Claude Sonnet 4.6','Claude Opus 4.6','Всегда самая дешёвая модель'],2,'В таблице урока Opus позиционируется для архитектуры и глубокого анализа, где максимальное качество важнее цены.']
-,['Нужно регулярно выполнять code review больших pull request. Какой выбор соответствует практической таблице урока?',['Claude Sonnet 4.6','Claude Haiku 4.5','Всегда Claude Opus 4.6','Модель не влияет на компромисс цена/качество'],0,'Sonnet в материале урока — баланс качества и скорости для большинства больших инженерных задач, включая code review.']
-,['Сервис должен классифицировать миллионы коротких сообщений по нескольким категориям. Какой выбор соответствует таблице урока?',['Claude Opus 4.6 для каждого сообщения','Claude Haiku 4.5 как кандидат для простой массовой классификации','Только Sonnet, потому что классификация всегда сложная','Любая модель с максимальным output'],1,'Haiku в таблице урока позиционируется как быстрая модель для классификации и форматирования.']
-,['Какой общий принцип выбора модели лучше всего следует из урока?',['Всегда использовать самую новую и мощную модель','Всегда выбирать самую дешёвую','Выбирать минимально достаточную модель под сложность и ценность задачи','Выбирать модель только по размеру context window'],2,'Практическая оптимизация — не переплачивать за capability, которое конкретной задаче не требуется.']
-,['Pipeline содержит дешёвую классификацию и редкий сложный архитектурный анализ. Как разумно распределить модели?',['Все шаги выполнять Opus','Классификацию отдать Haiku, типовые сложные задачи Sonnet, редкий глубокий анализ Opus','Все шаги выполнять Haiku','Выбирать случайную модель на каждом запросе'],1,'Разделение pipeline по сложности позволяет использовать дорогую capability только там, где она приносит ценность.']
-
-],
-l3:[
-['Что такое context window?',['Размер БД','Лимит токенизированной информации для одного контекстного вычисления','Число сообщений в UI','Размер vocabulary'],1,'Context window ограничивает активный модельный контекст.'],
-['Если факт помещается в context window, гарантируется ли идеальное использование?',['Да','Нет, длинный контекст может использоваться неравномерно','Да для JSON','Да при temperature=0'],1,'Номинальная вместимость и эффективное извлечение — разные свойства.'],
-['Что показала работа Lost in the Middle?',['LLM не читают начало','Позиция релевантной информации может влиять на качество','Context всегда 4K','RAG не работает'],1,'В длинном контексте качество часто зависело от позиции нужной информации.'],
-['Что точнее описывает context rot?',['Строгий API error code','Практическая деградация при перегруженном контексте','Удаление vocabulary','Проблема SSD'],1,'Это практический термин, а не универсальный точный порог.'],
-['Что такое hard context overflow?',['Prompt превышает допустимый размер','Модель ответила неточно','Tool call медленный','Много существительных'],0,'Overflow — превышение технического лимита.'],
-['Всегда ли модель получает все сообщения, видимые в длинном чате?',['Да','Нет: возможны truncation, summary, retrieval, compaction','Только последнее слово','Да, если есть scrollbar'],1,'UI-история и активный model context не обязаны совпадать.'],
-['Что значит минимальный достаточный контекст?',['Один токен','Минимальный объём релевантных данных, достаточный для задачи','Только system prompt','Контекст без user message'],1,'Цель — высокий сигнал, а не максимальное заполнение окна.'],
-['Как RAG помогает управлять контекстом?',['Переобучает модель','Передаёт выбранные релевантные фрагменты вместо всей базы','Увеличивает vocabulary','Отменяет токенизацию'],1,'Retrieval уменьшает шум и объём активного input.'],
-['Какой риск создаёт RAG?',['Нужный документ может не попасть в top-k','Модель перестаёт использовать токены','KV cache невозможен','Output бинарный'],0,'Retrieval quality нужно оценивать отдельно.'],
-['Почему summarization — lossy compression?',['Summary всегда длиннее','Некоторые детали могут быть отброшены','Меняет UTF-8 на ASCII','Всегда удаляет timestamps'],1,'Сжатие не сохраняет каждую деталь исходной истории.'],
-['Что лучше сделать с tool result на 50 000 строк?',['Вставить всё','Фильтровать/агрегировать до передачи LLM','Повторить дважды','Сделать 50 000 system prompts'],1,'Большие сырые результаты раздувают контекст и шум.'],
-['Context window — подходящая долговременная БД агента?',['Да','Нет, состояние лучше хранить внешне и извлекать по необходимости','Да только с PostgreSQL','Только для DNS'],1,'Контекст — рабочая память inference, не надёжное долговременное storage.'],
-['Что относится к context engineering?',['CSS тема','История, RAG, memory retrieval, tool formatting, summaries','Только temperature','Только HTTP client'],1,'Context engineering проектирует входную информацию модели.'],
-['Какой симптом указывает на проблему контекста?',['Рост input tokens и игнорирование ранних требований','Снижение latency','Меньше tool calls','Снижение стоимости'],0,'Рост контекста вместе с потерей важных требований — характерный сигнал.'],
-['Как лучше анализировать большой DNS-инцидент?',['Передать все логи за неделю','Сначала фильтровать и агрегировать evidence, затем дать релевантное модели','Удалить timestamps','Использовать только последнее Slack-сообщение'],1,'Компактный evidence set повышает отношение сигнала к шуму.']
-,['Агент получил 50 000 строк SQL, но для решения нужны только пять агрегированных показателей. Что лучше сделать?',['Передать все строки в context window','Агрегировать данные до LLM и передать только нужные показатели','Разбить строки на два одинаковых prompt','Увеличить temperature'],1,'Лучше уменьшить шум и token usage до передачи данных модели.']
-,['Начинается новая задача, не связанная с предыдущими 200 сообщениями чата. Какой подход предпочтительнее?',['Обязательно передать всю историю','Использовать чистый контекст или новую session, если старая история не нужна','Скопировать историю дважды','Сначала заполнить context window до максимума'],1,'Нерелевантная история увеличивает стоимость и шум без пользы для новой независимой задачи.']
-,['Где лучше хранить долговременное состояние agentic-системы?',['Только в бесконечно растущем prompt','Во внешнем state store и извлекать нужную часть в активный контекст','В названии модели','В output limit'],1,'Context window — рабочая память inference, а не надёжная долговременная база данных.']
-,['Что важнее при формировании контекста для анализа инцидента?',['Максимальный объём данных','Максимальное отношение релевантного сигнала к шуму','Максимальное число повторов одного факта','Заполнение context window до 100%'],1,'Минимальный достаточный evidence set обычно полезнее большого массива нерелевантной информации.']
-,['После compaction агент перестал помнить критичное ограничение проекта. В чём наиболее вероятная архитектурная ошибка?',['Summary отбросил важное состояние, а оригинал больше не доступен в активном контексте','KV cache слишком большой','Tokenizer создал новый vocabulary','Output был на английском'],0,'Summarization — lossy compression; ключевые решения, ограничения и запреты должны сохраняться в summary или внешнем state.']
-
-]};
+l1:[["Что такое token в subword-токенизации?",["Числовой индекс vocabulary","Текстовый фрагмент, полученный после токенизации","Embedding-вектор","Вероятность следующего слова"],1,"Token — текстовая единица; числовое представление этой единицы называется Token ID."],["Что такое Token ID?",["Числовой идентификатор токена в vocabulary","UTF-8 код всего предложения","Embedding токена","Количество символов в токене"],0,"Token ID — индекс токена в vocabulary конкретного tokenizer."],["Почему subword tokenization считается компромиссом?",["Каждое слово всегда один токен","Частые последовательности могут быть крупными токенами, а редкие слова разбиваются на части","Каждый символ всегда отдельный токен","Vocabulary вообще не нужен"],1,"Subword сочетает компактность частых последовательностей с возможностью представить редкие слова меньшими фрагментами."],["BPE — это…",["Один из алгоритмов subword tokenization","Тип embedding layer","Алгоритм attention","Способ тарификации API"],0,"BPE — один из подходов к построению subword vocabulary/merge rules."],["Что происходит, если для редкого слова нет одного крупного токена?",["Запрос отклоняется","Tokenizer обучается заново","Слово представляется несколькими меньшими токенами","Слово автоматически переводится"],2,"Vocabulary фиксирован во время inference; используются доступные меньшие токены."],["Почему одинаковое число слов на двух языках может дать разное число токенов?",["Tokenizer по-разному покрывает частые последовательности языков","Пробелы считаются только в одном языке","Модель переводит всё в английский","Каждый Unicode-символ всегда равен токену"],0,"Компактность зависит от vocabulary и статистики tokenizer."],["Что корректно означает измерение 886 против 557 токенов?",["Первый язык всегда дороже ровно в 1.59 раза","Для конкретных текстов и tokenizer отношение было около 1.59","Кириллица всегда ×1.59","Такое же отношение обязательно будет в output"],1,"Это конкретное измерение, а не универсальный коэффициент."],["Почему UUID/base64 могут расходовать много токенов?",["Они всегда тарифицируются ×2","Случайные последовательности часто хуже совпадают с крупными токенами vocabulary","Они обходят tokenizer","Модель преобразует их в изображения"],1,"Нерегулярные последовательности часто дробятся на большее число токенов."],["Tokenizer исправляет опечатку по смыслу?",["Всегда","Нет; он кодирует строку, а интерпретация смысла происходит в модели","Только при temperature=0","Только для английского"],1,"Tokenizer сегментирует/кодирует вход, а контекстный смысл формируется внутри Transformer."],["Какой порядок обработки корректен?",["Text → tokens → token IDs → embeddings → Transformer","Text → embeddings → tokenizer → IDs","IDs → text → Transformer","Transformer → tokenizer → vocabulary"],0,"Tokenizer формирует токены/IDs, затем embedding layer даёт векторы для Transformer."],["Что делает embedding layer?",["Переводит token ID в числовой вектор","Декодирует UTF-8","Выбирает модель","Сжимает HTTP"],0,"Embedding lookup преобразует дискретный ID в вектор, пригодный для нейросетевых вычислений."],["На какой стадии слово «замок» получает конкретное значение из контекста?",["Tokenization","Vocabulary lookup","Contextualization внутри Transformer","Detokenization"],2,"Контекстные представления внутри Transformer уточняют значение по окружению."],["Какие четыре логические стадии обработки полезно различать?",["Tokenization → Embedding → Contextualization → Generation","Training → HTTP → Billing → Cache","Embedding → Tokenization → Storage → Fine-tuning","Vocabulary → RAG → Batch → Decode"],0,"Это четыре разных уровня: кодирование текста, векторизация, контекстное представление и генерация."],["Что делает стадия Generation?",["Формирует следующий token на основе текущего контекста","Строит vocabulary заново","Исправляет UTF-8","Сохраняет долговременную память"],0,"Модель рассчитывает распределение следующего токена и продолжает последовательность autoregressive."],["Что может остановить генерацию?",["Output limit, естественное завершение или stop sequence","Только закрытие браузера","Только исчерпание vocabulary","Только смена языка"],0,"Типичные причины — лимит output, завершение ответа или настроенная stop sequence."],["Почему usage API может быть больше токенов одной user-строки?",["В input также могут входить system instructions, история, tools и служебное форматирование","Потому что TLS считается токенами","CSS считается input","CPU клиента добавляет токены"],0,"Model input шире последнего user message."],["Что лучше использовать для оценки стоимости?",["Количество слов","Количество символов","Фактический token usage конкретного API","Размер файла в KB"],2,"Биллинг определяется токенами по правилам конкретного API."],["Для чего полезен OpenAI Tokenizer web tool?",["Посмотреть практическое разбиение текста на токены у токенизаторов OpenAI","Измерить GPU latency Anthropic","Обучить новый BPE vocabulary","Создать embeddings"],0,"Инструмент показывает, как конкретный текст разбивается на токены."],["Если модели в следующем запросе нужна предыдущая информация, что должно произойти?",["Нужный контекст должен быть снова доступен через историю/memory/retrieval","Модель автоматически хранит все промежуточные embeddings навсегда","Tokenizer запоминает диалог","KV cache хранится как постоянная БД"],0,"Промежуточные вычисления inference не являются долговременной памятью."],["Какой основной принцип token-оптимизации?",["Убирать ненужные токены, сохраняя достаточную информацию для задачи","Всегда переводить всё на английский","Максимально сокращать prompt любой ценой","Подбирать визуально короткие слова"],0,"Оптимизация должна снижать token budget без потери необходимого контекста и качества."]],
+l2:[["Что такое prefill?",["Параллельная обработка заранее известного input-контекста перед генерацией","Перевод token IDs в UTF-8","Удаление истории","Финальный streaming"],0,"Prefill обрабатывает известные input tokens и формирует состояние/KV cache."],["Что означает decode в контексте prefill/decode?",["Последовательная генерация новых output tokens","Только detokenization в UTF-8","Чтение cache","Подсчёт input tokens"],0,"В inference decode — autoregressive generation после prefill."],["Что такое tokenizer decoding / detokenization?",["Обратное преобразование token IDs в bytes/text","Генерация thinking tokens","Prefill","Attention"],0,"Это отдельное значение слова decode: IDs преобразуются обратно в текстовое представление."],["Почему output generation последовательна?",["Token N+1 зависит от уже сгенерированных токенов 1..N","GPU не умеет параллельные матрицы","Tokenizer запрещает concurrency","HTTP передаёт один байт"],0,"Autoregressive dependency делает decode последовательным по длине output."],["Зачем нужен KV cache?",["Чтобы не пересчитывать K/V для уже обработанного prefix на каждом decode step","Чтобы хранить API key","Чтобы хранить vocabulary","Чтобы переводить output"],0,"KV cache уменьшает повторные attention-вычисления."],["Как считается стоимость при цене за 1M tokens?",["tokens / 1_000_000 × price","tokens × price","words / 1000 × price","characters × model size"],0,"Цена за MTok применяется к фактическому числу токенов."],["Что важнее всего помнить о thinking tokens?",["Они входят в billed output","Они бесплатны, если не видны","Они считаются input","Они не входят в max_tokens"],0,"Внутренний reasoning тарифицируется как output."],["500 visible output + 10 000 thinking tokens — сколько output tokens оплачивается?",["500","10 000","10 500","20 000"],2,"Billed output включает reasoning и финальный ответ: 500 + 10 000 = 10 500."],["При $25/MTok сколько стоят 10 500 output tokens?",["$0.002625","$0.02625","$0.2625","$2.625"],2,"10 500 / 1 000 000 × 25 = $0.2625."],["Если thinking отображается как summarized, за что платит клиент?",["За полный объём внутренних thinking tokens, а не только summary","Только за видимое summary","Thinking становится бесплатным","Только за input"],0,"Visible summary и billed reasoning — разные объёмы."],["Что делает display:'omitted' для thinking?",["Скрывает thinking text, но не отменяет billed thinking tokens","Отключает thinking и цену","Переводит thinking в input","Уменьшает output tokens до нуля"],0,"Visibility не изменяет оплату полного thinking процесса."],["Как рекомендуется управлять thinking в Opus/Sonnet 4.6?",["Adaptive thinking + effort","Только фиксированный budget_tokens","Temperature=0","Только max_tokens=1024"],0,"Для 4.6 manual budget_tokens deprecated; рекомендуются adaptive thinking и effort."],["Что означает effort='medium'?",["Мягкий сигнал баланса вычислений, а не гарантированный token budget","Ровно 3000 thinking tokens","Отключение thinking","Ровно 50% context window"],0,"Effort управляет поведением, а фактический thinking usage зависит от задачи."],["К чему относится минимум 1024 thinking tokens?",["К legacy/manual thinking.type='enabled' с budget_tokens","К любому adaptive thinking запросу","К каждому output Claude","К prompt cache"],0,"Минимум 1024 — ограничение manual budget_tokens; adaptive thinking работает иначе."],["Когда разумно использовать high/max effort?",["Для сложного reasoning/architecture/debugging, где качество оправдывает цену","Для любой простой классификации","Всегда по умолчанию для Haiku","Чтобы уменьшить latency"],0,"Глубокий thinking стоит использовать там, где он реально повышает качество."],["Что даёт 5-minute prompt cache hit относительно base input price Claude?",["Около 0.1× base input price","2×","1×","5×"],0,"Cache read стандартно стоит 10% базовой input-цены."],["Sonnet 4.6: 50K cached prefix × 100 запросов. Почему cache может снизить ~$15 до ~$1.67?",["Первый write дороже base, но последующие 99 hits стоят 0.1× input","Output становится бесплатным","Batch всегда включён","Tokenizer удаляет 90% текста"],0,"Cache write оплачивается один раз, последующие cache reads значительно дешевле."],["Что даёт Batch API?",["Около 50% скидки для asynchronous/offline workloads","Ускоряет каждый real-time request в 2 раза","Делает output бесплатным","Убирает thinking"],0,"Batch предназначен для неинтерактивной массовой обработки и снижает цену."],["Какой pipeline разумен по сложности задач?",["Haiku для простого routing/classification, Sonnet для типовых инженерных задач, Opus для сложного анализа","Opus для всего","Haiku для архитектуры, Opus для форматирования","Случайная модель"],0,"Минимально достаточная модель снижает стоимость без ненужной потери качества."],["Что происходит с cache-hit input при сочетании cache read 0.1× и Batch 0.5×?",["Соответствующая cached input часть может стоить около 0.05× base input","Весь запрос становится бесплатным","Output тоже автоматически 0.05×","Cache перестаёт работать"],0,"Pricing modifiers могут складываться: 0.1 × 0.5 = 0.05 для cached input; остальные компоненты считаются отдельно."]],
+l3:[["Что точнее всего описывает context window?",["Максимальный объём активной информации, доступной модели в одном inference","Размер training dataset","Число сообщений в UI","Размер vocabulary"],0,"Context window — ограниченный токенный объём активного контекста."],["Больший context window автоматически означает более высокое качество?",["Да","Нет: вместимость и эффективное использование информации — разные свойства","Да после 128K","Только для coding"],1,"Long context может ухудшать retrieval и focus задолго до hard limit."],["Что проверяет MRCR v2 8-needle?",["Поиск и различение конкретного из нескольких похожих фрагментов в длинном контексте","Скорость tokenizer","Image generation","API throughput"],0,"MRCR — long-context retrieval benchmark с несколькими похожими needles."],["Что означает 91.9% Mean Match Ratio в MRCR?",["Средняя степень совпадения ответов с целевыми фрагментами равна 91.9%","Ровно 91.9% задач полностью правильны","Использовано 91.9% context window","91.9% токенов найдены в vocabulary"],0,"Mean Match Ratio — среднее совпадение с эталонным содержимым, а не обычная accuracy полностью правильных ответов."],["Как изменился MRCR Claude Opus 4.6 между 256K и 1M?",["91.9% → 78.3%","78.3% → 91.9%","90.6% → 65.1%","10.8% → 18.5%"],0,"Benchmark показывает снижение Mean Match Ratio Opus 4.6 при росте input."],["Как изменился MRCR Claude Sonnet 4.6 между 256K и 1M?",["90.6% → 65.1%","65.1% → 90.6%","91.9% → 78.3%","10.8% → 18.5%"],0,"Для Sonnet 4.6 показатель в benchmark снизился с 90.6 до 65.1."],["Что такое context rot?",["Деградация надёжного использования информации по мере роста/зашумления context","Повреждение weights","Ошибка UTF-8","Удаление training data"],0,"Context rot описывает ухудшение recall/focus до hard overflow."],["Какой симптом характерен для context degradation?",["Повторное выполнение уже завершённых действий","Уменьшение input tokens","Ускорение prefill","Меньше tool calls"],0,"Повторы могут означать, что рабочее состояние стало плохо доступно."],["Если агент игнорирует раннюю инструкцию, что проверить первым?",["Не потерялась ли инструкция среди перегруженного context","Capability модели всегда недостаточна","Нужно увеличить temperature","Нужно добавить больше логов"],0,"Нужно различать capability и visibility информации в текущем context."],["Когда использовать /compact?",["Та же задача, но history перегружена","Новая независимая задача","Чтобы удалить repository","Чтобы отключить project memory"],0,"/compact сжимает history для продолжения текущей задачи."],["Когда использовать /clear?",["При переходе к новой независимой задаче","Чтобы сохранить всю history","После каждого tool call","Чтобы увеличить context window"],0,"/clear очищает conversation history."],["Как различать /compact и /clear?",["Та же задача → compact; новая задача → clear/new session","Новая задача → compact; та же → clear","Они идентичны","Обе меняют weights"],0,"Они решают разные задачи context hygiene."],["Как относиться к 500–800 tokens для CLAUDE.md?",["Как к эвристике, не техническому лимиту","Как к жёсткому API limit","Как к обязательному минимуму","Как к размеру KV cache"],0,"Главный критерий — signal-to-noise."],["Что иллюстрирует 2000 tokens CLAUDE.md × 50 запросов ≈ 100K?",["Повторяющийся prefix может создавать большой logical input","CLAUDE.md становится 100K-файлом","Это точный billing всегда","Context window растёт навсегда"],0,"Это оценка накопительного input footprint, не точный billing при любом caching."],["Что означает Lost in the Middle?",["Информация в середине длинного context может извлекаться хуже","Модель вообще не читает середину","Только первый токен влияет","Все модели одинаковы"],0,"Это статистическая позиционная деградация retrieval."],["Где лучше размещать критичные constraints?",["Ясно и заметно, не пряча среди нерелевантного текста","В случайном месте огромного лога","Только в последнем output","В base64"],0,"Высокий signal-to-noise помогает модели использовать критичные правила."],["Как относиться к 15–20 сообщениям на session?",["Как к ориентиру; tokens и качество context важнее числа turns","Как к жёсткому лимиту","После 20 turns модель ломается","Чем больше turns, тем лучше"],0,"Размер сообщений и tool results различается."],["Зачем делить длинную coding-задачу на stages?",["Чтобы фиксировать state во внешних артефактах и не тащить весь старый context","Чтобы увеличить tool calls","Чтобы хранить state только в чате","Чтобы отключить tests"],0,"Код, Git и tests — устойчивое внешнее состояние."],["Зачем subagents для независимых subtasks?",["Чтобы изолировать узкий context каждой подзадачи","Чтобы убрать billing","Чтобы делить один бесконечный context","Чтобы отключить tools"],0,"Изоляция снижает context pollution, хотя subagents имеют собственный usage."],["Какая ментальная модель полезна для context engineering?",["Модель ≈ процессор; context ≈ RAM; orchestration ≈ ОС","Модель ≈ RAM; context ≈ SSD","Context ≈ training dataset","Tokenizer ≈ database"],0,"Аналогия помогает разделять вычисления, рабочую память и управление."]]};
 const KEY='agentic-engineering-progress-v2';
 const SESSION_KEY='agentic-engineering-session-v2';
 let lesson='l1';
@@ -791,9 +1151,14 @@ function switchLesson(l){
   lesson=l;
   document.querySelectorAll('.lesson').forEach(x=>x.classList.toggle('active',x.dataset.lesson===l));
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.lesson===l));
-  toc();
-  renderQ();
-  renderStats();
+  const isGlossary=l==='glossary';
+  const sidebar=document.querySelector('.sidebar');
+  const quiz=document.querySelector('.quiz');
+  const layout=document.querySelector('.layout');
+  if(sidebar) sidebar.style.display=isGlossary?'none':'block';
+  if(quiz) quiz.style.display=isGlossary?'none':'block';
+  if(layout) layout.classList.toggle('glossary-layout',isGlossary);
+  if(!isGlossary){toc();renderQ();renderStats();}
   scrollTo(0,0);
 }
 
@@ -815,5 +1180,6 @@ resetLesson.onclick=()=>{
 };
 
 switchLesson('l1');
+
 
 </script></body></html>
