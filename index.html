@@ -1,4 +1,5 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agentic Engineering — уроки 1–5</title><style>
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Agentic Engineering — уроки 1–7</title><style>
 :root{--bg:#0f1115;--panel:#171a21;--panel2:#1d212a;--text:#e8eaf0;--muted:#9da5b4;--border:#2c3340;--accent:#7dd3fc;--good:#86efac;--bad:#fca5a5;--max:1180px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}button{font:inherit}.topbar{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.topbar-inner{max-width:var(--max);margin:auto;padding:12px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.brand{font-weight:800;margin-right:auto}.tab{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 12px;border-radius:9px;cursor:pointer}.tab.active{border-color:var(--accent);color:var(--accent)}.layout{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;padding:28px 20px 60px}.sidebar{position:sticky;top:82px;height:calc(100vh - 100px);overflow:auto}.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}.sidebar h3{margin:0 0 12px;font-size:14px;text-transform:uppercase;color:var(--muted)}.toc a{display:block;color:var(--muted);text-decoration:none;padding:5px 0;font-size:14px}.toc a:hover{color:var(--accent)}.progress-row{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin:7px 0}.progressbar{height:8px;background:#0c0e12;border-radius:99px;overflow:hidden;margin:9px 0 14px}.progressbar>div{height:100%;background:var(--accent);width:0}.content{min-width:0}.lesson{display:none}.lesson.active{display:block}.lesson h1{font-size:34px;line-height:1.15;margin:0 0 24px}.lesson h2{margin-top:42px;padding-top:4px;font-size:24px}.lesson h3{margin-top:28px;font-size:18px}.lesson p,.lesson li{color:#d6dae3}.lesson li{margin:5px 0}pre{background:#0a0c10;border:1px solid var(--border);border-radius:12px;padding:14px;overflow:auto}code{font-family:"Cascadia Code",Consolas,monospace;background:#0a0c10;padding:.1em .35em;border-radius:5px}pre code{padding:0;background:transparent}.quiz{margin-top:56px}.quiz-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}.quiz-head h2{margin:0}.quiz-controls{display:flex;gap:8px;flex-wrap:wrap}.action{border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:9px;cursor:pointer}.action.primary{border-color:var(--accent);color:var(--accent)}.question{margin-top:18px}.question-title{font-weight:750;font-size:18px;margin-bottom:14px}.option{display:block;width:100%;text-align:left;border:1px solid var(--border);background:#12151b;color:var(--text);padding:12px 14px;border-radius:10px;margin:8px 0;cursor:pointer}.option:hover:not(:disabled){border-color:#556174}.option.correct{border-color:var(--good);background:rgba(134,239,172,.08)}.option.wrong{border-color:var(--bad);background:rgba(252,165,165,.08)}.option:disabled{cursor:default}.feedback{margin-top:12px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);display:none}.feedback.show{display:block}.feedback.good{border-color:var(--good)}.feedback.bad{border-color:var(--bad)}.meta{font-size:13px;color:var(--muted);margin-top:10px}.status-pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 8px;margin-left:6px}.footer-note{color:var(--muted);font-size:13px;margin-top:8px}@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto}.lesson h1{font-size:28px}}
 
 .action:disabled{opacity:.45;cursor:not-allowed}
@@ -43,7 +44,7 @@
 
 .lesson blockquote{margin:18px 0;padding:12px 16px;border-left:3px solid var(--accent);background:rgba(125,211,252,.06);color:#d6dae3;border-radius:0 10px 10px 0}.lesson blockquote p{margin:0}
 </style></head><body>
-<header class="topbar"><div class="topbar-inner"><div class="brand">Agentic Engineering · Повторение</div><button class="tab" data-lesson="l1">Урок 1 — Токены</button><button class="tab" data-lesson="l2">Урок 2 — Input vs Output токены</button><button class="tab" data-lesson="l3">Урок 3 — Контекст</button><button class="tab deprecated-tab" data-lesson="l4"><s>Урок 4 — Temperature</s></button><button class="tab" data-lesson="l5">Урок 5 — Галлюцинации</button><button class="tab glossary-tab" data-lesson="glossary">Glossary</button></div></header>
+<header class="topbar"><div class="topbar-inner"><div class="brand">Agentic Engineering · Повторение</div><button class="tab" data-lesson="l1">Урок 1 — Токены</button><button class="tab" data-lesson="l2">Урок 2 — Input vs Output токены</button><button class="tab" data-lesson="l3">Урок 3 — Контекст</button><button class="tab deprecated-tab" data-lesson="l4"><s>Урок 4 — Temperature</s></button><button class="tab" data-lesson="l5">Урок 5 — Галлюцинации</button><button class="tab" data-lesson="l6">Урок 6 — Attention</button><button class="tab" data-lesson="l7">Урок 7 — Stateless и память</button><button class="tab glossary-tab" data-lesson="glossary">Glossary</button></div></header>
 <div class="layout"><aside class="sidebar"><div class="card">
 <h3>Текущий проход</h3>
 <div class="progress-row"><span>Вопрос</span><b id="currentQuestionNumber">1 / 20</b></div>
@@ -54,7 +55,7 @@
 <div class="progress-row"><span>Точность всех попыток</span><b id="accuracy">0%</b></div>
 <div class="progress-row"><span>Освоено</span><b id="mastered">0 / 20</b></div>
 <div class="progressbar"><div id="masteryBar"></div></div>
-<h3>Разделы</h3><nav id="tocBox" class="toc"></nav>
+<h3>Разделы</h3><nav class="toc" id="tocBox"></nav>
 </div></aside><main class="content"><article class="lesson" data-lesson="l1">
 <h1>Урок 1. Токены: как текст превращается в числа и почему это важно</h1>
 <h2 id="1-что-такое-токен-и-какие-бывают-подходы-к-токенизации">1. Что такое токен и какие бывают подходы к токенизации</h2>
@@ -62,13 +63,13 @@
 <p>Существует несколько базовых подходов к токенизации.</p>
 <h3 id="word-level-tokenization">Word-level tokenization</h3>
 <p>Текст разбивается по словам:</p>
-<pre><code>&quot;Large language model&quot;
-→ [&quot;Large&quot;, &quot;language&quot;, &quot;model&quot;]</code></pre>
+<pre><code>"Large language model"
+→ ["Large", "language", "model"]</code></pre>
 <p>Подход прост, но vocabulary быстро разрастается: разные формы слов, редкие слова, имена, опечатки и новые термины требуют отдельных записей.</p>
 <h3 id="character-level-tokenization">Character-level tokenization</h3>
 <p>Текст разбивается на символы:</p>
-<pre><code>&quot;hello&quot;
-→ [&quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;]</code></pre>
+<pre><code>"hello"
+→ ["h", "e", "l", "l", "o"]</code></pre>
 <p>Vocabulary получается небольшим и практически любое слово можно представить, но последовательность токенов становится значительно длиннее.</p>
 <h3 id="subword-tokenization-практическая-золотая-середина">Subword tokenization — практическая «золотая середина»</h3>
 <p>Subword-подход находится между word-level и character-level:</p>
@@ -78,11 +79,11 @@
 редкое слово
 → разбивается на несколько частей</code></pre>
 <p>Условный пример:</p>
-<pre><code>&quot;hello&quot;
-→ [&quot;hello&quot;]
+<pre><code>"hello"
+→ ["hello"]
 
-&quot;uncharacteristic&quot;
-→ [&quot;un&quot;, &quot;character&quot;, &quot;istic&quot;]</code></pre>
+"uncharacteristic"
+→ ["un", "character", "istic"]</code></pre>
 <p>Конкретное разбиение всегда зависит от tokenizer и его vocabulary.</p>
 <p><strong>BPE (Byte Pair Encoding)</strong> — один из известных алгоритмов subword tokenization. Он строит более крупные токены из часто встречающихся последовательностей, поэтому распространённые слова или фрагменты могут кодироваться компактно, а редкие слова остаются комбинацией нескольких меньших токенов.</p>
 <h3 id="token-и-token-id-не-одно-и-то-же">Token и Token ID — не одно и то же</h3>
@@ -95,7 +96,7 @@ Token ID</code></pre>
 <p><strong>Token</strong> — текстовая единица после токенизации: это может быть целое слово, часть слова, знак пунктуации, пробел или другой фрагмент. В контексте subword/BPE удобно думать о токене как о фрагменте слова или текста.</p>
 <p><strong>Token ID</strong> — числовой идентификатор этого токена в vocabulary токенизатора.</p>
 <p>Условно:</p>
-<pre><code>token:    &quot;hello&quot;
+<pre><code>token:    "hello"
 token ID: 15339</code></pre>
 <p>Само число <code>15339</code> не содержит значения слова. Это просто индекс записи в vocabulary.</p>
 <p>Более точный pipeline:</p>
@@ -167,9 +168,9 @@ Embedding table
 <p>Эта схема важна, потому что разделяет несколько разных уровней обработки, которые легко смешать между собой.</p>
 <h3 id="1-tokenization">1. Tokenization</h3>
 <p>На входе есть обычный текст, например:</p>
-<pre><code>&quot;замок&quot;</code></pre>
+<pre><code>"замок"</code></pre>
 <p>Tokenizer превращает его в токены, а затем в <strong>token IDs</strong> из своего vocabulary:</p>
-<pre><code>&quot;замок&quot;
+<pre><code>"замок"
    ↓
 token
    ↓
@@ -192,10 +193,10 @@ Embedding = числовой вектор для нейросети</code></pre>
 <h3 id="3-contextualization">3. Contextualization</h3>
 <p>Исходный embedding ещё не определяет конкретное значение слова в предложении.</p>
 <p>Например:</p>
-<pre><code>&quot;замок&quot; + &quot;дверь&quot;
+<pre><code>"замок" + "дверь"
 → механизм
 
-&quot;старинный замок&quot; + &quot;король&quot;
+"старинный замок" + "король"
 → здание</code></pre>
 <p>Transformer обрабатывает токены совместно и формирует <strong>контекстуализированные представления</strong>. Поэтому одна и та же исходная текстовая единица может интерпретироваться по-разному в зависимости от окружения.</p>
 <p>Ключевое различие:</p>
@@ -237,7 +238,7 @@ response</code></pre>
 <ol>
 <li><strong>Считайте реальные токены, а не слова или символы.</strong> Для оценки стоимости и context budget используйте tokenizer/token-counting механизм именно той модели или API, с которыми работает приложение.</li>
 <li><strong>Не переносите коэффициент токенизации одного теста на все тексты.</strong> В приведённом примере украинская версия потребовала <code>886 / 557 ≈ 1.59</code> раза больше токенов, но это результат конкретных текстов и конкретного токенизатора, а не постоянное свойство языка.</li>
-<li><strong>Для внутренних prompt&#x27;ов можно проверять более токенно-компактный язык.</strong> Если английская формулировка для выбранной модели требует меньше токенов и не ухудшает качество, это может уменьшить стоимость и расход context window. Пользовательский ответ при этом должен оставаться на нужном пользователю языке.</li>
+<li><strong>Для внутренних prompt'ов можно проверять более токенно-компактный язык.</strong> Если английская формулировка для выбранной модели требует меньше токенов и не ухудшает качество, это может уменьшить стоимость и расход context window. Пользовательский ответ при этом должен оставаться на нужном пользователю языке.</li>
 <li><strong>Убирайте токенный шум.</strong> Ненужные повторения, длинные URL, UUID, base64, случайные идентификаторы и огромные необработанные данные могут занимать непропорционально много токенов.</li>
 <li><strong>Не оптимизируйте prompt “на глаз”.</strong> Короткая по символам строка не обязательно токенно дешёвая: сначала измерение, затем оптимизация.</li>
 <li><strong>Учитывайте сразу несколько последствий token usage:</strong> стоимость, context window, prefill latency и доступный объём ответа.</li>
@@ -249,10 +250,10 @@ response</code></pre>
 а “сколько токенов реально увидит модель и зачем каждый из них нужен?”.</code></pre>
 <h2 id="источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
 <ul>
-<li>OpenAI, <strong>Tokenizer</strong>: <a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer">https://platform.openai.com/tokenizer</a></li>
-<li>OpenAI, <strong>tiktoken</strong>: <a href="https://github.com/openai/tiktoken" target="_blank" rel="noopener noreferrer">https://github.com/openai/tiktoken</a></li>
-<li>OpenAI Cookbook, <strong>How to count tokens with tiktoken</strong>: <a href="https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken" target="_blank" rel="noopener noreferrer">https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken</a></li>
-<li>Sennrich, Haddow, Birch, <strong>Neural Machine Translation of Rare Words with Subword Units</strong>: <a href="https://arxiv.org/abs/1508.07909" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1508.07909</a></li>
+<li>OpenAI, <strong>Tokenizer</strong>: <a href="https://platform.openai.com/tokenizer" rel="noopener noreferrer" target="_blank">https://platform.openai.com/tokenizer</a></li>
+<li>OpenAI, <strong>tiktoken</strong>: <a href="https://github.com/openai/tiktoken" rel="noopener noreferrer" target="_blank">https://github.com/openai/tiktoken</a></li>
+<li>OpenAI Cookbook, <strong>How to count tokens with tiktoken</strong>: <a href="https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken" rel="noopener noreferrer" target="_blank">https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken</a></li>
+<li>Sennrich, Haddow, Birch, <strong>Neural Machine Translation of Rare Words with Subword Units</strong>: <a href="https://arxiv.org/abs/1508.07909" rel="noopener noreferrer" target="_blank">https://arxiv.org/abs/1508.07909</a></li>
 </ul>
 </article>
 <article class="lesson" data-lesson="l2">
@@ -373,13 +374,13 @@ billed output: 10 500 tokens</code></pre>
 <p>Если промежуточные суммы округлять до центов (<code>$0.01</code> и <code>$0.26</code>), визуально можно получить другое отношение, поэтому для расчётов лучше использовать неокруглённые значения.</p>
 <h3 id="summarized-thinking-не-означает-оплату-только-за-summary">Summarized thinking не означает оплату только за summary</h3>
 <p>Claude может возвращать пользователю краткое summary reasoning вместо полного внутреннего reasoning. При этом тарифицируется <strong>полный объём thinking tokens</strong>, использованный моделью, а не только видимое summary.</p>
-<p>То же относится к <code>display: &quot;omitted&quot;</code>: скрытие thinking из ответа может уменьшить time-to-first-text-token, но не отменяет оплату полного внутреннего thinking.</p>
+<p>То же относится к <code>display: "omitted"</code>: скрытие thinking из ответа может уменьшить time-to-first-text-token, но не отменяет оплату полного внутреннего thinking.</p>
 <p>Для наблюдаемости Claude API предоставляет breakdown thinking tokens внутри общего output usage; общий <code>output_tokens</code> остаётся авторитетной величиной для биллинга.</p>
 <h2 id="13-adaptive-thinking-и-effort-levels">13. Adaptive thinking и effort levels</h2>
 <p>Для Claude Opus 4.6 и Sonnet 4.6 рекомендуемый режим — <strong>adaptive thinking</strong>:</p>
 <pre><code>{
-  &quot;thinking&quot;: { &quot;type&quot;: &quot;adaptive&quot; },
-  &quot;output_config&quot;: { &quot;effort&quot;: &quot;medium&quot; }
+  "thinking": { "type": "adaptive" },
+  "output_config": { "effort": "medium" }
 }</code></pre>
 <p>Модель сама решает, нужно ли ей рассуждать и сколько reasoning использовать для конкретного запроса.</p>
 <p><code>effort</code> задаёт мягкую стратегию глубины вычислений:</p>
@@ -394,9 +395,9 @@ billed output: 10 500 tokens</code></pre>
 <h3 id="где-применим-минимум-1024-thinking-tokens">Где применим минимум 1024 thinking tokens</h3>
 <p>Минимум <code>1024</code> относится к <strong>manual extended thinking</strong>:</p>
 <pre><code>{
-  &quot;thinking&quot;: {
-    &quot;type&quot;: &quot;enabled&quot;,
-    &quot;budget_tokens&quot;: 1024
+  "thinking": {
+    "type": "enabled",
+    "budget_tokens": 1024
   }
 }</code></pre>
 <p>Для такого режима <code>budget_tokens</code> должен быть не меньше <code>1024</code> и меньше <code>max_tokens</code>.</p>
@@ -519,12 +520,12 @@ offline bulk workload
 → Batch API</code></pre>
 <h2 id="источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
 <ul>
-<li>Anthropic, <strong>Pricing</strong>: <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/about-claude/pricing</a></li>
-<li>Anthropic, <strong>Extended thinking</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/extended-thinking" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/extended-thinking</a></li>
-<li>Anthropic, <strong>Thinking: steering and cost</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost</a></li>
-<li>Anthropic, <strong>Effort</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/effort" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/effort</a></li>
-<li>Anthropic, <strong>Prompt caching</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/prompt-caching</a></li>
-<li>Anthropic, <strong>Message Batches</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/batch-processing</a></li>
+<li>Anthropic, <strong>Pricing</strong>: <a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/about-claude/pricing</a></li>
+<li>Anthropic, <strong>Extended thinking</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/extended-thinking" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/build-with-claude/extended-thinking</a></li>
+<li>Anthropic, <strong>Thinking: steering and cost</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost</a></li>
+<li>Anthropic, <strong>Effort</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/effort" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/build-with-claude/effort</a></li>
+<li>Anthropic, <strong>Prompt caching</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/build-with-claude/prompt-caching</a></li>
+<li>Anthropic, <strong>Message Batches</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/build-with-claude/batch-processing</a></li>
 </ul>
 </article>
 <article class="lesson" data-lesson="l3">
@@ -665,9 +666,9 @@ effective context = насколько надёжно модель реальн�
 <li>нарушать архитектурные ограничения, которые раньше соблюдал.</li>
 </ul>
 <p>Полезно различать:</p>
-<pre><code>&quot;модель не может&quot;
+<pre><code>"модель не может"
 ≠
-&quot;модель сейчас плохо видит нужную информацию в контексте&quot;</code></pre>
+"модель сейчас плохо видит нужную информацию в контексте"</code></pre>
 <p>Перед выводом о capability модели стоит сначала проверить качество активного контекста.</p>
 <h2 id="12-что-делать-при-деградации-compact-clear-или-новая-сессия">12. Что делать при деградации: compact, clear или новая сессия</h2>
 <p>Для Claude Code есть несколько разных инструментов.</p>
@@ -810,21 +811,21 @@ State → files / Git / DB / memory
 Context → только то, что нужно сейчас</code></pre>
 <h2 id="источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
 <ul>
-<li>Anthropic, <strong>Context windows</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/context-windows</a></li>
-<li>Anthropic, <strong>Claude Sonnet 4.6 System Card — Long context / MRCR v2</strong>: <a href="https://www.anthropic.com/claude-sonnet-4-6-system-card" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/claude-sonnet-4-6-system-card</a></li>
-<li>Anthropic, <strong>Claude Code commands (<code>/compact</code>, <code>/clear</code>)</strong>: <a href="https://code.claude.com/docs/en/commands" target="_blank" rel="noopener noreferrer">https://code.claude.com/docs/en/commands</a></li>
-<li>Anthropic, <strong>Claude Code best practices</strong>: <a href="https://code.claude.com/docs/en/best-practices" target="_blank" rel="noopener noreferrer">https://code.claude.com/docs/en/best-practices</a></li>
-<li>Liu et al., <strong>Lost in the Middle</strong>: <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2307.03172</a></li>
-<li>Vodrahalli et al., <strong>Michelangelo</strong>: <a href="https://arxiv.org/abs/2409.12640" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2409.12640</a></li>
+<li>Anthropic, <strong>Context windows</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/build-with-claude/context-windows</a></li>
+<li>Anthropic, <strong>Claude Sonnet 4.6 System Card — Long context / MRCR v2</strong>: <a href="https://www.anthropic.com/claude-sonnet-4-6-system-card" rel="noopener noreferrer" target="_blank">https://www.anthropic.com/claude-sonnet-4-6-system-card</a></li>
+<li>Anthropic, <strong>Claude Code commands (<code>/compact</code>, <code>/clear</code>)</strong>: <a href="https://code.claude.com/docs/en/commands" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/commands</a></li>
+<li>Anthropic, <strong>Claude Code best practices</strong>: <a href="https://code.claude.com/docs/en/best-practices" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/best-practices</a></li>
+<li>Liu et al., <strong>Lost in the Middle</strong>: <a href="https://arxiv.org/abs/2307.03172" rel="noopener noreferrer" target="_blank">https://arxiv.org/abs/2307.03172</a></li>
+<li>Vodrahalli et al., <strong>Michelangelo</strong>: <a href="https://arxiv.org/abs/2409.12640" rel="noopener noreferrer" target="_blank">https://arxiv.org/abs/2409.12640</a></li>
 </ul>
 </article>
 <article class="lesson" data-lesson="l4">
 <h1>Урок 4. Temperature</h1>
 <div class="deprecated-notice">
-<strong>⚠ Часть описанных API-параметров устарела.</strong><br>
-<code>temperature</code>, <code>top_p</code> и <code>top_k</code> поддерживаются в <strong>Claude Sonnet 4.6</strong>, но в <strong>Claude Sonnet 5</strong> non-default значения больше не принимаются и возвращают <code>400</code>.<br><br>
-Для новых Claude <code>effort</code> используется для управления глубиной thinking/reasoning, а prompting — для управления поведением и вариативностью output. <code>effort</code> не является прямой заменой sampling-параметров.<br>
-<a href="https://platform.claude.com/docs/en/about-claude/models/migration-guide" target="_blank" rel="noopener noreferrer">Anthropic Migration Guide</a>
+<strong>⚠ Часть описанных API-параметров устарела.</strong><br/>
+<code>temperature</code>, <code>top_p</code> и <code>top_k</code> поддерживаются в <strong>Claude Sonnet 4.6</strong>, но в <strong>Claude Sonnet 5</strong> non-default значения больше не принимаются и возвращают <code>400</code>.<br/><br/>
+Для новых Claude <code>effort</code> используется для управления глубиной thinking/reasoning, а prompting — для управления поведением и вариативностью output. <code>effort</code> не является прямой заменой sampling-параметров.<br/>
+<a href="https://platform.claude.com/docs/en/about-claude/models/migration-guide" rel="noopener noreferrer" target="_blank">Anthropic Migration Guide</a>
 </div>
 <h2 id="что-такое-стохастичность">Что такое стохастичность</h2>
 <p><strong>Стохастичность</strong> — это наличие случайности в генерации: один и тот же prompt может приводить к разным последовательностям токенов и разным ответам, потому что следующий токен может выбираться из распределения вероятностей.</p>
@@ -852,12 +853,12 @@ Sampling / выбор токена
 <h2 id="2-logits-и-probability-distribution">2. Logits и Probability Distribution</h2>
 <p>На каждом decode step модель выдаёт для vocabulary набор <strong>logits</strong> — ненормализованных оценок кандидатов. После нормализации, обычно softmax, они превращаются в probability distribution.</p>
 <p>Условный пример:</p>
-<pre><code class="language-text">Контекст: &quot;Что ты думаешь ___&quot;
+<pre><code class="language-text">Контекст: "Что ты думаешь ___"
 
-&quot;про&quot;   → 30%
-&quot;было&quot;  → 20%
-&quot;с&quot;     → 10%
-&quot;щодо&quot;  →  8%
+"про"   → 30%
+"было"  → 20%
+"с"     → 10%
+"щодо"  →  8%
 другие  → оставшаяся вероятность
 </code></pre>
 <p>Высокая вероятность означает, что токен лучше согласуется с текущим контекстом по оценке модели. Она не означает фактическую истинность продолжения.</p>
@@ -881,26 +882,26 @@ Sampling / выбор токена
 <table>
 <thead>
 <tr>
-  <th>Temperature</th>
-  <th>Практический эффект</th>
-  <th>Типичные задачи</th>
+<th>Temperature</th>
+<th>Практический эффект</th>
+<th>Типичные задачи</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>низкая</td>
-  <td>меньше вариативности</td>
-  <td>код, extraction, structured output</td>
+<td>низкая</td>
+<td>меньше вариативности</td>
+<td>код, extraction, structured output</td>
 </tr>
 <tr>
-  <td>средняя</td>
-  <td>баланс</td>
-  <td>code review, объяснения</td>
+<td>средняя</td>
+<td>баланс</td>
+<td>code review, объяснения</td>
 </tr>
 <tr>
-  <td>высокая</td>
-  <td>больше вариантов</td>
-  <td>brainstorming, creative tasks</td>
+<td>высокая</td>
+<td>больше вариантов</td>
+<td>brainstorming, creative tasks</td>
 </tr>
 </tbody>
 </table>
@@ -1051,7 +1052,6 @@ Accept / Retry / Reject
 <li>Anthropic, <strong>Messages API — Create a Message</strong>: https://platform.claude.com/docs/en/api/messages/create</li>
 <li>Anthropic, <strong>Using the Messages API</strong>: https://platform.claude.com/docs/en/build-with-claude/working-with-messages</li>
 </ul>
-
 </article>
 <article class="lesson" data-lesson="l5">
 <h1>Урок 5. Галлюцинации: почему LLM выдумывают факты и как снижать риск</h1>
@@ -1401,95 +1401,767 @@ LLM предлагает ответ или действие
 <li>npm, <strong>npm view</strong>: <a href="https://docs.npmjs.com/cli/v11/commands/npm-view/" rel="noopener noreferrer" target="_blank">https://docs.npmjs.com/cli/v11/commands/npm-view/</a></li>
 <li>npm, <strong>Registry</strong>: <a href="https://docs.npmjs.com/using-npm/registry.html" rel="noopener noreferrer" target="_blank">https://docs.npmjs.com/using-npm/registry.html</a></li>
 </ul>
-
 </article>
-<article class="lesson" data-lesson="glossary"><div class="glossary-page"><h1>Glossary</h1><p class="glossary-intro">Краткий справочник терминов курса.</p>
-<section class="glossary-section"><h2>Токены и представление текста</h2><div class="glossary-grid">
-<div class="glossary-card"><h3>Tokenizer</h3><p>Компонент, который преобразует исходный текст в последовательность токенов и token IDs по правилам конкретного vocabulary.</p></div>
-<div class="glossary-card"><h3>Token</h3><p>Дискретная текстовая единица после токенизации: слово, часть слова, знак пунктуации, пробел или другой фрагмент.</p></div>
-<div class="glossary-card"><h3>Token ID</h3><p>Числовой идентификатор токена в vocabulary конкретного tokenizer.</p></div>
-<div class="glossary-card"><h3>Vocabulary</h3><p>Фиксированный набор токенов, которым tokenizer сопоставляет token IDs.</p></div>
-<div class="glossary-card"><h3>Subword tokenization</h3><p>Подход, при котором частые последовательности могут быть крупными токенами, а редкие слова разбиваются на несколько частей.</p></div>
-<div class="glossary-card"><h3>BPE</h3><p>Один из алгоритмов subword tokenization, объединяющий часто встречающиеся соседние последовательности.</p></div>
-<div class="glossary-card"><h3>Embedding</h3><p>Числовой вектор, получаемый из token ID и используемый нейросетью для дальнейших вычислений.</p></div>
-<div class="glossary-card"><h3>Detokenization / tokenizer decoding</h3><p>Обратное преобразование token IDs в байты/текст. Это не decode phase LLM inference.</p></div>
-</div></section>
-<section class="glossary-section"><h2>Inference и генерация</h2><div class="glossary-grid">
-<div class="glossary-card"><h3>Inference</h3><p>Запуск уже обученной модели для обработки конкретного input и получения output. Во время обычного inference веса модели не переобучаются.</p></div>
-<div class="glossary-card"><h3>Prefill</h3><p>Фаза inference, в которой обрабатываются заранее известные input tokens и формируется состояние/KV cache.</p></div>
-<div class="glossary-card"><h3>Decode phase</h3><p>Последовательная autoregressive генерация новых output tokens после prefill.</p></div>
-<div class="glossary-card"><h3>Generation</h3><p>Процесс выбора и добавления следующих токенов до завершения ответа или достижения stop/output limit.</p></div>
-<div class="glossary-card"><h3>Logits</h3><p>Не-нормализованные оценки модели для возможных следующих токенов.</p></div>
-<div class="glossary-card"><h3>KV cache</h3><p>Кэш key/value представлений attention для уже обработанного prefix.</p></div>
-<div class="glossary-card"><h3>Thinking tokens</h3><p>Внутренние reasoning tokens, используемые reasoning-моделью и учитываемые в output billing.</p></div>
-<div class="glossary-card"><h3>Effort</h3><p>Параметр новых Claude для управления глубиной thinking/reasoning. Это не прямой эквивалент temperature/top_p/top_k: sampling-параметры управляли выбором токенов, effort — глубиной reasoning.</p></div>
-</div></section>
-<section class="glossary-section"><h2>Контекст и память</h2><div class="glossary-grid">
-<div class="glossary-card"><h3>Context</h3><p>Информация, доступная модели в текущем inference.</p></div>
-<div class="glossary-card"><h3>Context window</h3><p>Максимальный токенный объём активного контекста, поддерживаемый моделью/API.</p></div>
-<div class="glossary-card"><h3>Context rot</h3><p>Практическая деградация способности надёжно использовать нужную информацию по мере роста/зашумления context.</p></div>
-<div class="glossary-card"><h3>Lost in the Middle</h3><p>Эффект, при котором информация в середине очень длинного context может извлекаться хуже, чем ближе к началу или концу.</p></div>
-<div class="glossary-card"><h3>MRCR</h3><p>Long-context benchmark для поиска и различения нескольких похожих фрагментов информации.</p></div>
-<div class="glossary-card"><h3>Mean Match Ratio</h3><p>Метрика MRCR: средняя степень совпадения ответа модели с целевым фрагментом; это не обычная accuracy полностью правильных ответов.</p></div>
-<div class="glossary-card"><h3>Compaction</h3><p>Сжатие длинной истории с сохранением наиболее важного рабочего состояния.</p></div>
-<div class="glossary-card"><h3>/compact</h3><p>Команда Claude Code для summarization текущей conversation history.</p></div>
-<div class="glossary-card"><h3>/clear</h3><p>Команда Claude Code для очистки conversation history перед новой независимой задачей.</p></div>
-<div class="glossary-card"><h3>External state</h3><p>Состояние вне активного context window: файлы, Git, БД, vector store и другие persistent storage.</p></div>
-</div></section>
-<section class="glossary-section"><h2>Retrieval и agentic engineering</h2><div class="glossary-grid">
-<div class="glossary-card"><h3>RAG</h3><p>Retrieval-Augmented Generation: поиск релевантных фрагментов во внешнем источнике и добавление выбранных данных в active context.</p></div>
-<div class="glossary-card"><h3>Retrieval</h3><p>Выбор информации, наиболее релевантной текущему запросу или этапу задачи.</p></div>
-<div class="glossary-card"><h3>Tool result</h3><p>Результат вызова внешнего инструмента, который может быть добавлен в context.</p></div>
-<div class="glossary-card"><h3>Subagent</h3><p>Отдельный агент/вызов с более узкой задачей и собственным context.</p></div>
-<div class="glossary-card"><h3>Context engineering</h3><p>Проектирование того, какие инструкции, history, retrieval results и tool outputs доступны модели на каждом шаге.</p></div>
-<div class="glossary-card"><h3>Signal-to-noise ratio</h3><p>Соотношение полезной информации к нерелевантному или устаревшему контексту.</p></div>
-</div></section>
-<section class="glossary-section"><h2>Стоимость и оптимизация</h2><div class="glossary-grid">
-<div class="glossary-card"><h3>Input tokens</h3><p>Токены контекста, которые модель обрабатывает как input.</p></div>
-<div class="glossary-card"><h3>Output tokens</h3><p>Токены, сгенерированные моделью; billed output reasoning-моделей может также включать thinking tokens.</p></div>
-<div class="glossary-card"><h3>Prompt caching</h3><p>Повторное использование большого неизменного prefix для снижения повторных вычислений/стоимости.</p></div>
-<div class="glossary-card"><h3>Cache hit</h3><p>Повторное использование уже закэшированного prefix.</p></div>
-<div class="glossary-card"><h3>Batch API</h3><p>Асинхронная массовая обработка запросов, подходящая для offline workloads.</p></div>
-<div class="glossary-card"><h3>Token budget</h3><p>Планируемый объём input, thinking и output с учётом context limit, стоимости и latency.</p></div>
-</div></section>
+<article class="lesson" data-lesson="l6">
+<h1>Урок 6. Attention: как модель связывает токены через контекст</h1>
+<h2 id="l6-1-одно-слово-может-иметь-несколько-значений">1. Одно слово может иметь несколько значений</h2>
+<p>После токенизации один и тот же token ID получает один и тот же исходный <strong>embedding</strong> независимо от конкретного предложения. Например, английское слово <code>mole</code> может означать:</p>
+<ul>
+<li>небольшое животное;</li>
+<li>моль как единицу количества вещества в химии;</li>
+<li>родинку в медицинском контексте.</li>
+</ul>
+<p>Исходный embedding не является отдельным вектором для каждого из этих значений. Это одна начальная точка в пространстве признаков. Конкретный смысл появляется позже, когда Transformer обрабатывает окружающие токены.</p>
+<pre><code class="language-text">token ID
+   ↓
+исходный embedding
+   ↓
+attention + остальные операции Transformer
+   ↓
+контекстуализированное представление
+</code></pre>
+<p>Поэтому полезно различать два понятия:</p>
+<pre><code class="language-text">Embedding
+= начальное представление токена
 
-<section class="glossary-section"><h2>Стохастичность и sampling</h2><div class="glossary-grid">
-<div class="glossary-card"><h3>Next Token Prediction</h3><p>На каждом decode step модель вычисляет distribution следующего токена, выбирает token и добавляет его в context.</p></div>
-<div class="glossary-card"><h3>Probability distribution</h3><p>Нормализованные вероятности возможных следующих токенов.</p></div>
-<div class="glossary-card"><h3>Sampling</h3><p>Выбор следующего токена из probability distribution с учётом вероятностей candidates.</p></div>
-<div class="glossary-card"><h3>Stochasticity</h3><p>Стохастичность — наличие случайности в generation, из-за которой одинаковый prompt может приводить к разным последовательностям токенов и разным ответам.</p></div>
-<div class="glossary-card"><h3>Temperature</h3><p>Legacy sampling parameter. Последняя Sonnet-модель с поддержкой — Claude Sonnet 4.6. В Sonnet 5 non-default значение возвращает 400. Для новых Claude effort управляет thinking-depth, а prompting — вариативностью поведения.</p></div>
-<div class="glossary-card"><h3>top-k</h3><p>Legacy sampling filter. Последняя Sonnet-модель с поддержкой — Claude Sonnet 4.6; в Sonnet 5 non-default значение возвращает 400.</p></div>
-<div class="glossary-card"><h3>top-p / nucleus sampling</h3><p>Legacy sampling filter. Последняя Sonnet-модель с поддержкой — Claude Sonnet 4.6; в Sonnet 5 non-default значение возвращает 400.</p></div>
-<div class="glossary-card"><h3>Determinism</h3><p>Повторяемость результата. T=0 повышает стабильность, но не гарантирует абсолютную идентичность.</p></div>
-<div class="glossary-card"><h3>Structured output</h3><p>Output с формальным контрактом, например JSON Schema.</p></div>
-<div class="glossary-card"><h3>Eval pipeline</h3><p>Автоматизированная проверка model output через schemas, tests и business rules.</p></div>
-</div></section>
+Contextual representation
+= представление токена после учёта контекста
+</code></pre>
+<p>Фраза <code>American shrew mole</code> подталкивает представление <code>mole</code> к значению животного, <code>one mole of CO₂</code> — к химическому значению, а <code>biopsy of the mole</code> — к медицинскому.</p>
+<h2 id="l6-2-attention-не-выбирает-значение-из-словаря-а-перераспределяет-информацию">2. Attention не выбирает значение из словаря, а перераспределяет информацию</h2>
+<p>Self-attention позволяет каждому токену получить информацию от других доступных токенов последовательности. Упрощённо токен задаёт вопрос: «какая часть контекста сейчас для меня важна?».</p>
+<p>Для <code>mole</code> в выражении <code>American shrew mole</code> токены <code>American</code> и <code>shrew</code> будут полезнее для интерпретации, чем нерелевантные слова из другой части текста.</p>
+<p>Но attention не выполняет бинарное правило вида:</p>
+<pre><code class="language-text">совпало → передать значение
+не совпало → полностью игнорировать
+</code></pre>
+<p>В обычном scaled dot-product attention модель вычисляет веса для множества доступных токенов. Одни получают большой вес, другие маленький.</p>
+<pre><code class="language-text">Attention(Q, K, V)
+=
+softmax(QKᵀ / √d_k) V
+</code></pre>
+<p>Результат — взвешенная смесь <code>Value</code>-векторов.</p>
+<h2 id="l6-3-query-key-и-value">3. Query, Key и Value</h2>
+<p>Для каждого входного представления Transformer обучаемыми линейными преобразованиями строит три вектора:</p>
+<pre><code class="language-text">Q = XW_Q
+K = XW_K
+V = XW_V
+</code></pre>
+<p>Их удобно понимать через аналогию с поиском:</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Интуитивная роль</th>
+<th>Аналогия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Query</td>
+<td>какую информацию ищет текущий токен</td>
+<td>поисковый запрос</td>
+</tr>
+<tr>
+<td>Key</td>
+<td>по каким признакам можно понять релевантность токена</td>
+<td>индекс / заголовок</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>какую информацию токен передаст, если окажется релевантным</td>
+<td>содержимое</td>
+</tr>
+</tbody>
+</table>
+<p>Механика одного attention head:</p>
+<pre><code class="language-text">1. Query текущей позиции сравнивается с Key доступных позиций.
+2. Полученные оценки масштабируются.
+3. Softmax превращает оценки в веса.
+4. Value-векторы складываются с этими весами.
+5. Получается новое представление текущей позиции.
+</code></pre>
+<p>Это непрерывный механизм: обычно нет единственного «совпавшего» Key. Несколько токенов могут одновременно влиять на результат.</p>
+<h3 id="l6-causal-mask-в-генеративной-llm">Causal mask в генеративной LLM</h3>
+<p>В decoder-only LLM действует causal mask: при генерации позиция может учитывать текущий и предыдущие токены, но не будущие токены, которые ещё не сгенерированы.</p>
+<pre><code class="language-text">token_1 ← видит token_1
+token_2 ← видит token_1..token_2
+token_3 ← видит token_1..token_3
+...
+</code></pre>
+<p>Это сохраняет autoregressive-принцип генерации.</p>
+<h2 id="l6-4-значение-уточняется-по-слоям">4. Значение уточняется по слоям</h2>
+<p>Transformer состоит из последовательности блоков. После каждого блока представление токена обновляется.</p>
+<p>Для слова <code>king</code> в тексте о Макбете можно представить процесс так:</p>
+<pre><code class="language-text">исходное представление
+        ↓
+учёт локального окружения
+        ↓
+уточнение сущности и смысловых связей
+        ↓
+учёт более широкого сюжета, стиля и структуры
+</code></pre>
+<p>Это иллюстрация, а не фиксированное распределение обязанностей между слоями. Нельзя утверждать, что «первый слой всегда отвечает за грамматику, второй — за смысл, третий — за стиль». Реальные признаки распределены между слоями и attention heads значительно сложнее.</p>
+<p>Важный принцип: <strong>контекстуализация происходит итеративно</strong>. Поздние слои работают уже не с исходным embedding, а с представлением, в которое предыдущие слои добавили контекстную информацию.</p>
+<h2 id="l6-5-multi-head-attention">5. Multi-head attention</h2>
+<p>Один attention head создаёт один набор проекций <code>Q/K/V</code> и одну систему весов. <strong>Multi-head attention</strong> запускает несколько heads параллельно, после чего их результаты объединяются и снова проецируются.</p>
+<pre><code class="language-text">Input
+ ├─ Head 1
+ ├─ Head 2
+ ├─ Head 3
+ └─ ...
+       ↓
+concat
+       ↓
+output projection
+       ↓
+Output
+</code></pre>
+<p>Разные heads могут выучить разные типы зависимостей: синтаксические, семантические, позиционные, coreference-связи и другие. Но нельзя считать, что каждому head заранее назначена одна человечески понятная функция.</p>
+<p>Параллельные матричные операции хорошо выполняются на GPU. Это одна из причин, по которой Transformer-архитектуры хорошо масштабируются.</p>
+<h2 id="l6-6-gpt-3-как-числовой-пример-multi-head-attention">6. GPT-3 как числовой пример multi-head attention</h2>
+<p>Для крупнейшей версии GPT-3 на 175 млрд параметров в опубликованной архитектуре указаны:</p>
+<pre><code class="language-text">96 Transformer layers
+96 attention heads в каждом слое
+d_model = 12 288
+</code></pre>
+<p>Размерность одного head:</p>
+<pre><code class="language-text">12 288 / 96 = 128
+</code></pre>
+<p>Упрощённо основные матрицы attention в одном слое — это <code>W_Q</code>, <code>W_K</code>, <code>W_V</code> и выходная <code>W_O</code>. Если считать каждую как матрицу примерно <code>d_model × d_model</code>, получаем:</p>
+<pre><code class="language-text">4 × 12 288²
+≈ 604 млн параметров на слой
 
-<section class="glossary-section"><h2>Галлюцинации, привязка к источникам и проверка фактов</h2><div class="glossary-grid">
-<div class="glossary-card"><h3>Галлюцинация (Hallucination)</h3><p>Правдоподобное, но фактически неверное или не подтверждённое утверждение, сгенерированное моделью.</p></div>
-<div class="glossary-card"><h3>Привязка к источникам (Grounding)</h3><p>Привязка ответа к конкретным внешним данным: документу, результату поиска, БД, результату инструмента или другому источнику истины.</p></div>
-<div class="glossary-card"><h3>Отказ от ответа (Abstention)</h3><p>Осознанный отказ давать конкретный ответ при недостатке данных: «не знаю» / «данных недостаточно».</p></div>
-<div class="glossary-card"><h3>Калибровка (Calibration)</h3><p>Насколько заявленная уверенность соответствует реальной вероятности быть правым.</p></div>
-<div class="glossary-card"><h3>Заявленная моделью уверенность (Self-reported confidence)</h3><p>Уверенность, которую сообщает сама модель. Полезна для приоритизации проверки, но не является независимым доказательством.</p></div>
-<div class="glossary-card"><h3>Фактическая согласованность (Factual consistency)</h3><p>Насколько ответ согласуется с предоставленным исходным документом; это не то же самое, что универсальная фактическая точность.</p></div>
-<div class="glossary-card"><h3>Ссылка на источник (Citation)</h3><p>Указатель на конкретный фрагмент источника, который должен поддерживать утверждение.</p></div>
-<div class="glossary-card"><h3>Citations API</h3><p>Механизм Claude API, который привязывает ссылки к реально предоставленным исходным документам.</p></div>
-<div class="glossary-card"><h3>Детерминированная проверка (Deterministic validation)</h3><p>Проверка через компилятор, тесты, валидатор схемы, реестр или запрос к БД/API.</p></div>
-<div class="glossary-card"><h3>Несколько независимых запусков (Best-of-N)</h3><p>Несколько независимых генераций с последующим сравнением. Расхождение — сигнал риска; совпадение не доказывает истинность.</p></div>
-<div class="glossary-card"><h3>Официальный / первичный источник (Authoritative source)</h3><p>Первичный или официальный источник проверяемого факта: реестр, официальная документация, БД, актуальный API и т. п.</p></div>
-</div></section>
-</div></article><section class="quiz card">
+604 млн × 96 слоёв
+≈ 58 млрд параметров
+</code></pre>
+<p>Относительно 175 млрд параметров всей модели:</p>
+<pre><code class="language-text">58 / 175 ≈ 0.331
+≈ 33%
+</code></pre>
+<p>То есть примерно треть параметров крупнейшего GPT-3 связана с основными attention-проекциями. Это приближённый расчёт, полезный для понимания масштаба механизма.</p>
+<h2 id="l6-7-почему-стандартный-self-attention-растёт-квадратично">7. Почему стандартный self-attention растёт квадратично</h2>
+<p>Для последовательности из <code>n</code> токенов матрица:</p>
+<pre><code class="language-text">QKᵀ
+</code></pre>
+<p>имеет размер:</p>
+<pre><code class="language-text">n × n
+</code></pre>
+<p>Поэтому число попарных attention scores на один head и слой масштабируется как <code>n²</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Длина контекста</th>
+<th style="text-align:right">Примерное число попарных scores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1 000 токенов</td>
+<td style="text-align:right">1 000 000</td>
+</tr>
+<tr>
+<td style="text-align:right">10 000 токенов</td>
+<td style="text-align:right">100 000 000</td>
+</tr>
+<tr>
+<td style="text-align:right">100 000 токенов</td>
+<td style="text-align:right">10 000 000 000</td>
+</tr>
+</tbody>
+</table>
+<p>Если увеличить длину последовательности в 10 раз:</p>
+<pre><code class="language-text">(10n)² = 100n²
+</code></pre>
+<p>Количество попарных сравнений увеличивается примерно в 100 раз.</p>
+<p>Это описание стандартного full attention. Современные реализации могут уменьшать потребление памяти и стоимость доступа к памяти, а некоторые архитектуры используют sparse/local/linear варианты attention, но базовая матрица полного self-attention остаётся квадратичной по длине последовательности.</p>
+<h2 id="l6-8-бюджет-внимания-полезная-но-ограниченная-аналогия">8. «Бюджет внимания»: полезная, но ограниченная аналогия</h2>
+<p>Для одного Query веса после softmax суммируются в <code>1</code>:</p>
+<pre><code class="language-text">w₁ + w₂ + ... + wₙ = 1
+</code></pre>
+<p>Поэтому с ростом контекста больше токенов конкурируют за вклад в новое представление. Это полезная интуиция для понимания <strong>attention dilution</strong>: важный сигнал может оказаться окружён большим количеством менее полезных кандидатов.</p>
+<p>Но утверждение «больше токенов автоматически означает меньше внимания каждому токену» слишком грубое. Модель может сконцентрировать почти весь вес на небольшом числе позиций независимо от общей длины. Проблема длинного контекста проявляется статистически и зависит от задачи, модели, позиции информации и структуры данных.</p>
+<p>Практический вывод:</p>
+<pre><code class="language-text">длиннее контекст
+≠
+автоматически лучше
+
+релевантнее и структурированнее контекст
+→ обычно полезнее
+</code></pre>
+<h2 id="l6-9-lost-in-the-middle">9. Lost in the Middle</h2>
+<p>Исследования длинного контекста показывают позиционный эффект: модель нередко лучше использует релевантную информацию, расположенную ближе к началу или концу большого контекста, и хуже — в середине.</p>
+<p>Типичный профиль описывают как U-образную кривую:</p>
+<pre><code class="language-text">качество
+высокое  \        /
+          \______/
+низкое
+
+        позиция в контексте
+начало   середина   конец
+</code></pre>
+<p>Это не означает, что середина «не читается». Также нет универсального правила «точность в середине всегда падает на 30%». Величина эффекта зависит от модели, длины контекста, задачи и способа измерения.</p>
+<p>Полезная инженерная интерпретация:</p>
+<pre><code class="language-text">context window
+= сколько данных модель технически принимает
+
+effective context
+= насколько надёжно она использует нужную информацию
+</code></pre>
+<h2 id="l6-10-как-размещать-информацию-в-длинном-prompt">10. Как размещать информацию в длинном prompt</h2>
+<p>Для больших запросов полезен следующий паттерн:</p>
+<pre><code class="language-text">Начало:
+стабильные правила, system/project context, определения
+
+Середина:
+объёмные данные, документы, детали, менее критичный фон
+
+Конец:
+текущая задача, конкретный вопрос, финальные ограничения и формат ответа
+</code></pre>
+<p>Причина не в том, что модель «видит только края». Начало получает преимущество устойчивого контекста, а конец близок к моменту генерации и часто получает сильный recency-сигнал.</p>
+<p>Критичные требования лучше не прятать внутри большого массива фоновых данных.</p>
+<p>При этом не нужно бессистемно дублировать одинаковые инструкции в разных местах: важны ясная иерархия, отсутствие конфликтов и компактность.</p>
+<h2 id="l6-11-декомпозиция-и-внешний-scratchpad">11. Декомпозиция и внешний scratchpad</h2>
+<p>Если вход слишком большой, проблему часто эффективнее решать архитектурно, а не только более мощной моделью.</p>
+<p>Один из практических паттернов:</p>
+<pre><code class="language-text">большой документ
+      ↓
+извлечь релевантные факты
+      ↓
+сформировать компактный рабочий блок
+      ↓
+сделать вывод по этому блоку
+</code></pre>
+<p>Такой промежуточный рабочий блок можно рассматривать как внешний <strong>scratchpad</strong>: не скрытая цепочка рассуждений модели, а явно сформированный набор фактов, решений, ссылок или результатов инструментов, который затем используется на следующем шаге.</p>
+<p>Преимущества:</p>
+<ul>
+<li>меньше нерелевантного контекста;</li>
+<li>проще проверять промежуточные данные;</li>
+<li>важные факты снова оказываются близко друг к другу;</li>
+<li>integration-pass работает с компактным представлением.</li>
+</ul>
+<p>Для длинной продолжающейся сессии аналогичную роль может выполнять compaction: сохранить важное состояние и убрать накопившийся шум.</p>
+<h2 id="l6-12-практический-пример-code-review-большого-pr">12. Практический пример: code review большого PR</h2>
+<p>Предположим, агент получает PR из 14 файлов: около 12K токенов diff плюс дополнительный контекст. Один проход даёт нестабильное качество: несколько файлов анализируются глубоко, остальные поверхностно, а cross-file проблема — например изменение сигнатуры функции без обновления всех мест вызова — пропускается.</p>
+<p>Более устойчивый workflow:</p>
+<pre><code class="language-text">PR
+ ↓
+focused pass по файлу/логической группе
+ ↓
+структурированные findings
+ ↓
+integration pass
+ ↓
+проверка cross-file связей
+</code></pre>
+<p>Например:</p>
+<pre><code class="language-text">Pass 1..N:
+локальные ошибки, API changes, invariants
+
+Integration pass:
+изменённые сигнатуры
+общие контракты
+вызовы между файлами
+конфликтующие изменения
+</code></pre>
+<p>Почему это обычно надёжнее одного огромного запроса:</p>
+<ol>
+<li>локальный pass даёт модели более сфокусированный контекст;</li>
+<li>промежуточные findings намного короче исходного diff;</li>
+<li>финальный pass тратит внимание на связи между файлами, а не повторно перечитывает все детали;</li>
+<li>отдельные этапы проще валидировать и повторять.</li>
+</ol>
+<p>Простая замена Sonnet на более мощную модель может повысить качество, но не устраняет саму проблему перегруженного контекста. Декомпозиция меняет структуру задачи.</p>
+<h2 id="l6-прикладные-выводы-best-practices">Прикладные выводы / Best Practices</h2>
+<ol>
+<li><strong>Не путайте исходный embedding с контекстным значением.</strong> Один token ID начинается с одного базового представления; смысл уточняется в Transformer.</li>
+<li><strong>Думайте о Q/K/V как о механизме релевантности и передачи информации</strong>, а не как о бинарном <code>match / no match</code>.</li>
+<li><strong>Помните формулу:</strong> <code>softmax(QKᵀ / √d_k)V</code> — веса определяются совместимостью Query и Key, а передаётся взвешенная информация Value.</li>
+<li><strong>Учитывайте causal mask в генеративных моделях.</strong> Текущая позиция не может использовать ещё не сгенерированные будущие токены.</li>
+<li><strong>Multi-head attention даёт несколько параллельных представлений связей</strong>, но не приписывайте каждому head фиксированную человеческую роль без измерений.</li>
+<li><strong>Full attention квадратичен по длине.</strong> Увеличение контекста в 10 раз означает примерно 100-кратный рост числа попарных attention scores.</li>
+<li><strong>Большое окно не означает одинаково эффективное использование каждой позиции.</strong> Оценивайте effective context, а не только номинальный лимит.</li>
+<li><strong>Не воспринимайте «бюджет внимания» буквально.</strong> Softmax создаёт конкуренцию за веса, но модель может концентрироваться на малом числе токенов.</li>
+<li><strong>Критичный устойчивый контекст держите заметным в начале, текущую задачу и финальные ограничения — ближе к концу.</strong></li>
+<li><strong>Не прячьте важное требование в середине длинного массива данных.</strong></li>
+<li><strong>Для больших документов сначала извлекайте релевантные факты, затем делайте вывод.</strong> Внешний scratchpad уменьшает шум и облегчает проверку.</li>
+<li><strong>Для больших PR используйте focused passes + integration pass.</strong> Локальные проверки и cross-file анализ требуют разных фокусов.</li>
+<li><strong>Более мощная модель не заменяет хорошую декомпозицию.</strong> Если проблема вызвана перегруженным контекстом, сначала меняйте структуру workflow.</li>
+<li><strong>Измеряйте качество длинного контекста на своих задачах.</strong> Эффект Lost in the Middle и степень деградации зависят от модели и данных.</li>
+</ol>
+<p>Короткая схема:</p>
+<pre><code class="language-text">Большой контекст
+   ↓
+выделить релевантное
+   ↓
+локальные focused passes
+   ↓
+компактные промежуточные результаты
+   ↓
+integration pass
+   ↓
+проверяемый итог
+</code></pre>
+<h2 id="l6-источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
+<ul>
+<li>Vaswani et al., <strong>Attention Is All You Need</strong>: https://arxiv.org/abs/1706.03762</li>
+<li>Brown et al., <strong>Language Models are Few-Shot Learners (GPT-3)</strong>: https://arxiv.org/abs/2005.14165</li>
+<li>Liu et al., <strong>Lost in the Middle: How Language Models Use Long Contexts</strong>: https://arxiv.org/abs/2307.03172</li>
+</ul>
+</article>
+<article class="lesson" data-lesson="l7">
+<h1>Урок 7. Stateless LLM: диалог, память и сохранение состояния</h1>
+<h2 id="l7-1-stateless-каждый-запрос-независим">1. Stateless: каждый запрос независим</h2>
+<p><strong>Stateless</strong> означает, что модельный API не хранит неявное состояние диалога между отдельными запросами. Новый вызов не получает предыдущие сообщения автоматически только потому, что они были отправлены раньше.</p>
+<p>Для Anthropic Messages API это сформулировано прямо: многоходовый диалог строится как stateless-взаимодействие, а нужная история снова передаётся в очередном запросе.</p>
+<p>Упрощённо:</p>
+<pre><code class="language-text">Запрос 1
+  ↓
+Модель
+  ↓
+Ответ 1
+
+Запрос 2 без истории Запроса 1
+  ↓
+Модель
+  ↓
+Ответ 2 не имеет доступа к Запросу 1
+</code></pre>
+<p>Если сначала спросить о квантовых вычислениях, а затем открыть новую независимую сессию и написать только «добавь ещё одно предложение», модель не получает исходную тему автоматически. Приложение должно либо снова передать нужную историю, либо восстановить состояние из внешнего источника.</p>
+<p>Stateless не означает, что во время вычисления вообще нет временного состояния. Внутри конкретного inference используется KV cache и другие промежуточные данные. Также провайдер может поддерживать prompt caching. Ключевое различие в другом: <strong>между независимыми запросами нельзя полагаться на скрытую разговорную память конкретного worker/GPU</strong>.</p>
+<h2 id="l7-2-почему-чат-выглядит-как-непрерывный-диалог-messages-array">2. Почему чат выглядит как непрерывный диалог: messages array</h2>
+<p>Иллюзию непрерывного диалога создаёт приложение, которое собирает историю и передаёт её модели вместе с новым сообщением.</p>
+<p>Типичный запрос к Messages API логически выглядит так:</p>
+<pre><code class="language-json">{
+  "system": "You are a helpful assistant...",
+  "tools": [
+    { "name": "search", "description": "..." }
+  ],
+  "messages": [
+    { "role": "user", "content": "Первое сообщение" },
+    { "role": "assistant", "content": "Первый ответ" },
+    { "role": "user", "content": "Второе сообщение" },
+    { "role": "assistant", "content": "Второй ответ" },
+    { "role": "user", "content": "Третье сообщение" }
+  ]
+}
+</code></pre>
+<p>Модель видит не «чат как объект памяти», а очередной входной контекст. История сообщений — один из его компонентов.</p>
+<p>Отсюда важный инженерный вывод:</p>
+<pre><code class="language-text">UI хранит диалог
+      ↓
+приложение собирает нужную историю
+      ↓
+API получает context
+      ↓
+модель генерирует следующий ответ
+</code></pre>
+<p>Если приложение перестанет отправлять старую историю, она перестанет влиять на новый inference.</p>
+<h2 id="l7-3-почему-запрос-растёт-по-мере-диалога">3. Почему запрос растёт по мере диалога</h2>
+<p>Когда каждый новый вызов содержит предыдущие сообщения, размер input увеличивается. В качестве иллюстрации роста можно представить такой профиль:</p>
+<table class="notes-table">
+<thead>
+<tr>
+<th>Состояние диалога</th>
+<th style="text-align:right">Примерный размер очередного input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Message 1</td>
+<td style="text-align:right">~2K токенов</td>
+</tr>
+<tr>
+<td>Message 3</td>
+<td style="text-align:right">~15K токенов</td>
+</tr>
+<tr>
+<td>Message 5</td>
+<td style="text-align:right">~85K токенов</td>
+</tr>
+<tr>
+<td>Message 10</td>
+<td style="text-align:right">~250K токенов</td>
+</tr>
+<tr>
+<td>Message 20</td>
+<td style="text-align:right">~500K+ токенов</td>
+</tr>
+</tbody>
+</table>
+<p>Эти значения не являются универсальной формулой: реальный рост зависит от длины сообщений, системных инструкций, результатов инструментов, документов и других частей контекста.</p>
+<p>У накопления истории есть два разных последствия.</p>
+<h3 id="l7-стоимость-и-задержка-растут">Стоимость и задержка растут</h3>
+<p>Старые input tokens снова входят в логический контекст следующих запросов. Без кэширования провайдеру приходится снова обрабатывать этот префикс. Чем больше вход, тем выше потенциальная стоимость и prefill latency.</p>
+<p><strong>Prompt caching</strong> может сильно снизить цену и повторные вычисления для неизменного префикса. Но кэширование не уменьшает логический размер контекста и не превращает длинную историю в короткую.</p>
+<pre><code class="language-text">Prompt caching
+→ дешевле повторная обработка одинакового prefix
+
+Prompt caching
+≠ удаление старых сообщений из context window
+</code></pre>
+<h3 id="l7-качество-может-снижаться">Качество может снижаться</h3>
+<p>По мере роста истории увеличивается количество нерелевантных, устаревших и конкурирующих фрагментов. Модель может хуже удерживать точные ограничения, смешивать факты из разных этапов задачи или терять важные детали после compaction.</p>
+<p>Поэтому стоимость и качество — отдельные проблемы: кэш может решить часть стоимости, но не обязан решить проблему перегруженного контекста.</p>
+<h2 id="l7-4-что-действительно-переживает-закрытие-сессии">4. Что действительно переживает закрытие сессии</h2>
+<p>Если следующая сессия должна знать что-то из предыдущей, это состояние нужно сохранить явно. Для Claude Code полезно различать несколько слоёв.</p>
+<table class="notes-table">
+<thead>
+<tr>
+<th>Слой</th>
+<th>Кто формирует</th>
+<th>Что хранить</th>
+<th>Как попадает в следующую сессию</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CLAUDE.md</code></td>
+<td>разработчик</td>
+<td>устойчивые инструкции, архитектурные правила, команды, соглашения</td>
+<td>загружается как проектный контекст</td>
+</tr>
+<tr>
+<td>Auto memory</td>
+<td>Claude Code</td>
+<td>накопленные наблюдения, исправления, предпочтения, полезные паттерны</td>
+<td><code>MEMORY.md</code> загружается автоматически, тематические файлы читаются по необходимости</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>разработчики и инструменты</td>
+<td>код, коммиты, история изменений</td>
+<td>агент должен прочитать нужные файлы/историю</td>
+</tr>
+<tr>
+<td><code>CHANGELOG</code>, <code>progress.md</code>, task state</td>
+<td>команда или агент</td>
+<td>статус большой задачи, завершённые шаги, неудачные подходы, следующие действия</td>
+<td>читается явно при продолжении работы</td>
+</tr>
+</tbody>
+</table>
+<h3 id="l7-claudemd"><code>CLAUDE.md</code></h3>
+<p><code>CLAUDE.md</code> — не «память мозга модели», а обычный файл с устойчивыми инструкциями. Claude Code читает такие инструкции при старте сессии. Текущая документация рекомендует держать файл компактным и ориентироваться примерно на объём до 200 строк, поскольку чрезмерно длинный постоянный контекст ухудшает соблюдение инструкций.</p>
+<h3 id="l7-auto-memory-и-memorymd">Auto memory и <code>MEMORY.md</code></h3>
+<p>Auto memory — отдельный механизм, при котором Claude Code сам записывает полезные наблюдения. По текущей документации в стартовый контекст автоматически загружаются первые <strong>200 строк или 25 KB</strong> <code>MEMORY.md</code>, в зависимости от того, какой предел достигнут раньше. Более подробные тематические файлы читаются по необходимости.</p>
+<p>Это важно отличать от <code>CLAUDE.md</code>:</p>
+<pre><code class="language-text">CLAUDE.md
+→ правила и инструкции, которые контролирует разработчик
+
+Auto memory / MEMORY.md
+→ заметки и наблюдения, которые накапливает Claude Code
+</code></pre>
+<h3 id="l7-git-и-заметки-о-прогрессе">Git и заметки о прогрессе</h3>
+<p>Git хранит проверяемый результат предыдущей работы, но наличие commit history не означает, что весь Git автоматически присутствует в текущем context window. Агент должен прочитать нужные файлы, diff, log или другой релевантный участок.</p>
+<p>Для длинных задач отдельный <code>CHANGELOG</code> или <code>progress.md</code> полезен как журнал передачи смены: что уже сделано, что не сработало, какие решения приняты и что делать дальше.</p>
+<h2 id="l7-5-точный-блок-фактов-когда-summary-недостаточно">5. Точный блок фактов: когда summary недостаточно</h2>
+<p>Compaction и обычная суммаризация полезны для смыслового состояния задачи, но они являются <strong>потерями информации</strong>. Для точных идентификаторов и чисел это опасно.</p>
+<p>Например, support-агент работает с платежами и заказами. Суммы, даты и номера заказов нельзя надёжно хранить только внутри длинной истории, которую периодически пересказывают.</p>
+<p>Более устойчивый шаблон — отдельно формировать <strong>блок точных фактов</strong> из авторитетного источника и добавлять его в каждый запрос без пересказа:</p>
+<pre><code class="language-json">{
+  "orderId": "ORD-48152",
+  "amount": "137.42 EUR",
+  "paidAt": "2026-08-22T10:14:32Z",
+  "paymentStatus": "captured"
+}
+</code></pre>
+<p>При каждом запросе приложение заново получает актуальные значения из БД/API и помещает их в context отдельно от сжатой истории разговора.</p>
+<pre><code class="language-text">Источник истины: БД / API
+        ↓
+точный fact block
+        ↓
+LLM context
+
+Conversation history
+        ↓
+может быть compacted
+</code></pre>
+<p>Такой блок не обязан быть буквально неизменяемым навсегда. Его смысл в том, что <strong>точные факты не проходят через генеративный пересказ</strong>. Если данные изменились, блок нужно пересобрать из источника истины.</p>
+<h2 id="l7-6-clear-compact-и-auto-compaction">6. <code>/clear</code>, <code>/compact</code> и auto-compaction</h2>
+<p>Эти механизмы решают разные задачи.</p>
+<h3 id="l7-clear"><code>/clear</code></h3>
+<p><code>/clear</code> удаляет текущую conversation history из активной сессии. Модель не «стирает память», потому что скрытой долговременной истории диалога у неё и не было. Приложение просто перестаёт передавать предыдущий messages array.</p>
+<p>Постоянные источники состояния могут снова попасть в новый context независимо от очищенной истории: например, <code>CLAUDE.md</code>, auto memory или файлы проекта.</p>
+<h3 id="l7-compact"><code>/compact</code></h3>
+<p><code>/compact</code> заменяет разросшуюся историю более коротким summary, стараясь сохранить рабочее состояние задачи.</p>
+<pre><code class="language-text">длинный messages array
+        ↓
+compaction
+        ↓
+короткий summary + актуальный контекст
+</code></pre>
+<p>Это <strong>lossy compression</strong>. Архитектурные решения и общий статус могут сохраниться, а отдельная точная цифра, формулировка или промежуточная деталь — исчезнуть или исказиться.</p>
+<p>В Claude Code project-root <code>CLAUDE.md</code> после compaction перечитывается с диска и снова добавляется в контекст. Поэтому устойчивые правила проекта лучше хранить там, а не только в разговоре.</p>
+<p>Claude Code также выполняет auto-compaction при приближении к пределу context window. В текущей документации для стандартной конфигурации указан порог примерно <strong>95%</strong>, при этом его можно изменить настройками. Это эксплуатационная настройка продукта, а не фундаментальный закон LLM.</p>
+<h2 id="l7-7-декомпозиция-не-давать-одной-истории-расти-бесконечно">7. Декомпозиция: не давать одной истории расти бесконечно</h2>
+<p>Большую задачу полезно делить на несколько логических сессий и явно переносить между ними только необходимое состояние.</p>
+<pre><code class="language-text">1 × 45 сообщений
+→ один большой накопленный context
+
+3 × 15 сообщений
+→ три более чистых context window
+→ состояние передаётся через код, Git и краткие заметки
+</code></pre>
+<p>Число <code>15</code> здесь — эвристика, а не технический лимит. Важен сам принцип: <strong>граница этапа должна совпадать с естественной точкой, где состояние можно зафиксировать вне разговора</strong>.</p>
+<p>Декомпозиция может даже увеличить суммарное число токенов из-за нескольких запусков. Её цель — не гарантированно минимизировать bill, а улучшить управляемость контекста и надёжность результата.</p>
+<h2 id="l7-8-subagents-чистый-контекст-для-узкой-задачи">8. Subagents: чистый контекст для узкой задачи</h2>
+<p>Subagent получает отдельное context window и выполняет ограниченную часть работы. Детальный исследовательский шум остаётся внутри subagent, а основной агент получает компактный результат.</p>
+<pre><code class="language-text">Main agent
+   ├─ Subagent A → узкий анализ → краткий результат
+   ├─ Subagent B → поиск       → краткий результат
+   └─ Subagent C → проверка    → краткий результат
+</code></pre>
+<p>Этот паттерн полезен, когда отдельная подзадача требует много чтения, поиска или tool calls, но основному агенту нужны только несколько выводов.</p>
+<p>Преимущество — изоляция контекста. Компромисс — дополнительные вызовы модели и отдельный token usage каждого subagent.</p>
+<h2 id="l7-9-just-in-time-context-загружать-данные-по-потребности">9. Just-in-time context: загружать данные по потребности</h2>
+<p>Вместо загрузки всей потенциально полезной информации в начале агент может хранить <strong>лёгкие ссылки</strong>:</p>
+<ul>
+<li>путь к файлу;</li>
+<li>имя функции или класса;</li>
+<li>идентификатор записи;</li>
+<li>сохранённый запрос;</li>
+<li>URL;</li>
+<li>ключ документа.</li>
+</ul>
+<p>Когда данные действительно нужны, агент загружает их через инструмент:</p>
+<pre><code class="language-text">лёгкая ссылка
+    ↓
+нужны данные?
+  ↙       ↘
+нет       да
+ ↓         ↓
+не       Read file / Search / API
+тратить       ↓
+токены    данные попадают в context
+</code></pre>
+<p>Anthropic описывает такой подход как <strong>just-in-time context</strong>: вместо предварительной загрузки всего массива данных агент динамически получает нужную информацию во время выполнения задачи.</p>
+<p>Это особенно полезно для больших репозиториев и knowledge bases. В контексте можно держать путь <code>src/Dns/ZoneService.cs</code>, а сам файл читать только тогда, когда задача действительно затрагивает этот код.</p>
+<h2 id="l7-10-почему-stateless-архитектура-упрощает-масштабирование">10. Почему stateless-архитектура упрощает масштабирование</h2>
+<p>Если каждый запрос содержит всё необходимое для обработки, backend не обязан хранить разговорное состояние на конкретном worker между вызовами.</p>
+<p>Упрощённая схема:</p>
+<pre><code class="language-text">Request
+   ↓
+Load balancer
+ ├─ Worker A
+ ├─ Worker B
+ └─ Worker C
+</code></pre>
+<p>Это даёт важные инфраструктурные свойства:</p>
+<ul>
+<li>проще горизонтально добавлять workers;</li>
+<li>нет обязательной миграции разговорного состояния между ними;</li>
+<li>повторный запрос может быть обработан другим worker, если все необходимые данные снова переданы;</li>
+<li>жизненный цикл вычислительного состояния отдельного inference не становится долговременной памятью диалога.</li>
+</ul>
+<p>Это архитектурный принцип на уровне API-контракта. Конкретный провайдер может использовать внутренние кэши, маршрутизацию и оптимизации, но пользователь не должен строить корректность приложения на предположении, что следующий запрос попадёт на тот же вычислительный узел.</p>
+<h2 id="l7-11-ментальная-модель-смена-инженер-записки">11. Ментальная модель «смена → инженер → записки»</h2>
+<p>Полезная аналогия — работа нескольких инженеров по сменам. Новый инженер не получает содержимое головы предыдущего, но может продолжить работу по внешним артефактам.</p>
+<table class="notes-table">
+<thead>
+<tr>
+<th>Артефакт</th>
+<th>Аналогия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CLAUDE.md</code></td>
+<td>инструкция для нового инженера</td>
+</tr>
+<tr>
+<td>Auto memory</td>
+<td>заметки предыдущего инженера</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>результат предыдущей работы</td>
+</tr>
+<tr>
+<td><code>CHANGELOG</code> / progress notes</td>
+<td>журнал изменений и передачи смены</td>
+</tr>
+</tbody>
+</table>
+<p>Отсюда следует общий принцип:</p>
+<pre><code class="language-text">Stateless
+≠ отсутствие возможности помнить
+
+Stateless
+= память должна быть спроектирована явно
+</code></pre>
+<p><strong>Persistence layers</strong> — это внешние записи, которые переживают границы сессий и при необходимости снова загружаются в активный контекст.</p>
+<h2 id="l7-12-типичные-заблуждения">12. Типичные заблуждения</h2>
+<h3 id="l7-раз-чат-виден-в-интерфейсе-модель-его-помнит">«Раз чат виден в интерфейсе, модель его помнит»</h3>
+<p>Не обязательно. Интерфейс может хранить историю, но для влияния на inference платформа должна снова передать или восстановить нужные данные.</p>
+<h3 id="l7-clear-стирает-память-модели">«<code>/clear</code> стирает память модели»</h3>
+<p>Нет. Он очищает текущую conversation history. Постоянные файлы и внешнее состояние существуют отдельно.</p>
+<h3 id="l7-compact-это-просто-забывание">«<code>/compact</code> — это просто забывание»</h3>
+<p>Точнее говорить о сжатии с потерями. Сохраняется краткое рабочее представление истории, но часть деталей может исчезнуть.</p>
+<h3 id="l7-prompt-caching-решает-проблему-длинного-контекста">«Prompt caching решает проблему длинного контекста»</h3>
+<p>Кэширование уменьшает повторные вычисления и стоимость неизменного префикса, но не убирает токены из логического контекста и не гарантирует более высокое качество.</p>
+<h3 id="l7-если-взять-более-мощную-модель-точные-суммы-и-id-можно-хранить-в-истории">«Если взять более мощную модель, точные суммы и ID можно хранить в истории»</h3>
+<p>Для транзакционных фактов источник истины всё равно должен находиться во внешней системе. Модель должна получать точные значения из БД/API, а не восстанавливать их из пересказа длинного разговора.</p>
+<h2 id="l7-13-практический-шаблон-для-агента-с-точными-данными">13. Практический шаблон для агента с точными данными</h2>
+<p>Для support-, billing- или order-агента можно разделить контекст на слои:</p>
+<pre><code class="language-text">System / policy rules
+        +
+CLAUDE.md или устойчивые инструкции
+        +
+точные факты из БД/API
+        +
+compacted summary старого разговора
+        +
+несколько последних сообщений
+        +
+текущий запрос пользователя
+        ↓
+       LLM
+</code></pre>
+<p>Критичные значения не должны зависеть от качества compaction. Сумма платежа, номер заказа и статус операции каждый раз берутся из авторитетного источника.</p>
+<p>Если история становится длинной, можно сжать семантическую часть разговора, не затрагивая точный факт-блок.</p>
+<h2 id="l7-прикладные-выводы-best-practices">Прикладные выводы / Best Practices</h2>
+<ol>
+<li><strong>Считайте модельный API stateless по умолчанию.</strong> Если информация нужна в следующем запросе, явно передайте её или восстановите из внешнего состояния.</li>
+<li><strong>Не путайте историю в UI с памятью модели.</strong> Диалог существует потому, что приложение собирает и снова отправляет нужный контекст.</li>
+<li><strong>Следите за ростом input tokens по мере сессии.</strong> Длинная история влияет на стоимость, latency и качество использования контекста.</li>
+<li><strong>Используйте prompt caching для повторяющегося префикса, но не как замену context hygiene.</strong> Кэш снижает стоимость вычислений, а не размер логического контекста.</li>
+<li><strong>Храните устойчивые правила в <code>CLAUDE.md</code>, а не только в разговоре.</strong> Делайте файл компактным и конкретным.</li>
+<li><strong>Используйте Auto memory для накопленных наблюдений, но контролируйте содержимое <code>MEMORY.md</code>.</strong> Автоматически загружается только ограниченная стартовая часть.</li>
+<li><strong>Храните проверяемое состояние проекта в Git, файлах и БД.</strong> Conversation history не должна быть единственным источником истины.</li>
+<li><strong>Не доверяйте compaction точные транзакционные данные.</strong> Суммы, даты, ID и статусы вставляйте отдельным блоком из БД/API.</li>
+<li><strong><code>/compact</code> используйте для продолжения той же задачи</strong>, когда нужно уменьшить историю; <strong><code>/clear</code> — для действительно новой независимой задачи</strong>.</li>
+<li><strong>Декомпозируйте длинные задачи по естественным этапам.</strong> После каждого этапа фиксируйте состояние в коде, Git или progress-файле.</li>
+<li><strong>Используйте subagents для узких контекстно-тяжёлых подзадач.</strong> Возвращайте в основной context компактный проверяемый результат.</li>
+<li><strong>Используйте just-in-time context.</strong> Держите лёгкие ссылки и загружайте большие данные через инструменты только когда они реально нужны.</li>
+<li><strong>Не стройте корректность на привязке к конкретному worker.</strong> Полный запрос должен содержать или уметь восстановить всё состояние, необходимое для обработки.</li>
+<li><strong>Разделяйте semantic state и authoritative facts.</strong> Первое можно суммаризировать, второе нужно получать из источника истины.</li>
+</ol>
+<p>Короткая схема:</p>
+<pre><code class="language-text">Conversation = временный рабочий context
+Persistence  = файлы / Git / memory / DB
+Exact facts  = источник истины → отдельный fact block
+Large data   = ссылки → загрузка just-in-time
+Long task    = этапы / subagents / compaction
+</code></pre>
+<h2 id="l7-источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
+<ul>
+<li>Anthropic, <strong>Using the Messages API</strong>: https://platform.claude.com/docs/en/build-with-claude/working-with-messages</li>
+<li>Anthropic, <strong>How Claude remembers your project</strong>: https://code.claude.com/docs/en/memory</li>
+<li>Anthropic, <strong>Claude Code on the web — Manage context</strong>: https://code.claude.com/docs/en/claude-code-on-the-web</li>
+<li>Anthropic Engineering, <strong>Effective context engineering for AI agents</strong>: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents</li>
+<li>Anthropic, <strong>Prompt caching</strong>: https://platform.claude.com/docs/en/build-with-claude/prompt-caching</li>
+</ul>
+</article>
+<article class="lesson" data-lesson="glossary"><div class="glossary-page"><h1>Glossary</h1><p class="glossary-intro">Краткий справочник терминов курса.</p><section class="glossary-section"><h2>Токены и представление текста</h2><div class="glossary-grid"><div class="glossary-card"><h3>Tokenizer</h3><p>Компонент, который преобразует исходный текст в последовательность токенов и token IDs по правилам конкретного vocabulary.</p>
+</div><div class="glossary-card"><h3>Token</h3><p>Дискретная текстовая единица после токенизации: слово, часть слова, знак пунктуации, пробел или другой фрагмент.</p>
+</div><div class="glossary-card"><h3>Token ID</h3><p>Числовой идентификатор токена в vocabulary конкретного tokenizer.</p>
+</div><div class="glossary-card"><h3>Vocabulary</h3><p>Фиксированный набор токенов, которым tokenizer сопоставляет token IDs.</p>
+</div><div class="glossary-card"><h3>Subword tokenization</h3><p>Подход, при котором частые последовательности могут быть крупными токенами, а редкие слова разбиваются на несколько частей.</p>
+</div><div class="glossary-card"><h3>BPE</h3><p>Один из алгоритмов subword tokenization, объединяющий часто встречающиеся соседние последовательности.</p>
+</div><div class="glossary-card"><h3>Embedding</h3><p>Числовой вектор, получаемый из token ID и используемый нейросетью для дальнейших вычислений.</p>
+</div><div class="glossary-card"><h3>Detokenization / tokenizer decoding</h3><p>Обратное преобразование token IDs в байты/текст. Это не decode phase LLM inference.</p>
+</div></div></section><section class="glossary-section"><h2>Inference и генерация</h2><div class="glossary-grid"><div class="glossary-card"><h3>Inference</h3><p>Запуск уже обученной модели для обработки конкретного input и получения output. Во время обычного inference веса модели не переобучаются.</p>
+</div><div class="glossary-card"><h3>Prefill</h3><p>Фаза inference, в которой обрабатываются заранее известные input tokens и формируется состояние/KV cache.</p>
+</div><div class="glossary-card"><h3>Decode phase</h3><p>Последовательная autoregressive генерация новых output tokens после prefill.</p>
+</div><div class="glossary-card"><h3>Generation</h3><p>Процесс выбора и добавления следующих токенов до завершения ответа или достижения stop/output limit.</p>
+</div><div class="glossary-card"><h3>Logits</h3><p>Не-нормализованные оценки модели для возможных следующих токенов.</p>
+</div><div class="glossary-card"><h3>KV cache</h3><p>Кэш key/value представлений attention для уже обработанного prefix.</p>
+</div><div class="glossary-card"><h3>Thinking tokens</h3><p>Внутренние reasoning tokens, используемые reasoning-моделью и учитываемые в output billing.</p>
+</div><div class="glossary-card"><h3>Effort</h3><p>Параметр новых Claude для управления глубиной thinking/reasoning и связанным token spend. В Claude Sonnet 5 adaptive thinking включён по умолчанию, а <code>effort</code> управляет его глубиной.</p>
+<p><code>effort</code> не является прямой заменой <code>temperature</code>, <code>top_p</code> или <code>top_k</code>: sampling-параметры управляли выбором токенов, а <code>effort</code> управляет объёмом reasoning.</p>
+</div></div></section><section class="glossary-section"><h2>Attention и Transformer</h2><div class="glossary-grid"><div class="glossary-card"><h3>Contextual representation</h3><p>Контекстуализированное представление — вектор токена после обработки Transformer с учётом окружающих токенов. В отличие от исходного embedding, оно зависит от конкретного контекста.</p>
+</div><div class="glossary-card"><h3>Attention</h3><p>Механизм, который вычисляет, какие доступные позиции последовательности релевантны текущей позиции, и формирует новое представление как взвешенную комбинацию передаваемой информации.</p>
+</div><div class="glossary-card"><h3>Self-attention</h3><p>Вариант attention, в котором Query, Key и Value строятся из представлений одной и той же последовательности. Он позволяет токенам учитывать другие токены текущего контекста.</p>
+</div><div class="glossary-card"><h3>Query (Q)</h3><p>Вектор, описывающий, какую информацию текущая позиция ищет у других доступных позиций.</p>
+</div><div class="glossary-card"><h3>Key (K)</h3><p>Вектор с признаками позиции, по которым определяется её релевантность для конкретного Query.</p>
+</div><div class="glossary-card"><h3>Value (V)</h3><p>Вектор с информацией позиции, которая передаётся в новое представление пропорционально вычисленному attention weight.</p>
+</div><div class="glossary-card"><h3>Attention score</h3><p>Числовая оценка совместимости Query и Key до softmax. В scaled dot-product attention она получается из скалярного произведения <code>QKᵀ</code> с последующим масштабированием.</p>
+</div><div class="glossary-card"><h3>Attention weight</h3><p>Нормализованный через softmax вес, определяющий вклад соответствующего Value-вектора в новое представление. Для одного Query сумма attention weights по доступным позициям равна <code>1</code>.</p>
+</div><div class="glossary-card"><h3>Scaled dot-product attention</h3><p>Стандартная форма attention:</p>
+<pre><code class="language-text">Attention(Q, K, V) = softmax(QKᵀ / √d_k) V
+</code></pre>
+<p>Совместимость Query и Key определяет веса, после чего с этими весами смешиваются Value-векторы.</p>
+</div><div class="glossary-card"><h3>d_model</h3><p>Размерность основного скрытого представления токена в Transformer. В multi-head attention это пространство обычно разделяется между несколькими heads.</p>
+</div><div class="glossary-card"><h3>d_k</h3><p>Размерность Key и Query внутри одного attention head. В формуле scaled dot-product attention используется множитель <code>1 / √d_k</code>, чтобы контролировать масштаб attention scores.</p>
+</div><div class="glossary-card"><h3>Causal mask</h3><p>Маска в autoregressive decoder-only LLM, запрещающая текущей позиции учитывать будущие токены. Позиция может использовать только уже доступный префикс.</p>
+</div><div class="glossary-card"><h3>Attention head</h3><p>Один независимый набор обучаемых проекций Query, Key и Value, создающий собственную систему attention weights и собственное представление связей между позициями.</p>
+</div><div class="glossary-card"><h3>Multi-head attention</h3><p>Механизм, в котором несколько attention heads работают параллельно с разными обучаемыми проекциями. Их результаты объединяются и проходят выходную проекцию.</p>
+</div><div class="glossary-card"><h3>Full attention</h3><p>Вариант self-attention, где каждая допустимая позиция может сравниваться со всеми другими допустимыми позициями. Матрица <code>QKᵀ</code> для последовательности длины <code>n</code> имеет размер <code>n × n</code>.</p>
+</div><div class="glossary-card"><h3>Квадратичная сложность full attention</h3><p>Рост числа попарных attention scores пропорционально <code>n²</code>, где <code>n</code> — длина последовательности. Увеличение длины контекста в 10 раз увеличивает число таких сравнений примерно в 100 раз.</p>
+</div><div class="glossary-card"><h3>Attention dilution</h3><p>Полезная инженерная интуиция: по мере роста контекста больше позиций конкурируют за вклад в новое представление. Это не означает равномерный вес <code>1/n</code> и не гарантирует ухудшение каждого токена, но важный сигнал может становиться менее заметным среди большого количества кандидатов.</p>
+</div><div class="glossary-card"><h3>Effective context</h3><p>Практически полезная часть контекста, которую модель способна надёжно использовать для конкретной задачи. Номинальный context window описывает вместимость, а effective context — реальную надёжность использования информации.</p>
+</div><div class="glossary-card"><h3>External scratchpad</h3><p>Явно сформированный промежуточный рабочий блок с фактами, решениями, ссылками или результатами инструментов. Он хранится вне скрытого reasoning модели и используется для уменьшения шума и проверки промежуточного состояния.</p>
+</div><div class="glossary-card"><h3>Focused pass</h3><p>Отдельный проход по узкой части большой задачи: например, анализ одного файла или логической группы файлов. Цель — уменьшить объём нерелевантного контекста и получить структурированный промежуточный результат.</p>
+</div><div class="glossary-card"><h3>Integration pass</h3><p>Финальный проход, который объединяет результаты нескольких focused passes и проверяет связи между ними, например cross-file контракты, изменённые сигнатуры и общие инварианты.</p>
+</div></div></section><section class="glossary-section"><h2>Контекст и память</h2><div class="glossary-grid"><div class="glossary-card"><h3>Context</h3><p>Информация, доступная модели в текущем inference.</p>
+</div><div class="glossary-card"><h3>Context window</h3><p>Максимальный токенный объём активного контекста, поддерживаемый моделью/API.</p>
+</div><div class="glossary-card"><h3>Context rot</h3><p>Практическая деградация способности надёжно использовать нужную информацию по мере роста/зашумления context.</p>
+</div><div class="glossary-card"><h3>Lost in the Middle</h3><p>Эффект, при котором информация в середине очень длинного context может извлекаться хуже, чем ближе к началу или концу.</p>
+</div><div class="glossary-card"><h3>MRCR</h3><p>Long-context benchmark для поиска и различения нескольких похожих фрагментов информации.</p>
+</div><div class="glossary-card"><h3>Mean Match Ratio</h3><p>Метрика MRCR: средняя степень совпадения ответа модели с целевым фрагментом; это не обычная accuracy полностью правильных ответов.</p>
+</div><div class="glossary-card"><h3>Compaction</h3><p>Сжатие длинной conversation history в более короткое рабочее представление. Это lossy compression: ключевое состояние сохраняется, но отдельные детали могут исчезнуть.</p>
+</div><div class="glossary-card"><h3>/compact</h3><p>Команда Claude Code для compaction текущей conversation history: длинная история заменяется более коротким summary, чтобы освободить context window и продолжить ту же задачу.</p>
+</div><div class="glossary-card"><h3>/clear</h3><p>Команда Claude Code для очистки текущей conversation history перед новой независимой задачей. Она не удаляет внешние persistent-файлы или знания из весов модели.</p>
+</div><div class="glossary-card"><h3>External state</h3><p>Состояние вне активного context window: файлы, Git, БД, object storage, memory-файлы и другие persistent storage, из которых нужные данные можно снова загрузить в context.</p>
+</div><div class="glossary-card"><h3>Stateless / Stateless API</h3><p>Архитектурный контракт, при котором независимый запрос не получает предыдущую conversation history автоматически. Нужное состояние должно быть снова передано в запросе или восстановлено из внешнего хранилища.</p>
+</div><div class="glossary-card"><h3>Messages array</h3><p>Структурированный список сообщений с ролями и содержимым, который передаёт модели нужную историю диалога. В stateless API именно повторная передача messages создаёт эффект многоходового разговора.</p>
+</div><div class="glossary-card"><h3>Persistence layer</h3><p>Внешний слой хранения состояния, переживающий границы model sessions: файлы, Git, БД, memory-файлы, журналы прогресса и другие записи, которые можно загрузить в новый context.</p>
+</div><div class="glossary-card"><h3>CLAUDE.md</h3><p>Markdown-файл Claude Code с устойчивыми инструкциями проекта: архитектурными правилами, командами, соглашениями и workflow. Это внешний persistent context, а не скрытая память модели.</p>
+</div><div class="glossary-card"><h3>Auto memory</h3><p>Механизм Claude Code, при котором Claude сам сохраняет полезные наблюдения и исправления в memory-файлы, чтобы использовать их в будущих сессиях.</p>
+</div><div class="glossary-card"><h3>MEMORY.md</h3><p>Основной индекс Auto memory в Claude Code. В стартовый context автоматически загружаются первые 200 строк или 25 KB, в зависимости от того, какой предел достигнут раньше; подробные тематические файлы читаются по потребности.</p>
+</div><div class="glossary-card"><h3>Auto-compaction</h3><p>Автоматический запуск compaction при приближении conversation к пределу context window. Порог является настройкой продукта, а не фундаментальным свойством LLM.</p>
+</div><div class="glossary-card"><h3>Блок точных фактов (Authoritative fact block)</h3><p>Отдельный структурированный блок с точными ID, суммами, датами, статусами и другими критичными значениями, заново получаемыми из БД/API и добавляемыми в context без генеративного пересказа.</p>
+</div></div></section><section class="glossary-section"><h2>Retrieval и agentic engineering</h2><div class="glossary-grid"><div class="glossary-card"><h3>RAG</h3><p>Retrieval-Augmented Generation: поиск релевантных фрагментов во внешнем источнике и добавление выбранных данных в active context.</p>
+</div><div class="glossary-card"><h3>Retrieval</h3><p>Выбор информации, наиболее релевантной текущему запросу или этапу задачи.</p>
+</div><div class="glossary-card"><h3>Tool result</h3><p>Результат вызова внешнего инструмента, который может быть добавлен в context.</p>
+</div><div class="glossary-card"><h3>Subagent</h3><p>Отдельный агент/вызов с более узкой задачей и собственным context.</p>
+</div><div class="glossary-card"><h3>Context engineering</h3><p>Проектирование того, какие инструкции, history, retrieval results и tool outputs доступны модели на каждом шаге.</p>
+</div><div class="glossary-card"><h3>Signal-to-noise ratio</h3><p>Соотношение полезной информации к нерелевантному или устаревшему контексту.</p>
+</div><div class="glossary-card"><h3>Just-in-time context</h3><p>Стратегия context engineering, при которой агент хранит лёгкие ссылки на данные — пути, идентификаторы, URL, сохранённые запросы — и загружает сами данные через инструменты только тогда, когда они действительно нужны.</p>
+</div></div></section><section class="glossary-section"><h2>Стоимость и оптимизация</h2><div class="glossary-grid"><div class="glossary-card"><h3>Input tokens</h3><p>Токены контекста, которые модель обрабатывает как input.</p>
+</div><div class="glossary-card"><h3>Output tokens</h3><p>Токены, сгенерированные моделью; billed output reasoning-моделей может также включать thinking tokens.</p>
+</div><div class="glossary-card"><h3>Prompt caching</h3><p>Повторное использование большого неизменного prefix для снижения повторных вычислений/стоимости.</p>
+</div><div class="glossary-card"><h3>Cache hit</h3><p>Повторное использование уже закэшированного prefix.</p>
+</div><div class="glossary-card"><h3>Batch API</h3><p>Асинхронная массовая обработка запросов, подходящая для offline workloads.</p>
+</div><div class="glossary-card"><h3>Token budget</h3><p>Планируемый объём input, thinking и output с учётом context limit, стоимости и latency.</p>
+</div></div></section><section class="glossary-section"><h2>Стохастичность и sampling</h2><div class="glossary-grid"><div class="glossary-card"><h3>Next Token Prediction</h3><p>Autoregressive принцип: на каждом decode step модель вычисляет распределение следующего токена, выбирает токен и добавляет его в context.</p>
+</div><div class="glossary-card"><h3>Probability distribution</h3><p>Нормализованные вероятности возможных следующих токенов. Сумма вероятностей равна 1.</p>
+</div><div class="glossary-card"><h3>Sampling</h3><p>Выбор следующего токена из probability distribution с учётом вероятностей кандидатов.</p>
+</div><div class="glossary-card"><h3>Stochasticity</h3><p>Стохастичность — наличие случайности в generation, из-за которой одинаковый prompt может приводить к разным последовательностям токенов и разным ответам.</p>
+</div><div class="glossary-card"><h3>Temperature</h3><p>Устаревший для новых Claude sampling parameter, который менял резкость probability distribution. Последняя Sonnet-модель с поддержкой — <strong>Claude Sonnet 4.6</strong>. В Claude Sonnet 5 non-default значение <code>temperature</code> возвращает <code>400</code>.</p>
+<p>В новых Claude <code>effort</code> управляет глубиной reasoning, а prompting — поведением и вариативностью output. <code>effort</code> не является прямым эквивалентом temperature.</p>
+</div><div class="glossary-card"><h3>top-k</h3><p>Устаревший для новых Claude sampling filter, ограничивающий candidates K наиболее вероятными токенами. Последняя Sonnet-модель с поддержкой — <strong>Claude Sonnet 4.6</strong>. В Claude Sonnet 5 non-default <code>top_k</code> возвращает <code>400</code>.</p>
+</div><div class="glossary-card"><h3>top-p / nucleus sampling</h3><p>Устаревший для новых Claude sampling filter по cumulative probability. Последняя Sonnet-модель с поддержкой — <strong>Claude Sonnet 4.6</strong>. В Claude Sonnet 5 non-default <code>top_p</code> возвращает <code>400</code>.</p>
+</div><div class="glossary-card"><h3>Determinism</h3><p>Способность системы повторять один результат для одинакового input. <code>T=0</code> повышает стабильность, но не гарантирует абсолютную идентичность output.</p>
+</div><div class="glossary-card"><h3>Structured output</h3><p>Output с формальным контрактом, например JSON Schema, пригодный для машинной валидации.</p>
+</div><div class="glossary-card"><h3>Eval pipeline</h3><p>Автоматизированная проверка model output через schemas, tests, business rules и другие validators.</p>
+</div></div></section><section class="glossary-section"><h2>Галлюцинации, привязка к источникам и проверка фактов</h2><div class="glossary-grid"><div class="glossary-card"><h3>Галлюцинация (Hallucination)</h3><p>Правдоподобное, но фактически неверное или не подтверждённое утверждение, сгенерированное моделью.</p>
+</div><div class="glossary-card"><h3>Привязка к источникам (Grounding)</h3><p>Привязка ответа модели к конкретным внешним данным: документу, результату поиска, базе данных, результату инструмента или другому источнику истины.</p>
+</div><div class="glossary-card"><h3>Отказ от ответа (Abstention)</h3><p>Осознанный отказ давать конкретный ответ при недостатке данных, например «не знаю» или «данных недостаточно».</p>
+</div><div class="glossary-card"><h3>Калибровка (Calibration)</h3><p>Соответствие заявленной уверенности реальной вероятности быть правым. Хорошо откалиброванная система не должна одинаково уверенно звучать в надёжных и сомнительных случаях.</p>
+</div><div class="glossary-card"><h3>Заявленная моделью уверенность (Self-reported confidence)</h3><p>Оценка уверенности, которую сама модель добавляет к ответу. Полезна для приоритизации проверки, но не является независимым доказательством корректности.</p>
+</div><div class="glossary-card"><h3>Фактическая согласованность (Factual consistency)</h3><p>Насколько ответ модели согласуется с предоставленным источником. Это более узкое понятие, чем общая фактическая истинность ответа о мире.</p>
+</div><div class="glossary-card"><h3>Ссылка на источник (Citation)</h3><p>Структурированная ссылка на конкретный фрагмент источника, который должен поддерживать утверждение.</p>
+</div><div class="glossary-card"><h3>Citations API</h3><p>Механизм Claude API, который привязывает ссылки к реально предоставленным документам и возвращает указатели на конкретные фрагменты источника.</p>
+</div><div class="glossary-card"><h3>Детерминированная проверка (Deterministic validation)</h3><p>Проверка утверждения или действия программным механизмом с однозначным результатом: компилятором, тестами, валидатором схемы, реестром пакетов или запросом к БД/API.</p>
+</div><div class="glossary-card"><h3>Несколько независимых запусков (Best-of-N)</h3><p>Несколько независимых генераций одного задания с последующим сравнением или ранжированием. Расхождения помогают обнаружить нестабильность, но совпадение ответов не доказывает истинность.</p>
+</div><div class="glossary-card"><h3>Официальный / первичный источник (Authoritative source)</h3><p>Источник, который является первичным или официальным для проверяемого факта: реестр пакетов для существования пакета, официальная документация для API, БД для состояния приложения и т. п.</p>
+</div></div></section><section class="glossary-section"><h2>Источник по sampling-параметрам</h2><ul>
+<li>Anthropic, Migration guide: https://platform.claude.com/docs/en/about-claude/models/migration-guide</li>
+</ul>
+</section></div></article><section class="quiz card">
 <div class="quiz-head">
-  <div class="quiz-title-row">
-    <h2>Тестирование</h2>
-    <button id="resetLesson" class="reset-link" type="button">Сбросить прогресс темы</button>
-  </div>
-  <div class="footer-note">20 вопросов на тему. Ошибочные и недостаточно освоенные вопросы получают больший вес при повторении. Прогресс хранится локально в браузере.</div>
+<div class="quiz-title-row">
+<h2>Тестирование</h2>
+<button class="reset-link" id="resetLesson" type="button">Сбросить прогресс темы</button>
 </div>
-<div id="questionBox" class="question"></div>
+<div class="footer-note">20 вопросов на тему. Ошибочные и недостаточно освоенные вопросы получают больший вес при повторении. Прогресс хранится локально в браузере.</div>
+</div>
+<div class="question" id="questionBox"></div>
 <div class="quiz-bottom-actions">
-  <button id="nextQuestion" class="next-icon-button" type="button" aria-label="Следующий вопрос" title="Следующий вопрос">→</button>
+<button aria-label="Следующий вопрос" class="next-icon-button" id="nextQuestion" title="Следующий вопрос" type="button">→</button>
 </div>
 </section></main></div><script>
 const Q={
@@ -1497,7 +2169,9 @@ l1:[["Что такое token в subword-токенизации?",["Числов
 l2:[["Что такое prefill?",["Параллельная обработка заранее известного input-контекста перед генерацией","Перевод token IDs в UTF-8","Удаление истории","Финальный streaming"],0,"Prefill обрабатывает известные input tokens и формирует состояние/KV cache."],["Что означает decode в контексте prefill/decode?",["Последовательная генерация новых output tokens","Только detokenization в UTF-8","Чтение cache","Подсчёт input tokens"],0,"В inference decode — autoregressive generation после prefill."],["Что такое tokenizer decoding / detokenization?",["Обратное преобразование token IDs в bytes/text","Генерация thinking tokens","Prefill","Attention"],0,"Это отдельное значение слова decode: IDs преобразуются обратно в текстовое представление."],["Почему output generation последовательна?",["Token N+1 зависит от уже сгенерированных токенов 1..N","GPU не умеет параллельные матрицы","Tokenizer запрещает concurrency","HTTP передаёт один байт"],0,"Autoregressive dependency делает decode последовательным по длине output."],["Зачем нужен KV cache?",["Чтобы не пересчитывать K/V для уже обработанного prefix на каждом decode step","Чтобы хранить API key","Чтобы хранить vocabulary","Чтобы переводить output"],0,"KV cache уменьшает повторные attention-вычисления."],["Как считается стоимость при цене за 1M tokens?",["tokens / 1_000_000 × price","tokens × price","words / 1000 × price","characters × model size"],0,"Цена за MTok применяется к фактическому числу токенов."],["Что важнее всего помнить о thinking tokens?",["Они входят в billed output","Они бесплатны, если не видны","Они считаются input","Они не входят в max_tokens"],0,"Внутренний reasoning тарифицируется как output."],["500 visible output + 10 000 thinking tokens — сколько output tokens оплачивается?",["500","10 000","10 500","20 000"],2,"Billed output включает reasoning и финальный ответ: 500 + 10 000 = 10 500."],["При $25/MTok сколько стоят 10 500 output tokens?",["$0.002625","$0.02625","$0.2625","$2.625"],2,"10 500 / 1 000 000 × 25 = $0.2625."],["Если thinking отображается как summarized, за что платит клиент?",["За полный объём внутренних thinking tokens, а не только summary","Только за видимое summary","Thinking становится бесплатным","Только за input"],0,"Visible summary и billed reasoning — разные объёмы."],["Что делает display:'omitted' для thinking?",["Скрывает thinking text, но не отменяет billed thinking tokens","Отключает thinking и цену","Переводит thinking в input","Уменьшает output tokens до нуля"],0,"Visibility не изменяет оплату полного thinking процесса."],["Как рекомендуется управлять thinking в Opus/Sonnet 4.6?",["Adaptive thinking + effort","Только фиксированный budget_tokens","Temperature=0","Только max_tokens=1024"],0,"Для 4.6 manual budget_tokens deprecated; рекомендуются adaptive thinking и effort."],["Что означает effort='medium'?",["Мягкий сигнал баланса вычислений, а не гарантированный token budget","Ровно 3000 thinking tokens","Отключение thinking","Ровно 50% context window"],0,"Effort управляет поведением, а фактический thinking usage зависит от задачи."],["К чему относится минимум 1024 thinking tokens?",["К legacy/manual thinking.type='enabled' с budget_tokens","К любому adaptive thinking запросу","К каждому output Claude","К prompt cache"],0,"Минимум 1024 — ограничение manual budget_tokens; adaptive thinking работает иначе."],["Когда разумно использовать high/max effort?",["Для сложного reasoning/architecture/debugging, где качество оправдывает цену","Для любой простой классификации","Всегда по умолчанию для Haiku","Чтобы уменьшить latency"],0,"Глубокий thinking стоит использовать там, где он реально повышает качество."],["Что даёт 5-minute prompt cache hit относительно base input price Claude?",["Около 0.1× base input price","2×","1×","5×"],0,"Cache read стандартно стоит 10% базовой input-цены."],["Sonnet 4.6: 50K cached prefix × 100 запросов. Почему cache может снизить ~$15 до ~$1.67?",["Первый write дороже base, но последующие 99 hits стоят 0.1× input","Output становится бесплатным","Batch всегда включён","Tokenizer удаляет 90% текста"],0,"Cache write оплачивается один раз, последующие cache reads значительно дешевле."],["Что даёт Batch API?",["Около 50% скидки для asynchronous/offline workloads","Ускоряет каждый real-time request в 2 раза","Делает output бесплатным","Убирает thinking"],0,"Batch предназначен для неинтерактивной массовой обработки и снижает цену."],["Какой pipeline разумен по сложности задач?",["Haiku для простого routing/classification, Sonnet для типовых инженерных задач, Opus для сложного анализа","Opus для всего","Haiku для архитектуры, Opus для форматирования","Случайная модель"],0,"Минимально достаточная модель снижает стоимость без ненужной потери качества."],["Что происходит с cache-hit input при сочетании cache read 0.1× и Batch 0.5×?",["Соответствующая cached input часть может стоить около 0.05× base input","Весь запрос становится бесплатным","Output тоже автоматически 0.05×","Cache перестаёт работать"],0,"Pricing modifiers могут складываться: 0.1 × 0.5 = 0.05 для cached input; остальные компоненты считаются отдельно."]],
 l3:[["Что точнее всего описывает context window?",["Максимальный объём активной информации, доступной модели в одном inference","Размер training dataset","Число сообщений в UI","Размер vocabulary"],0,"Context window — ограниченный токенный объём активного контекста."],["Больший context window автоматически означает более высокое качество?",["Да","Нет: вместимость и эффективное использование информации — разные свойства","Да после 128K","Только для coding"],1,"Long context может ухудшать retrieval и focus задолго до hard limit."],["Что проверяет MRCR v2 8-needle?",["Поиск и различение конкретного из нескольких похожих фрагментов в длинном контексте","Скорость tokenizer","Image generation","API throughput"],0,"MRCR — long-context retrieval benchmark с несколькими похожими needles."],["Что означает 91.9% Mean Match Ratio в MRCR?",["Средняя степень совпадения ответов с целевыми фрагментами равна 91.9%","Ровно 91.9% задач полностью правильны","Использовано 91.9% context window","91.9% токенов найдены в vocabulary"],0,"Mean Match Ratio — среднее совпадение с эталонным содержимым, а не обычная accuracy полностью правильных ответов."],["Как изменился MRCR Claude Opus 4.6 между 256K и 1M?",["91.9% → 78.3%","78.3% → 91.9%","90.6% → 65.1%","10.8% → 18.5%"],0,"Benchmark показывает снижение Mean Match Ratio Opus 4.6 при росте input."],["Как изменился MRCR Claude Sonnet 4.6 между 256K и 1M?",["90.6% → 65.1%","65.1% → 90.6%","91.9% → 78.3%","10.8% → 18.5%"],0,"Для Sonnet 4.6 показатель в benchmark снизился с 90.6 до 65.1."],["Что такое context rot?",["Деградация надёжного использования информации по мере роста/зашумления context","Повреждение weights","Ошибка UTF-8","Удаление training data"],0,"Context rot описывает ухудшение recall/focus до hard overflow."],["Какой симптом характерен для context degradation?",["Повторное выполнение уже завершённых действий","Уменьшение input tokens","Ускорение prefill","Меньше tool calls"],0,"Повторы могут означать, что рабочее состояние стало плохо доступно."],["Если агент игнорирует раннюю инструкцию, что проверить первым?",["Не потерялась ли инструкция среди перегруженного context","Capability модели всегда недостаточна","Нужно увеличить temperature","Нужно добавить больше логов"],0,"Нужно различать capability и visibility информации в текущем context."],["Когда использовать /compact?",["Та же задача, но history перегружена","Новая независимая задача","Чтобы удалить repository","Чтобы отключить project memory"],0,"/compact сжимает history для продолжения текущей задачи."],["Когда использовать /clear?",["При переходе к новой независимой задаче","Чтобы сохранить всю history","После каждого tool call","Чтобы увеличить context window"],0,"/clear очищает conversation history."],["Как различать /compact и /clear?",["Та же задача → compact; новая задача → clear/new session","Новая задача → compact; та же → clear","Они идентичны","Обе меняют weights"],0,"Они решают разные задачи context hygiene."],["Как относиться к 500–800 tokens для CLAUDE.md?",["Как к эвристике, не техническому лимиту","Как к жёсткому API limit","Как к обязательному минимуму","Как к размеру KV cache"],0,"Главный критерий — signal-to-noise."],["Что иллюстрирует 2000 tokens CLAUDE.md × 50 запросов ≈ 100K?",["Повторяющийся prefix может создавать большой logical input","CLAUDE.md становится 100K-файлом","Это точный billing всегда","Context window растёт навсегда"],0,"Это оценка накопительного input footprint, не точный billing при любом caching."],["Что означает Lost in the Middle?",["Информация в середине длинного context может извлекаться хуже","Модель вообще не читает середину","Только первый токен влияет","Все модели одинаковы"],0,"Это статистическая позиционная деградация retrieval."],["Где лучше размещать критичные constraints?",["Ясно и заметно, не пряча среди нерелевантного текста","В случайном месте огромного лога","Только в последнем output","В base64"],0,"Высокий signal-to-noise помогает модели использовать критичные правила."],["Как относиться к 15–20 сообщениям на session?",["Как к ориентиру; tokens и качество context важнее числа turns","Как к жёсткому лимиту","После 20 turns модель ломается","Чем больше turns, тем лучше"],0,"Размер сообщений и tool results различается."],["Зачем делить длинную coding-задачу на stages?",["Чтобы фиксировать state во внешних артефактах и не тащить весь старый context","Чтобы увеличить tool calls","Чтобы хранить state только в чате","Чтобы отключить tests"],0,"Код, Git и tests — устойчивое внешнее состояние."],["Зачем subagents для независимых subtasks?",["Чтобы изолировать узкий context каждой подзадачи","Чтобы убрать billing","Чтобы делить один бесконечный context","Чтобы отключить tools"],0,"Изоляция снижает context pollution, хотя subagents имеют собственный usage."],["Какая ментальная модель полезна для context engineering?",["Модель ≈ процессор; context ≈ RAM; orchestration ≈ ОС","Модель ≈ RAM; context ≈ SSD","Context ≈ training dataset","Tokenizer ≈ database"],0,"Аналогия помогает разделять вычисления, рабочую память и управление."]],
 l4:[["Что точнее всего описывает Next Token Prediction?",["Модель сразу создаёт весь ответ","На каждом шаге модель вычисляет распределение следующего токена и добавляет выбранный токен в контекст","Tokenizer выбирает готовое предложение","Модель извлекает абзац из training data"],1,"Autoregressive generation строит ответ последовательно."],["Что такое logits?",["Готовые нормализованные вероятности","Не-нормализованные оценки кандидатов следующего токена","Token IDs prompt","Размер KV cache"],1,"Probability distribution получается из logits после нормализации."],["Что означает высокая next-token probability?",["Фактическую истинность","Высокую согласованность продолжения с текущим контекстом по оценке модели","Гарантию выбора","Частоту в training data один к одному"],1,"Probability не равна truth."],["Почему одинаковые prompt могут дать разные ответы?",["Sampling может выбрать разные токены","Vocabulary создаётся заново","Weights переобучаются","Prompt переводится"],0,"Стохастический выбор одного токена может изменить всю дальнейшую траекторию."],["Почему один другой токен меняет дальнейший ответ?",["Он меняет контекст и последующие logits","Он очищает vocabulary","Он меняет модель","Он отключает prefill"],0,"Каждый generated token становится частью контекста следующего шага."],["Что обычно делает меньшая temperature?",["Концентрирует распределение вокруг top-кандидатов","Увеличивает context window","Отключает tokenizer","Всегда удлиняет ответ"],0,"Меньшая temperature снижает вариативность."],["Что обычно делает большая temperature?",["Повышает относительные шансы альтернатив","Всегда выбирает top-1","Уменьшает output limit","Отключает thinking"],0,"Distribution становится более плоским."],["Что верно про T=0?",["Гарантирует идентичный output","Повышает стабильность, но не гарантирует полную детерминированность","Запрещает output","Всегда доступен"],1,"Anthropic прямо предупреждает, что T=0 не полностью deterministic."],["Как floating-point различия могут повлиять на T=0?",["При почти равных кандидатах микроразница может изменить победителя","Они меняют tokenizer","FP32 всегда случайный","GPU переобучает модель"],0,"Микроразница в logits может сменить top candidate."],["Что делает top-k?",["Оставляет K наиболее вероятных кандидатов","Ограничивает K символов","Выбирает K моделей","Хранит K сообщений"],0,"top-k фильтрует candidate set."],["Что делает top-p?",["Оставляет top-токены до достижения cumulative probability p","Выбирает ровно p токенов","Обрезает prompt","Меняет embeddings"],0,"Это nucleus sampling."],["Какой нюанс важен для новых Claude?",["Sampling параметры доступны всегда","Claude Sonnet 4.6 — последняя Sonnet-модель с temperature/top_p/top_k; в Sonnet 5 non-default значения не принимаются","Claude не использует probabilities","Temperature всегда 0–2"],1,"В Sonnet 5 sampling-параметры убраны: effort управляет thinking-depth, а prompting — поведением ответа."],["Почему строгий prompt повышает стабильность?",["Сужает пространство допустимых outputs","Меняет weights","Уменьшает vocabulary","Гарантирует FP32"],0,"Формат и ограничения уменьшают число допустимых trajectories."],["Что предпочтительнее для machine-readable output?",["Открытый prompt","Structured output/schema + validation","Высокая temperature","Первый случайный ответ"],1,"Формальный контракт надёжнее одной sampling настройки."],["Prompt как 'ручка temperature' — это…",["Полезная аналогия: prompt влияет на вариативность, но не заменяет numeric parameter","Полностью идентичный механизм","Способ реально выставить T=0","Неверно: prompt не влияет"],0,"Prompt управляет пространством ответов, но не является sampling parameter."],["Workflow для brainstorming?",["Широкий prompt → несколько вариантов → ranking","T=0 → принять первый","Schema → запретить варианты","Один deterministic candidate"],0,"Для идей вариативность полезна."],["Workflow для CI/CD или extraction?",["LLM → structured output → deterministic validation → retry/reject","LLM → сразу production","High temperature → принять первый","Только длинный system prompt"],0,"Критичный pipeline обязан валидировать output."],["Что значит 'стохастичность — инструмент'?",["Разная вариативность полезна для разных задач","Любая случайность — баг","Чем выше T, тем лучше","Стохастичность нужна только изображениям"],0,"Brainstorming и automated contract требуют разного поведения."],["Если нужна 100% гарантия формата, на что нельзя полагаться единственно?",["На T=0","На schema validator","На parser","На unit tests"],0,"Гарантию должен обеспечивать deterministic validator."],["Что логировать для воспроизводимости?",["Model, prompt version, sampling settings и eval result","Только ответ","Только символы prompt","Только HTTP status"],0,"Так можно анализировать изменения поведения."]],
-l5:[["Что точнее всего описывает галлюцинацию LLM?", ["Любой нестандартный ответ модели", "Правдоподобное, но фактически неверное или неподтверждённое утверждение", "Ошибка токенизатора", "Только выдуманная URL-ссылка"], 1, "Галлюцинация — это не просто вариативность, а правдоподобный ответ, который не соответствует фактам или подтверждающим данным."], ["Почему предсказание следующего токена может породить выдуманный ISBN или номер версии?", ["Модель знает формат и может достроить правдоподобное значение без проверенного источника", "Токенизатор всегда заменяет цифры", "ISBN хранится в KV cache", "Temperature автоматически создаёт номера"], 0, "Знание шаблона объекта не означает наличие надёжного факта о конкретном объекте."], ["Почему редкий конкретный факт особенно подвержен галлюцинации?", ["Модель может знать форму объекта, но не иметь надёжного основания для конкретного значения", "Редкие факты всегда отсутствуют в обучающих данных", "Токенизатор удаляет редкие слова", "LLM не умеет генерировать цифры"], 0, "Правдоподобный формат не означает наличие проверенного факта: модель может достроить недостающую деталь по статистическому шаблону."], ["Почему оценивание только по точности может поощрять угадывание?", ["Если ошибка и отказ от ответа дают 0, случайная догадка иногда имеет шанс получить 1", "Потому что тест всегда использует веб-поиск", "Потому что правильный ответ тоже даёт 0", "Потому что LLM не видит вопрос"], 0, "Когда «не знаю» и ошибка оцениваются одинаково, угадывание иногда статистически выгоднее отказа от ответа."], ["Какой приём в промпте напрямую снижает давление «ответить любой ценой»?", ["Запретить модели использовать слово «нет»", "Разрешить ответ «не знаю / данных недостаточно»", "Попросить максимально уверенный тон", "Всегда использовать более длинный ответ"], 1, "Явное разрешение отказаться от ответа — одна из базовых техник снижения риска галлюцинаций."], ["Что означает показатель 40% для gpt-5-thinking в SimpleQA?", ["Универсальную вероятность ошибки GPT-5 во всех задачах", "Долю галлюцинаций в конкретном тесте SimpleQA без веб-поиска", "Долю неверных токенов", "Процент запросов с вызовами инструментов"], 1, "GPT-5 System Card указывает 40% именно для SimpleQA без веб-поиска; это результат конкретного теста и режима."], ["Почему процент из конкретного теста нельзя переносить на все реальные запросы?", ["Показатель зависит от теста, модели и условий запуска", "Потому что любой тест всегда ошибочен", "Потому что проценты применимы только к токенизатору", "Потому что тесты не используют модели"], 0, "Метрика описывает конкретные условия оценивания, а не универсальную вероятность ошибки модели."], ["Что верно о рассуждении модели и фактической корректности?", ["Больше рассуждений автоматически гарантирует истинность", "Рассуждение может улучшать решение задачи, но не заменяет привязку к источникам и проверку фактов", "Рассуждение делает ссылки на источники ненужными", "Thinking tokens являются первичным источником"], 1, "Дополнительное рассуждение не превращает модель в источник истины; фактические утверждения всё ещё требуют подтверждения или внешней проверки."], ["Почему уверенный тон ответа нельзя считать доказательством?", ["Стиль и фактическая корректность могут быть плохо откалиброваны", "Уверенный тон всегда означает галлюцинацию", "Осторожный тон всегда означает истину", "Уверенность зависит только от длины промпта"], 0, "Связность и уверенность формулировки не гарантируют фактическую корректность."], ["Что делать с утверждением «+34% уверенных слов при галлюцинации, MIT», если первичный MIT-источник не найден?", ["Повторять как установленный факт", "Явно пометить как непроверенное и не строить на нём выводы", "Округлить до 35%", "Считать доказательством любой уверенной фразы"], 1, "Непроверенную статистику нельзя превращать в факт; можно сохранять только выводы, которые подтверждаются источниками."], ["Модель предложила незнакомый npm-пакет. Что делать в первую очередь?", ["Имя выглядит реалистично, значит пакет существует", "Проверить пакет через реестр npm", "Попросить модель написать README пакета", "Увеличить effort"], 1, "Существование пакета проверяется через официальный реестр, а не по правдоподобию названия."], ["Фраза «73% разработчиков используют X» дана без источника. Что делать?", ["Принять из-за точности числа", "Запросить и открыть первичный источник", "Снизить temperature", "Заменить 73% на 70%"], 1, "Точная цифра без источника — красный флаг; нужно проверяемое происхождение данных."], ["Почему «идеальная» цитата требует проверки?", ["LLM может сгенерировать правдоподобный текст, похожий на цитату", "Цитаты всегда запрещены", "Токенизатор не умеет кавычки", "Любая цитата обязательно ложная"], 0, "Формат и стилистическая правдоподобность не гарантируют существование текста в источнике."], ["Что верно об оценке уверенности, которую сообщает сама модель?", ["Это математическая гарантия правильности", "Это полезный сигнал для приоритизации проверки, но не независимое доказательство", "Она заменяет модульные тесты", "100% уверенности делает факт истинным"], 1, "Самооценка модели остаётся частью её ответа и может быть плохо откалибрована."], ["Зачем сначала просить прямые цитаты из документа, а потом вывод?", ["Чтобы привязать вывод к конкретным данным из источника", "Чтобы увеличить долю галлюцинаций", "Чтобы обойти токенизатор", "Чтобы сделать ответ длиннее"], 0, "Сначала извлечь подтверждающий фрагмент, затем сделать вывод — это уменьшает пространство для недокументированных домыслов."], ["Что верно о веб-поиске как способе снижения галлюцинаций?", ["Сам факт доступа к веб-поиску гарантирует истину", "Нужно убедиться, что найденный источник действительно подтверждает утверждение", "Веб-поиск нужен только для картинок", "Поиск автоматически проверяет бизнес-правила"], 1, "Поиск помогает только тогда, когда найденные данные релевантны и корректно интерпретированы."], ["Что дают несколько независимых запусков одного промпта?", ["Расхождения выявляют нестабильность, но совпадение не доказывает истину", "100% гарантию при двух одинаковых ответах", "Автоматическую проверку ссылок", "Отмену стоимости токенов"], 0, "Несколько запусков полезны как диагностический сигнал, но модели могут стабильно повторять одну и ту же ошибку."], ["CI-бот генерирует `npm install <package>`. Какая защита наиболее надёжна перед выполнением?", ["Попросить модель ещё раз проверить себя", "Попросить оценку уверенности", "Автоматически выполнить `npm view <package>` и проверить реестр", "Попросить более длинное объяснение"], 2, "Для вопроса существования пакета есть официальный источник — реестр npm; детерминированная предварительная проверка надёжнее второго вызова модели."], ["Что гарантирует Claude Citations API в пределах предоставленных документов?", ["Что любой вывод модели истинен", "Что ссылка указывает на реально предоставленный фрагмент источника", "Что исходный документ безошибочен", "Что URL из памяти модели существует"], 1, "Citations API повышает проверяемость происхождения ответа и привязывает ссылки к предоставленным документам, но не гарантирует правильность интерпретации."], ["Какой общий принцип лучше всего снижает риск галлюцинации в действиях агента?", ["LLM должна быть последней точкой контроля", "LLM предлагает, а официальный источник или детерминированная проверка подтверждает перед выполнением", "Достаточно максимально уверенного промпта", "Нужно всегда запускать одну и ту же модель дважды"], 1, "Для критичных действий последняя проверка должна быть внешней: реестр, компилятор, тесты, схема, БД/API или человек."]]};
+l5:[["Что точнее всего описывает галлюцинацию LLM?", ["Любой нестандартный ответ модели", "Правдоподобное, но фактически неверное или неподтверждённое утверждение", "Ошибка токенизатора", "Только выдуманная URL-ссылка"], 1, "Галлюцинация — это не просто вариативность, а правдоподобный ответ, который не соответствует фактам или подтверждающим данным."], ["Почему предсказание следующего токена может породить выдуманный ISBN или номер версии?", ["Модель знает формат и может достроить правдоподобное значение без проверенного источника", "Токенизатор всегда заменяет цифры", "ISBN хранится в KV cache", "Temperature автоматически создаёт номера"], 0, "Знание шаблона объекта не означает наличие надёжного факта о конкретном объекте."], ["Почему редкий конкретный факт особенно подвержен галлюцинации?", ["Модель может знать форму объекта, но не иметь надёжного основания для конкретного значения", "Редкие факты всегда отсутствуют в обучающих данных", "Токенизатор удаляет редкие слова", "LLM не умеет генерировать цифры"], 0, "Правдоподобный формат не означает наличие проверенного факта: модель может достроить недостающую деталь по статистическому шаблону."], ["Почему оценивание только по точности может поощрять угадывание?", ["Если ошибка и отказ от ответа дают 0, случайная догадка иногда имеет шанс получить 1", "Потому что тест всегда использует веб-поиск", "Потому что правильный ответ тоже даёт 0", "Потому что LLM не видит вопрос"], 0, "Когда «не знаю» и ошибка оцениваются одинаково, угадывание иногда статистически выгоднее отказа от ответа."], ["Какой приём в промпте напрямую снижает давление «ответить любой ценой»?", ["Запретить модели использовать слово «нет»", "Разрешить ответ «не знаю / данных недостаточно»", "Попросить максимально уверенный тон", "Всегда использовать более длинный ответ"], 1, "Явное разрешение отказаться от ответа — одна из базовых техник снижения риска галлюцинаций."], ["Что означает показатель 40% для gpt-5-thinking в SimpleQA?", ["Универсальную вероятность ошибки GPT-5 во всех задачах", "Долю галлюцинаций в конкретном тесте SimpleQA без веб-поиска", "Долю неверных токенов", "Процент запросов с вызовами инструментов"], 1, "GPT-5 System Card указывает 40% именно для SimpleQA без веб-поиска; это результат конкретного теста и режима."], ["Почему процент из конкретного теста нельзя переносить на все реальные запросы?", ["Показатель зависит от теста, модели и условий запуска", "Потому что любой тест всегда ошибочен", "Потому что проценты применимы только к токенизатору", "Потому что тесты не используют модели"], 0, "Метрика описывает конкретные условия оценивания, а не универсальную вероятность ошибки модели."], ["Что верно о рассуждении модели и фактической корректности?", ["Больше рассуждений автоматически гарантирует истинность", "Рассуждение может улучшать решение задачи, но не заменяет привязку к источникам и проверку фактов", "Рассуждение делает ссылки на источники ненужными", "Thinking tokens являются первичным источником"], 1, "Дополнительное рассуждение не превращает модель в источник истины; фактические утверждения всё ещё требуют подтверждения или внешней проверки."], ["Почему уверенный тон ответа нельзя считать доказательством?", ["Стиль и фактическая корректность могут быть плохо откалиброваны", "Уверенный тон всегда означает галлюцинацию", "Осторожный тон всегда означает истину", "Уверенность зависит только от длины промпта"], 0, "Связность и уверенность формулировки не гарантируют фактическую корректность."], ["Что делать с утверждением «+34% уверенных слов при галлюцинации, MIT», если первичный MIT-источник не найден?", ["Повторять как установленный факт", "Явно пометить как непроверенное и не строить на нём выводы", "Округлить до 35%", "Считать доказательством любой уверенной фразы"], 1, "Непроверенную статистику нельзя превращать в факт; можно сохранять только выводы, которые подтверждаются источниками."], ["Модель предложила незнакомый npm-пакет. Что делать в первую очередь?", ["Имя выглядит реалистично, значит пакет существует", "Проверить пакет через реестр npm", "Попросить модель написать README пакета", "Увеличить effort"], 1, "Существование пакета проверяется через официальный реестр, а не по правдоподобию названия."], ["Фраза «73% разработчиков используют X» дана без источника. Что делать?", ["Принять из-за точности числа", "Запросить и открыть первичный источник", "Снизить temperature", "Заменить 73% на 70%"], 1, "Точная цифра без источника — красный флаг; нужно проверяемое происхождение данных."], ["Почему «идеальная» цитата требует проверки?", ["LLM может сгенерировать правдоподобный текст, похожий на цитату", "Цитаты всегда запрещены", "Токенизатор не умеет кавычки", "Любая цитата обязательно ложная"], 0, "Формат и стилистическая правдоподобность не гарантируют существование текста в источнике."], ["Что верно об оценке уверенности, которую сообщает сама модель?", ["Это математическая гарантия правильности", "Это полезный сигнал для приоритизации проверки, но не независимое доказательство", "Она заменяет модульные тесты", "100% уверенности делает факт истинным"], 1, "Самооценка модели остаётся частью её ответа и может быть плохо откалибрована."], ["Зачем сначала просить прямые цитаты из документа, а потом вывод?", ["Чтобы привязать вывод к конкретным данным из источника", "Чтобы увеличить долю галлюцинаций", "Чтобы обойти токенизатор", "Чтобы сделать ответ длиннее"], 0, "Сначала извлечь подтверждающий фрагмент, затем сделать вывод — это уменьшает пространство для недокументированных домыслов."], ["Что верно о веб-поиске как способе снижения галлюцинаций?", ["Сам факт доступа к веб-поиску гарантирует истину", "Нужно убедиться, что найденный источник действительно подтверждает утверждение", "Веб-поиск нужен только для картинок", "Поиск автоматически проверяет бизнес-правила"], 1, "Поиск помогает только тогда, когда найденные данные релевантны и корректно интерпретированы."], ["Что дают несколько независимых запусков одного промпта?", ["Расхождения выявляют нестабильность, но совпадение не доказывает истину", "100% гарантию при двух одинаковых ответах", "Автоматическую проверку ссылок", "Отмену стоимости токенов"], 0, "Несколько запусков полезны как диагностический сигнал, но модели могут стабильно повторять одну и ту же ошибку."], ["CI-бот генерирует `npm install <package>`. Какая защита наиболее надёжна перед выполнением?", ["Попросить модель ещё раз проверить себя", "Попросить оценку уверенности", "Автоматически выполнить `npm view <package>` и проверить реестр", "Попросить более длинное объяснение"], 2, "Для вопроса существования пакета есть официальный источник — реестр npm; детерминированная предварительная проверка надёжнее второго вызова модели."], ["Что гарантирует Claude Citations API в пределах предоставленных документов?", ["Что любой вывод модели истинен", "Что ссылка указывает на реально предоставленный фрагмент источника", "Что исходный документ безошибочен", "Что URL из памяти модели существует"], 1, "Citations API повышает проверяемость происхождения ответа и привязывает ссылки к предоставленным документам, но не гарантирует правильность интерпретации."], ["Какой общий принцип лучше всего снижает риск галлюцинации в действиях агента?", ["LLM должна быть последней точкой контроля", "LLM предлагает, а официальный источник или детерминированная проверка подтверждает перед выполнением", "Достаточно максимально уверенного промпта", "Нужно всегда запускать одну и ту же модель дважды"], 1, "Для критичных действий последняя проверка должна быть внешней: реестр, компилятор, тесты, схема, БД/API или человек."]],
+l6:[["Что точнее всего происходит с многозначным токеном после начального embedding?",["Для каждого значения сразу выбирается отдельный token ID","Его представление уточняется по контексту внутри Transformer","Tokenizer повторно обучается на предложении","Embedding заменяется текстовым словарём"],1,"Исходный embedding является начальным представлением; контекстное значение формируется внутри Transformer."],["Почему `mole` в `American shrew mole` и `one mole of CO₂` может интерпретироваться по-разному?",["Tokenizer назначает разные ID одному и тому же токену","Окружающие токены меняют контекстуализированное представление через attention и последующие слои","Softmax меняет spelling токена","KV cache хранит отдельный словарь значений"],1,"Один и тот же исходный токен получает разную контекстуализацию в зависимости от окружения."],["Что означает Query в механизме attention?",["Информацию, которую токен передаёт","Представление того, какую информацию текущая позиция ищет","Готовый текст ответа","Номер слоя Transformer"],1,"Query участвует в вычислении релевантности доступных Key-векторов."],["Что означает Key в механизме attention?",["Признаки, по которым оценивается релевантность позиции для Query","Финальный output token","Сумму всех Value","Размер context window"],0,"Query сравнивается с Key, чтобы получить оценки релевантности."],["Какую роль выполняет Value?",["Определяет номер токена в vocabulary","Несёт информацию, которая взвешенно добавляется в новое представление","Всегда равен Query","Хранит вероятность завершения ответа"],1,"После вычисления attention weights именно Value-векторы смешиваются с соответствующими весами."],["Какая формула соответствует scaled dot-product attention?",["softmax(QKᵀ / √d_k)V","Q + K + V без нормализации","softmax(VQᵀ)K","QK + V²"],0,"Стандартный scaled dot-product attention сначала получает совместимость Q и K, затем softmax-веса применяются к V."],["Почему модель attention нельзя свести к бинарному `Q совпал с K → передать V`?",["Потому что Q и K вообще не используются","Обычно вычисляется распределение весов по множеству доступных позиций","Потому что Value всегда нулевой","Так работает только tokenizer"],1,"Attention обычно создаёт непрерывные веса: несколько токенов могут одновременно влиять на новое представление."],["Что делает causal mask в decoder-only LLM?",["Запрещает текущей позиции учитывать ещё не сгенерированные будущие токены","Удаляет системный prompt","Ограничивает vocabulary до 96 токенов","Отключает multi-head attention"],0,"Causal mask сохраняет autoregressive-порядок: позиция видит только текущий и предыдущий префикс."],["Что точнее всего описывает multi-head attention?",["Один и тот же attention расчёт запускается без разных проекций","Несколько attention heads с разными обучаемыми проекциями работают параллельно, а результаты объединяются","Каждый head — отдельная LLM","Heads используются только при обучении"],1,"Каждый head имеет собственные Q/K/V-проекции; их результаты объединяются и проходят выходную проекцию."],["Можно ли считать, что Head 1 всегда отвечает за грамматику, Head 2 за смысл, Head 3 за позицию?",["Да, это фиксировано архитектурой Transformer","Нет, heads могут специализироваться, но человеческие роли им заранее не назначены","Да, но только в GPT-3","Нет, потому что heads не обучаются"],1,"Интерпретируемые паттерны возможны, но жёсткой заранее заданной специализации нет."],["Какие параметры опубликованы для GPT-3 175B?",["96 слоёв, 96 heads, d_model=12 288","12 слоёв, 12 heads, d_model=768","175 слоёв, 58 heads, d_model=96","96 слоёв, 12 heads, d_model=2048"],0,"В статье GPT-3 для модели 175B указаны 96 слоёв, 96 attention heads и d_model 12 288."],["Почему оценка около 58 млрд attention-параметров для GPT-3 175B правдоподобна?",["4 основные d_model×d_model проекции на слой × 96 слоёв дают примерно 58 млрд","96×96 всегда равно 58 млрд","Все 175 млрд параметров делятся поровну между heads","Потому что context window равен 58 млрд"],0,"Приближённо 4×12 288²×96 ≈ 58 млрд параметров для Q/K/V/output-проекций."],["Почему число попарных attention scores растёт как n²?",["Каждый token сравнивается с доступными token positions, формируя матрицу n×n","Tokenizer удваивает каждый token","Каждый head создаёт n новых слоёв","KV cache хранит n² слов"],0,"Матрица QKᵀ для full self-attention имеет размер n×n."],["Если длина контекста увеличить с 10K до 100K токенов, во сколько раз возрастёт число попарных scores при full attention?",["Примерно в 10 раз","Примерно в 20 раз","Примерно в 100 раз","Не изменится"],2,"Длина выросла в 10 раз, поэтому n² выросло в 10² = 100 раз."],["Как правильнее понимать «ограниченный бюджет внимания»?",["Каждому токену всегда выдаётся ровно 1/n веса","Для каждого Query softmax-веса суммируются в 1, поэтому больше позиций конкурируют за вклад, но распределение может быть очень неравномерным","У модели существует фиксированное глобальное число 100 attention points","После 10K токенов attention отключается"],1,"Аналогия полезна как идея конкуренции за веса, но не означает равномерного распределения 1/n."],["Что показывает эффект Lost in the Middle?",["Модель вообще не может использовать середину контекста","В некоторых long-context задачах релевантная информация в начале и конце используется лучше, чем в середине","Любой факт в середине теряет ровно 30% accuracy","Только первые токены доступны attention"],1,"Исследования показывают позиционную деградацию, но её величина не универсальна."],["Какой вывод о числе «-30% в середине» наиболее корректен?",["Это универсальная константа для всех LLM","Это может быть иллюстративной величиной конкретного эксперимента; реальный эффект зависит от модели и задачи","Это формула softmax","Это размер attention head"],1,"Lost in the Middle не задаёт фиксированного процента деградации для всех моделей и контекстов."],["Как разумно структурировать очень длинный prompt?",["Спрятать критичные инструкции в середине","Стабильные правила и контекст держать заметными в начале, объёмные данные — в середине, текущую задачу и финальные ограничения — ближе к концу","Повторить все инструкции после каждого абзаца","Всегда помещать документы после ответа"],1,"Такой порядок использует преимущества структурированного начала и близости текущего запроса к генерации."],["Зачем использовать внешний scratchpad при анализе большого документа?",["Чтобы заставить модель раскрыть скрытую цепочку рассуждений","Чтобы сначала собрать компактный набор релевантных фактов, а затем делать вывод по нему","Чтобы увеличить context window","Чтобы отключить Q/K/V"],1,"Внешний scratchpad — проверяемый промежуточный блок фактов/решений, который снижает шум следующего шага."],["PR содержит 14 файлов и около 12K токенов diff; single-pass review пропускает cross-file изменения. Какой workflow наиболее устойчив?",["Просто заменить Sonnet на более мощную модель и снова читать всё одним проходом","Разбить review на focused passes по файлам/логическим группам, сохранить findings и сделать отдельный integration pass по cross-file связям","Добавить инструкцию `REVIEW ALL FILES EQUALLY` и ничего больше не менять","Повысить вариативность генерации"],1,"Декомпозиция разделяет локальный анализ и интеграцию: финальный pass работает с компактными findings и фокусируется на межфайловых связях."]],
+l7:[["Что означает stateless для модельного API?",["Модель не использует KV cache внутри одного запроса","Каждый новый API-вызов не получает предыдущую историю автоматически","Модель не может работать с несколькими сообщениями","Сервер обязан удалять все кэши после каждого токена"],1,"Stateless означает отсутствие неявной разговорной памяти между независимыми вызовами. Нужную историю приложение передаёт снова или восстанавливает извне."],["Почему чат может выглядеть непрерывным, если API stateless?",["Модель постоянно хранит чат в своих весах","Приложение добавляет предыдущие user/assistant сообщения в очередной messages array","Tokenizer сам восстанавливает историю по последнему сообщению","KV cache автоматически живёт между всеми сессиями пользователя"],1,"Непрерывность создаёт orchestration layer: он собирает нужную историю и снова отправляет её модели."],["Что произойдёт, если в новом независимом запросе отправить только «добавь ещё одно предложение» без предыдущей темы?",["Модель гарантированно продолжит предыдущий ответ","Модель получит прошлую тему из hidden chat memory","Предыдущая тема не будет доступна, если приложение отдельно её не восстановит","API автоматически найдёт предыдущий request по user ID"],2,"Новый stateless-вызов знает только тот контекст, который был передан или восстановлен системой."],["Почему стоимость длинной сессии может расти?",["Каждый следующий input может снова включать накопившуюся историю","Output предыдущих запросов удаляет input tokens","Количество токенов всегда удваивается ровно после каждого сообщения","Только system prompt тарифицируется повторно"],0,"Если история снова отправляется, её токены входят в следующие input. Реальная скорость роста зависит от содержимого."],["Что prompt caching решает лучше всего?",["Удаляет старые сообщения из context window","Делает модель stateful","Снижает повторные вычисления и стоимость неизменного префикса","Гарантирует отсутствие context degradation"],2,"Кэширование оптимизирует повторную обработку одинакового prefix, но логический контекст остаётся тем же."],["Какой вариант точнее всего описывает `CLAUDE.md`?",["Скрытая память внутри весов Claude","Файл с устойчивыми инструкциями и правилами, который Claude Code загружает в контекст","KV cache между API-запросами","Автоматически генерируемый журнал всех ответов"],1,"`CLAUDE.md` — внешний файл инструкций. Его содержимое становится частью контекста, а не параметров модели."],["Что по текущей документации автоматически загружается из Auto memory при старте сессии?",["Вся история Git","Первые 200 строк или 25 KB `MEMORY.md`, в зависимости от того, что меньше","Все тематические memory-файлы без ограничений","Только последний абзац `MEMORY.md`"],1,"Стартовый read ограничен первыми 200 строками или 25 KB `MEMORY.md`; тематические файлы могут читаться по потребности."],["Почему наличие Git-репозитория само по себе не означает, что вся история проекта уже в context window?",["Git нельзя читать инструментами","Git хранит состояние внешне; агент должен явно прочитать нужные файлы, diff или log","LLM не умеют работать с кодом","Git используется только для prompt caching"],1,"Git — persistence layer и источник проверяемого состояния, но релевантные данные нужно загрузить в активный контекст."],["Support-агент путает суммы и номера заказов после compaction. Какое решение надёжнее?",["Отключить compaction и держать бесконечную history","Вставлять точные транзакционные факты из БД/API отдельным блоком в каждый запрос","Просить модель каждый раз вспомнить числа увереннее","Просто заменить Sonnet на более мощную модель"],1,"Точные authoritative facts не должны зависеть от lossy summary. Их следует заново получать из источника истины."],["Что точнее всего делает `/clear`?",["Удаляет знания из весов модели","Очищает текущую conversation history, после чего persistent-файлы могут загрузиться отдельно","Сжимает историю в summary","Удаляет Git и Auto memory"],1,"`/clear` прекращает использование текущей истории разговора; внешние слои persistence существуют отдельно."],["Какое главное ограничение `/compact`?",["Он всегда удваивает context window","Это сжатие с потерями: часть деталей может не попасть в summary","Он удаляет `CLAUDE.md` с диска","Он применим только к изображениям"],1,"Compaction сохраняет рабочую суть, но не гарантирует дословное сохранение всех деталей и точных значений."],["Что происходит с project-root `CLAUDE.md` после compaction в Claude Code?",["Он навсегда исключается из контекста","Он перечитывается с диска и снова добавляется в контекст","Он превращается в Git commit","Он заменяет `MEMORY.md`"],1,"Устойчивые project instructions переживают compaction за счёт повторной загрузки `CLAUDE.md`."],["Как следует трактовать auto-compaction около 95% context window?",["Как фундаментальный закон Transformer","Как текущую эксплуатационную настройку Claude Code, которую можно изменить","Как гарантию, что ровно 5% данных теряется","Как лимит Messages API на число сообщений"],1,"Порог относится к продуктовой настройке Claude Code, а не к архитектурному закону LLM."],["Почему 3 сессии по 15 сообщений могут быть устойчивее одной на 45 сообщений?",["Каждая сессия получает более чистый context, а состояние можно передавать через внешние артефакты","45 сообщений запрещены API","Каждая новая сессия автоматически бесплатна","Модель физически устаёт после 15 сообщений"],0,"Декомпозиция уменьшает загрязнение активного контекста. Число 15 — лишь эвристика, а не лимит."],["В чём основной смысл subagent-подхода для контекста?",["Все subagents используют один общий бесконечный context","Узкая подзадача выполняется в отдельном context window, а основной агент получает компактный результат","Subagent хранит знания в весах основной модели","Subagent всегда дешевле одного вызова"],1,"Subagents изолируют детальный рабочий контекст, но имеют собственную стоимость и token usage."],["Что означает just-in-time context?",["Загрузить все файлы репозитория до первого запроса","Хранить лёгкие ссылки и подгружать данные инструментами только когда они нужны","Использовать только последние 10 токенов","Всегда делать `/compact` перед tool call"],1,"Just-in-time подход уменьшает предварительный context: данные загружаются динамически по потребности."],["Какой набор данных лучше держать как лёгкую ссылку до момента потребности?",["Полный 500-страничный документ в каждом request","Путь к файлу или идентификатор записи, который можно раскрыть через Read/Search/API","Все результаты SQL за месяц","Полную историю всех tool calls"],1,"Идентификаторы и пути позволяют не платить токенами за данные, которые могут вообще не понадобиться."],["Почему stateless API удобен для горизонтального масштабирования?",["Потому что следующий request обязан попасть на тот же worker","Потому что корректный request может содержать/восстановить нужное состояние без conversation affinity к конкретному worker","Потому что stateless отключает сеть","Потому что KV cache становится глобальной БД"],1,"Отсутствие обязательного разговорного состояния на worker упрощает маршрутизацию, масштабирование и retry."],["Как правильнее разделять semantic state и authoritative facts?",["Оба всегда пересказывать через `/compact`","Semantic state можно суммаризировать; точные ID, суммы и статусы нужно заново получать из источника истины","Authoritative facts хранить только в последнем ответе модели","Semantic state всегда хранить только в весах LLM"],1,"Семантическое состояние допускает lossy compression, а точные факты должны приходить из БД/API или другого авторитетного источника."],["Какой общий принцип лучше всего описывает persistence layers для stateless LLM?",["Stateless означает, что состояние невозможно сохранять","Состояние между сессиями сохраняют внешние артефакты, которые затем явно загружают в новый context","Нужно полагаться на скрытую память GPU","Достаточно одного очень длинного messages array навсегда"],1,"Persistence проектируется явно: файлы, Git, memory, БД и заметки переживают сессию, а нужная часть снова попадает в активный context."]]};
 const KEY='agentic-engineering-progress-v2';
 const SESSION_KEY='agentic-engineering-session-v2';
 let lesson='l1';
