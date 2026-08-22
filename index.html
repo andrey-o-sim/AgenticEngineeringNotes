@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agentic Engineering — уроки 1–4</title><style>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agentic Engineering — уроки 1–5</title><style>
 :root{--bg:#0f1115;--panel:#171a21;--panel2:#1d212a;--text:#e8eaf0;--muted:#9da5b4;--border:#2c3340;--accent:#7dd3fc;--good:#86efac;--bad:#fca5a5;--max:1180px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}button{font:inherit}.topbar{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.topbar-inner{max-width:var(--max);margin:auto;padding:12px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.brand{font-weight:800;margin-right:auto}.tab{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 12px;border-radius:9px;cursor:pointer}.tab.active{border-color:var(--accent);color:var(--accent)}.layout{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;padding:28px 20px 60px}.sidebar{position:sticky;top:82px;height:calc(100vh - 100px);overflow:auto}.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}.sidebar h3{margin:0 0 12px;font-size:14px;text-transform:uppercase;color:var(--muted)}.toc a{display:block;color:var(--muted);text-decoration:none;padding:5px 0;font-size:14px}.toc a:hover{color:var(--accent)}.progress-row{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin:7px 0}.progressbar{height:8px;background:#0c0e12;border-radius:99px;overflow:hidden;margin:9px 0 14px}.progressbar>div{height:100%;background:var(--accent);width:0}.content{min-width:0}.lesson{display:none}.lesson.active{display:block}.lesson h1{font-size:34px;line-height:1.15;margin:0 0 24px}.lesson h2{margin-top:42px;padding-top:4px;font-size:24px}.lesson h3{margin-top:28px;font-size:18px}.lesson p,.lesson li{color:#d6dae3}.lesson li{margin:5px 0}pre{background:#0a0c10;border:1px solid var(--border);border-radius:12px;padding:14px;overflow:auto}code{font-family:"Cascadia Code",Consolas,monospace;background:#0a0c10;padding:.1em .35em;border-radius:5px}pre code{padding:0;background:transparent}.quiz{margin-top:56px}.quiz-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}.quiz-head h2{margin:0}.quiz-controls{display:flex;gap:8px;flex-wrap:wrap}.action{border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:9px;cursor:pointer}.action.primary{border-color:var(--accent);color:var(--accent)}.question{margin-top:18px}.question-title{font-weight:750;font-size:18px;margin-bottom:14px}.option{display:block;width:100%;text-align:left;border:1px solid var(--border);background:#12151b;color:var(--text);padding:12px 14px;border-radius:10px;margin:8px 0;cursor:pointer}.option:hover:not(:disabled){border-color:#556174}.option.correct{border-color:var(--good);background:rgba(134,239,172,.08)}.option.wrong{border-color:var(--bad);background:rgba(252,165,165,.08)}.option:disabled{cursor:default}.feedback{margin-top:12px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);display:none}.feedback.show{display:block}.feedback.good{border-color:var(--good)}.feedback.bad{border-color:var(--bad)}.meta{font-size:13px;color:var(--muted);margin-top:10px}.status-pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 8px;margin-left:6px}.footer-note{color:var(--muted);font-size:13px;margin-top:8px}@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto}.lesson h1{font-size:28px}}
 
 .action:disabled{opacity:.45;cursor:not-allowed}
@@ -41,14 +41,15 @@
 @media(max-width:760px){.glossary-grid{grid-template-columns:1fr}}
 
 
+.lesson blockquote{margin:18px 0;padding:12px 16px;border-left:3px solid var(--accent);background:rgba(125,211,252,.06);color:#d6dae3;border-radius:0 10px 10px 0}.lesson blockquote p{margin:0}
 </style></head><body>
-<header class="topbar"><div class="topbar-inner"><div class="brand">Agentic Engineering · Повторение</div><button class="tab" data-lesson="l1">Урок 1 — Токены</button><button class="tab" data-lesson="l2">Урок 2 — Input vs Output токены</button><button class="tab" data-lesson="l3">Урок 3 — Контекст</button><button class="tab deprecated-tab" data-lesson="l4"><s>Урок 4 — Temperature</s></button><button class="tab glossary-tab" data-lesson="glossary">Glossary</button></div></header>
+<header class="topbar"><div class="topbar-inner"><div class="brand">Agentic Engineering · Повторение</div><button class="tab" data-lesson="l1">Урок 1 — Токены</button><button class="tab" data-lesson="l2">Урок 2 — Input vs Output токены</button><button class="tab" data-lesson="l3">Урок 3 — Контекст</button><button class="tab deprecated-tab" data-lesson="l4"><s>Урок 4 — Temperature</s></button><button class="tab" data-lesson="l5">Урок 5 — Галлюцинации</button><button class="tab glossary-tab" data-lesson="glossary">Glossary</button></div></header>
 <div class="layout"><aside class="sidebar"><div class="card">
 <h3>Текущий проход</h3>
 <div class="progress-row"><span>Вопрос</span><b id="currentQuestionNumber">1 / 20</b></div>
 <div class="progress-row"><span>Осталось</span><b id="remainingQuestions">15</b></div>
 <div class="progressbar"><div id="sessionBar"></div></div>
-<h3>Освоение урока</h3>
+<h3>Освоение темы</h3>
 <div class="progress-row"><span>Отвечено хотя бы раз</span><b id="attempted">0 / 20</b></div>
 <div class="progress-row"><span>Точность всех попыток</span><b id="accuracy">0%</b></div>
 <div class="progress-row"><span>Освоено</span><b id="mastered">0 / 20</b></div>
@@ -230,12 +231,12 @@ tokenization → embeddings → contextual computations → generation
 response</code></pre>
 <p>После завершения запроса эти промежуточные вычислительные состояния не становятся постоянной памятью между независимыми запросами.</p>
 <p>Если следующему запросу нужен предыдущий контекст, приложение должно снова передать нужную историю или восстановить её через механизм памяти/хранилища.</p>
-<p>Это напрямую связывает первый урок с темой context window из третьего урока.</p>
+<p>Предыдущая информация влияет на следующий inference только тогда, когда снова становится доступной через активный контекст, memory или retrieval.</p>
 <h2 id="прикладные-выводы-best-practices">Прикладные выводы / Best Practices</h2>
-<p>После этого урока полезно оставить несколько инженерных правил.</p>
+<p>Практические инженерные правила:</p>
 <ol>
 <li><strong>Считайте реальные токены, а не слова или символы.</strong> Для оценки стоимости и context budget используйте tokenizer/token-counting механизм именно той модели или API, с которыми работает приложение.</li>
-<li><strong>Не переносите коэффициент токенизации одного теста на все тексты.</strong> В примере урока украинская версия потребовала <code>886 / 557 ≈ 1.59</code> раза больше токенов, но это результат конкретных текстов и конкретного токенизатора, а не постоянное свойство языка.</li>
+<li><strong>Не переносите коэффициент токенизации одного теста на все тексты.</strong> В приведённом примере украинская версия потребовала <code>886 / 557 ≈ 1.59</code> раза больше токенов, но это результат конкретных текстов и конкретного токенизатора, а не постоянное свойство языка.</li>
 <li><strong>Для внутренних prompt&#x27;ов можно проверять более токенно-компактный язык.</strong> Если английская формулировка для выбранной модели требует меньше токенов и не ухудшает качество, это может уменьшить стоимость и расход context window. Пользовательский ответ при этом должен оставаться на нужном пользователю языке.</li>
 <li><strong>Убирайте токенный шум.</strong> Ненужные повторения, длинные URL, UUID, base64, случайные идентификаторы и огромные необработанные данные могут занимать непропорционально много токенов.</li>
 <li><strong>Не оптимизируйте prompt “на глаз”.</strong> Короткая по символам строка не обязательно токенно дешёвая: сначала измерение, затем оптимизация.</li>
@@ -577,7 +578,7 @@ offline bulk workload
 <h2 id="12-context-engineering">12. Context engineering</h2>
 <p><strong>Context engineering</strong> — проектирование того, какая информация и в каком виде попадает в активный контекст. Сюда относятся system/developer instructions, подбор истории, RAG, memory retrieval, формат tool results, summaries, порядок документов и промежуточные результаты agentic workflow.</p>
 <p>Для agentic engineering это ключевой навык: качество системы зависит не только от модели, но и от качества информации, которую система показывает ей в конкретный момент.</p>
-<h2 id="12-общая-схема-трёх-уроков">12. Общая схема трёх уроков</h2>
+<h2 id="12-общая-схема-обработки">12. Общая схема обработки</h2>
 <pre><code>Text
   ↓
 Tokenizer
@@ -820,7 +821,7 @@ Context → только то, что нужно сейчас</code></pre>
 <article class="lesson" data-lesson="l4">
 <h1>Урок 4. Temperature</h1>
 <div class="deprecated-notice">
-<strong>⚠ Урок содержит устаревшие API-параметры.</strong><br>
+<strong>⚠ Часть описанных API-параметров устарела.</strong><br>
 <code>temperature</code>, <code>top_p</code> и <code>top_k</code> поддерживаются в <strong>Claude Sonnet 4.6</strong>, но в <strong>Claude Sonnet 5</strong> non-default значения больше не принимаются и возвращают <code>400</code>.<br><br>
 Для новых Claude <code>effort</code> используется для управления глубиной thinking/reasoning, а prompting — для управления поведением и вариативностью output. <code>effort</code> не является прямой заменой sampling-параметров.<br>
 <a href="https://platform.claude.com/docs/en/about-claude/models/migration-guide" target="_blank" rel="noopener noreferrer">Anthropic Migration Guide</a>
@@ -846,7 +847,7 @@ Sampling / выбор токена
   ↓
 Следующий decode step
 </code></pre>
-<p>Это продолжает схему предыдущих уроков: tokenizer формирует token IDs, prefill обрабатывает input, а decode последовательно создаёт output.</p>
+<p>В общей схеме inference tokenizer формирует token IDs, prefill обрабатывает input, а decode последовательно создаёт output.</p>
 <p>Фраза «модель предсказывает следующее слово» неточна: модель предсказывает <strong>следующий токен</strong>, который может быть словом, частью слова, знаком пунктуации или другим фрагментом.</p>
 <h2 id="2-logits-и-probability-distribution">2. Logits и Probability Distribution</h2>
 <p>На каждом decode step модель выдаёт для vocabulary набор <strong>logits</strong> — ненормализованных оценок кандидатов. После нормализации, обычно softmax, они превращаются в probability distribution.</p>
@@ -904,15 +905,15 @@ Sampling / выбор токена
 </tbody>
 </table>
 <p>Точные диапазоны и поддержка зависят от модели/API.</p>
-<h3 id="актуализация-относительно-слайдов-курса">Актуализация относительно слайдов курса</h3>
-<p>Слайды показывают Claude API с диапазоном <code>0.0–1.0</code> и default <code>1.0</code>. Эти sampling-параметры относятся к legacy-поведению Claude. Последняя Sonnet-модель с их поддержкой — <strong>Claude Sonnet 4.6</strong>. В Claude Sonnet 5 non-default значения <code>temperature</code>, <code>top_p</code> и <code>top_k</code> возвращают <code>400</code>. Для thinking-depth используется <code>effort</code>, а для вариативности поведения Anthropic рекомендует prompting.</p>
+<h3 id="актуальность-параметров-claude">Актуальность параметров Claude</h3>
+<p>Для Claude Sonnet 4.6 API использует диапазон <code>0.0–1.0</code> с default <code>1.0</code>. Эти sampling-параметры относятся к legacy-поведению Claude. Последняя Sonnet-модель с их поддержкой — <strong>Claude Sonnet 4.6</strong>. В Claude Sonnet 5 non-default значения <code>temperature</code>, <code>top_p</code> и <code>top_k</code> возвращают <code>400</code>. Для thinking-depth используется <code>effort</code>, а для вариативности поведения Anthropic рекомендует prompting.</p>
 <h2 id="5-почему-t-0-не-гарантирует-100-идентичность">5. Почему T=0 не гарантирует 100% идентичность</h2>
 <p>Практически <code>T=0</code> стремится выбирать наиболее вероятное продолжение и уменьшает вариативность, но:</p>
 <pre><code class="language-text">T = 0 → высокая стабильность
 T = 0 ≠ абсолютная гарантия одинакового результата
 </code></pre>
 <p>Anthropic прямо указывает в Messages API reference, что даже <code>temperature = 0.0</code> не делает ответы полностью deterministic.</p>
-<p>Слайды курса дополнительно объясняют возможный источник различий через floating-point вычисления на GPU/TPU. Если два кандидата почти равны, очень маленькая численная разница может изменить победивший токен:</p>
+<p>Один из возможных источников различий — floating-point вычисления на GPU/TPU. Если два кандидата почти равны, очень маленькая численная разница может изменить победивший токен:</p>
 <pre><code class="language-text">кандидат A → 0.30001
 кандидат B → 0.30000
 </code></pre>
@@ -1052,7 +1053,357 @@ Accept / Retry / Reject
 </ul>
 
 </article>
-<article class="lesson" data-lesson="glossary"><div class="glossary-page"><h1>Glossary</h1><p class="glossary-intro">Краткий справочник терминов из уроков 1–4.</p>
+<article class="lesson" data-lesson="l5">
+<h1>Урок 5. Галлюцинации: почему LLM выдумывают факты и как снижать риск</h1>
+<h2 id="l5-1-что-такое-галлюцинация">1. Что такое галлюцинация</h2>
+<p>В контексте LLM <strong>галлюцинация</strong> — это правдоподобный, но фактически неверный или не подтверждённый ответ модели. Ошибка может выглядеть очень убедительно: корректный формат, уверенный тон, реалистичная ссылка, название библиотеки или точная цифра ещё не означают, что утверждение существует в реальности.</p>
+<p>Главная ментальная модель:</p>
+<pre><code class="language-text">контекст
+   ↓
+вероятности следующего токена
+   ↓
+выбор токена
+   ↓
+новый контекст
+   ↓
+следующий токен
+</code></pre>
+<p>Модель оптимизирована на генерацию правдоподобного продолжения. <strong>Правдоподобие и истинность — разные свойства.</strong></p>
+<p>Фраза «галлюцинация — не баг, а природа генерации» полезна как инженерная эвристика, но её не следует понимать как «любая LLM обязана всегда галлюцинировать». Механизм предсказания следующего токена создаёт возможность правдоподобной ошибки, а привязка к источникам, поиск по внешним данным, цитирование, инструменты и внешняя валидация способны существенно снижать риск.</p>
+<h2 id="l5-2-почему-предсказание-следующего-токена-порождает-правдоподобные-выдумки">2. Почему предсказание следующего токена порождает правдоподобные выдумки</h2>
+<p>Предположим, модель получает начало:</p>
+<pre><code class="language-text">Столица Украины — это ...
+</code></pre>
+<p>Для частого общеизвестного факта распределение может быть сильно сконцентрировано вокруг правильного продолжения. Условный пример распределения:</p>
+<pre><code class="language-text">Киев      82%
+Харьков    9%
+Львов      5%
+другое     4%
+</code></pre>
+<p>Эти проценты — иллюстрация механизма, а не измерение конкретной модели.</p>
+<p>Сложность возникает для редких, произвольных и плохо предсказуемых фактов: ISBN, точного номера версии, малоизвестной библиотеки, даты рождения, URL, номера судебного дела. Модель хорошо знает <strong>форму</strong> такого объекта, но может не иметь надёжного основания для конкретного значения.</p>
+<p>Например, она может знать, что ISBN выглядит как последовательность цифр определённого формата, и сгенерировать строку, которая <strong>выглядит</strong> как настоящий ISBN, хотя не была извлечена из проверенного каталога.</p>
+<pre><code class="language-text">знает шаблон
+    ≠
+знает конкретный факт
+</code></pre>
+<h2 id="l5-3-почему-модели-выгодно-угадывать-вместо-не-знаю">3. Почему модели выгодно угадывать вместо «не знаю»</h2>
+<p>Один из ключевых факторов — <strong>смещение обучения и оценивания в сторону угадывания</strong>.</p>
+<p>Во многих тестовых задачах традиционная схема выглядит так:</p>
+<table class="notes-table">
+<thead>
+<tr>
+<th>Ответ</th>
+<th style="text-align:right">Балл</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>правильный</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>неправильный</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>«не знаю» / отказ от ответа</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Если ошибка и честное воздержание от ответа получают одинаковый ноль, угадывание иногда статистически выгоднее: случайный ответ имеет небольшой шанс принести 1 балл, а «не знаю» гарантирует 0.</p>
+<p>OpenAI в исследовании <em>Why Language Models Hallucinate</em> отдельно разбирает этот стимул и показывает, что оценивание только по точности может поощрять угадывание вместо корректного выражения неопределённости.</p>
+<p>Практический вывод:</p>
+<pre><code class="language-text">если система хочет безопасное поведение,
+она должна разрешать и вознаграждать отказ от ответа
+</code></pre>
+<p>В промпте это можно явно сформулировать:</p>
+<pre><code class="language-text">Если данных недостаточно или ты не уверен — скажи, что не знаешь.
+Не выдумывай недостающие факты.
+</code></pre>
+<h2 id="l5-4-simpleqa-как-читать-результаты-теста">4. SimpleQA: как читать результаты теста</h2>
+<p>Проценты галлюцинаций всегда нужно читать вместе с <strong>названием теста, моделью, датой и режимом запуска</strong>. Нельзя переносить один показатель на все типы задач.</p>
+<p>В системной карточке GPT-5 (<strong>System Card</strong>) для <strong>SimpleQA без доступа к веб-поиску</strong> указано:</p>
+<pre><code class="language-text">gpt-5-thinking:
+точность              55%
+доля галлюцинаций    40%
+</code></pre>
+<p>Значение <code>40%</code> относится именно к конкретной версии модели, тесту SimpleQA и режиму без веб-поиска. Оно не означает, что модель галлюцинирует в 40% любых реальных запросов.</p>
+<p>Главное правило:</p>
+<pre><code class="language-text">процент в конкретном тесте
+    ≠
+универсальная вероятность ошибки
+</code></pre>
+<p>Перед сравнением цифр нужно проверить, что именно измеряет тест и в каких условиях получен результат.</p>
+<h2 id="l5-5-уверенный-тон-не-является-доказательством">5. Уверенный тон не является доказательством</h2>
+<p>Полезное правило:</p>
+<pre><code class="language-text">чем увереннее звучит конкретный факт,
+тем больше оснований его проверить
+</code></pre>
+<p>Но важно не превратить это в обратную магию: формулировки «определённо», «безусловно», «100% точно» сами по себе не доказывают галлюцинацию, а осторожные слова не доказывают корректность.</p>
+<p>Для числа <code>+34%</code>, атрибутированного MIT в связи с более частым использованием уверенных формулировок при галлюцинациях, <strong>не удалось подтвердить первичный источник MIT, поэтому этот процент не используется как установленный факт.</strong></p>
+<p>Подтверждённый практический вывод шире: <strong>стиль ответа и фактическая уверенность модели не обязаны быть хорошо откалиброваны</strong>. Самоуверенный текст нужно проверять теми же способами, что и осторожный.</p>
+<h3 id="l5-калибровка">Калибровка</h3>
+<p><strong>Калибровка</strong> — насколько заявленная уверенность соответствует реальной вероятности быть правым.</p>
+<p>Просьба указать уровень уверенности может быть полезна для интерфейса и приоритизации проверки, но самооценка модели не должна заменять внешнюю проверку.</p>
+<h2 id="l5-6-красные-флаги-галлюцинаций">6. Красные флаги галлюцинаций</h2>
+<p>Четыре особенно полезных сигнала:</p>
+<h3 id="l5-1-неизвестная-библиотека-или-пакет">1. Неизвестная библиотека или пакет</h3>
+<p>Модель предлагает конкретное имя:</p>
+<pre><code class="language-text">npm install super-perfect-parser
+</code></pre>
+<p>Если пакет незнаком, не доверяйте названию только потому, что оно выглядит реалистично.</p>
+<p>Проверка:</p>
+<pre><code class="language-text">npm view &lt;package&gt;
+</code></pre>
+<p>или запрос к соответствующему реестру пакетов / пакетному менеджеру.</p>
+<h3 id="l5-2-точная-цифра-без-источника">2. Точная цифра без источника</h3>
+<p>Формулировка вида:</p>
+<pre><code class="language-text">«73% разработчиков используют ...»
+</code></pre>
+<p>без ссылки на исследование — повод запросить источник и открыть его.</p>
+<h3 id="l5-3-идеальная-цитата">3. «Идеальная» цитата</h3>
+<p>Если цитата слишком точно поддерживает вашу мысль, проверьте оригинальный документ. Модель может сгенерировать текст, стилистически похожий на настоящую цитату.</p>
+<h3 id="l5-4-правдоподобный-url">4. Правдоподобный URL</h3>
+<p>Модель умеет воспроизводить структуру URL и правдоподобные пути страниц. Это не значит, что страница существует.</p>
+<pre><code class="language-text">ссылка выглядит правильно
+        ≠
+ссылка открывается
+</code></pre>
+<p>Общее правило:</p>
+<blockquote>
+<p>Чем более конкретный и легко проверяемый факт генерирует модель, тем дешевле и полезнее выполнить фактическую проверку.</p>
+</blockquote>
+<h2 id="l5-7-шесть-практических-техник-снижения-риска">7. Шесть практических техник снижения риска</h2>
+<h3 id="l5-техника-1-разрешить-не-знаю">Техника 1. Разрешить «не знаю»</h3>
+<p>Явно снимите давление «ответить любой ценой»:</p>
+<pre><code class="language-text">Если ответ не следует из доступных данных — скажи, что не знаешь.
+Не заполняй пробелы предположениями.
+</code></pre>
+<p>Anthropic также рекомендует явно разрешать Claude признавать неопределённость.</p>
+<h3 id="l5-техника-2-просить-уровень-уверенности">Техника 2. Просить уровень уверенности</h3>
+<p>Например:</p>
+<pre><code class="language-text">Для каждого фактического утверждения укажи:
+- высокая / средняя / низкая уверенность;
+- на каких данных основан вывод.
+</code></pre>
+<p>Используйте это как сигнал для дополнительной проверки, но не как детерминированную гарантию.</p>
+<h3 id="l5-техника-3-сначала-цитаты-из-контекста-потом-вывод">Техника 3. Сначала цитаты из контекста, потом вывод</h3>
+<p>Для задач на основе документов полезен двухшаговый подход:</p>
+<pre><code class="language-text">1. Найди дословные места в документе.
+2. Только затем сформулируй вывод, опираясь на эти места.
+</code></pre>
+<p>Anthropic рекомендует использовать прямые цитаты для привязки вывода к источнику, особенно при работе с длинными документами.</p>
+<h3 id="l5-техника-4-веб-поиск-поиск-по-внешним-источникам">Техника 4. Веб-поиск / поиск по внешним источникам</h3>
+<p>Если вопрос зависит от актуальных или редких фактов, дайте модели доступ к внешнему источнику.</p>
+<p>Но сам доступ к веб-поиску не гарантирует правильность:</p>
+<pre><code class="language-text">поиск
+  ↓
+выбрать релевантный источник
+  ↓
+проверить подтверждающие данные
+  ↓
+сформулировать вывод
+  ↓
+дать ссылку
+</code></pre>
+<p>Нужно проверять, что источник действительно подтверждает утверждение.</p>
+<h3 id="l5-техника-5-несколько-независимых-запусков">Техника 5. Несколько независимых запусков</h3>
+<p>Один и тот же промпт можно запустить несколько раз и сравнить ответы.</p>
+<p>Если результаты расходятся — это сильный сигнал для проверки.</p>
+<p>Если совпадают — это <strong>не доказательство истинности</strong>: несколько запусков могут стабильно воспроизвести одну и ту же ошибку.</p>
+<h3 id="l5-техника-6-выполнить-код-вызвать-проверяющий-инструмент">Техника 6. Выполнить код / вызвать проверяющий инструмент</h3>
+<p>Для машинно проверяемых фактов это часто самый сильный подход.</p>
+<p>Примеры:</p>
+<pre><code class="language-text">«пакет существует?»      → реестр пакетов
+«код компилируется?»     → компилятор
+«тест проходит?»         → модульные/интеграционные тесты
+«URL существует?»        → HTTP-запрос
+«JSON соответствует?»    → валидатор схемы
+«запись есть в БД?»      → запрос к БД
+</code></pre>
+<p>Ключевой принцип:</p>
+<pre><code class="language-text">не проси LLM второй раз угадать то,
+что детерминированный инструмент может проверить напрямую
+</code></pre>
+<h2 id="l5-8-почему-самопроверка-модели-не-равна-внешней-проверке">8. Почему самопроверка модели не равна внешней проверке</h2>
+<p>Рассмотрим CI-сценарий: бот генерирует:</p>
+<pre><code class="language-text">npm install &lt;package&gt;
+</code></pre>
+<p>Иногда пакет выдуман.</p>
+<p>Сравнивались четыре стратегии:</p>
+<ol>
+<li>попросить модель самой перепроверить ответ;</li>
+<li>попросить оценку уверенности и блокировать низкие значения;</li>
+<li>использовать Citations API;</li>
+<li>перед выполнением команды проверить пакет через реестр пакетов.</li>
+</ol>
+<p>Наиболее надёжный вариант для этого сценария — <strong>внешняя проверка через реестр пакетов</strong>:</p>
+<pre><code class="language-text">npm view &lt;package&gt;
+</code></pre>
+<p>Почему:</p>
+<ul>
+<li>самопроверка остаётся ещё одним вероятностным вызовом модели;</li>
+<li>заявленная моделью уверенность не доказывает существование пакета;</li>
+<li>Citations API предназначен для привязки ответа к переданным документам, а не для проверки текущего состояния реестра npm;</li>
+<li>реестр npm является непосредственным источником истины для вопроса «существует ли пакет».</li>
+</ul>
+<p>Для CI/CD правильная архитектура:</p>
+<pre><code class="language-text">LLM предлагает действие
+       ↓
+предварительная детерминированная проверка
+       ↓
+разрешить / отклонить
+       ↓
+выполнение
+</code></pre>
+<h2 id="l5-9-citations-api-промпт-против-архитектурной-поддержки">9. Citations API: промпт против архитектурной поддержки</h2>
+<p>Обычный промпт:</p>
+<pre><code class="language-text">«цитируй источники»
+</code></pre>
+<p>не мешает модели сгенерировать правдоподобную, но несуществующую ссылку.</p>
+<p>В Claude Citations API документы передаются как исходные данные с включённым режимом цитирования. API возвращает структурированные указатели на фрагменты <strong>предоставленных документов</strong>.</p>
+<p>Преимущество:</p>
+<pre><code class="language-text">документ
+   ↓
+Claude + Citations
+   ↓
+указатель на реальный фрагмент исходного документа
+</code></pre>
+<p>Anthropic указывает, что ссылки в этом механизме привязаны к реально предоставленному содержимому, а <code>cited_text</code> извлекается из него.</p>
+<p>Но это не означает:</p>
+<pre><code class="language-text">«если есть ссылка на источник → весь ответ автоматически истинен»
+</code></pre>
+<p>Остаются отдельные риски:</p>
+<ul>
+<li>модель может неверно интерпретировать процитированный фрагмент;</li>
+<li>утверждение может быть шире подтверждающего фрагмента;</li>
+<li>сам исходный документ может быть ошибочным или устаревшим;</li>
+<li>не каждый тип данных поддерживает одинаковую детализацию цитирования.</li>
+</ul>
+<p>Citations API обеспечивает <strong>привязку к источнику и проверяемость происхождения ответа</strong>, но не заменяет проверку по правилам предметной области.</p>
+<h2 id="l5-10-комбинированный-промпт-для-анализа-документов">10. Комбинированный промпт для анализа документов</h2>
+<p>Техники 1–3 удобно объединить:</p>
+<pre><code class="language-text">Проанализируй документ.
+
+Для каждого существенного вывода:
+1. Укажи уровень уверенности.
+2. Если данных недостаточно — прямо скажи «не знаю / данных недостаточно».
+3. Приведи конкретную цитату или место в документе, на котором основан вывод.
+4. Не используй внешние факты, если я отдельно не попросил.
+</code></pre>
+<p>Такой промпт:</p>
+<ul>
+<li>разрешает отказ от ответа;</li>
+<li>делает неопределённость явной;</li>
+<li>заставляет привязывать вывод к конкретным данным из источника.</li>
+</ul>
+<p>В рабочей системе лучше дополнить его архитектурными механизмами: Citations API, поиском по внешним источникам, валидаторами, инструментами и логированием.</p>
+<h2 id="l5-11-иерархия-доверия-от-слов-модели-к-проверяемым-данным">11. Иерархия доверия: от слов модели к проверяемым данным</h2>
+<p>Полезно ранжировать способы проверки:</p>
+<pre><code class="language-text">самоуверенный текст модели
+        ↓
+заявленная моделью уверенность
+        ↓
+повторный вызов модели / несколько запусков
+        ↓
+цитата из предоставленного источника
+        ↓
+веб-поиск / поиск по внешним источникам
+        ↓
+детерминированный инструмент / реестр / компилятор / БД / тест
+</code></pre>
+<p>Чем ближе проверка к первичному источнику истины, тем меньше она зависит от генеративного поведения той же модели.</p>
+<h2 id="l5-12-что-считать-хорошей-архитектурой-рабочей-системы">12. Что считать хорошей архитектурой рабочей системы</h2>
+<p>Для критичных фактических ответов модель не должна быть последней точкой контроля.</p>
+<pre><code class="language-text">задача пользователя / агента
+      ↓
+LLM предлагает ответ или действие
+      ↓
+привязка к источникам / поиск внешних данных
+      ↓
+детерминированная проверка, где это возможно
+      ↓
+подтверждающие данные / ссылки на источники
+      ↓
+решение: принять / повторить / отклонить / отправить на проверку человеку
+</code></pre>
+<p>Примеры:</p>
+<table class="notes-table">
+<thead>
+<tr>
+<th>Тип утверждения</th>
+<th>Предпочтительная проверка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>пакет npm/NuGet</td>
+<td>реестр пакетов</td>
+</tr>
+<tr>
+<td>сигнатура API</td>
+<td>официальная документация / SDK</td>
+</tr>
+<tr>
+<td>код</td>
+<td>компилятор + тесты + статический анализ</td>
+</tr>
+<tr>
+<td>запись/состояние системы</td>
+<td>запрос к БД/API</td>
+</tr>
+<tr>
+<td>актуальная цена/курс</td>
+<td>официальный актуальный источник</td>
+</tr>
+<tr>
+<td>факт из документа</td>
+<td>цитата / ссылка на конкретный фрагмент</td>
+</tr>
+<tr>
+<td>юридическое/медицинское решение</td>
+<td>первичный источник + специалист</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l5-прикладные-выводы-best-practices">Прикладные выводы / Best Practices</h2>
+<ol>
+<li><strong>Не используйте уверенный тон как замену проверки истинности.</strong> Связность и убедительность текста не равны фактической корректности.</li>
+<li><strong>Разрешайте модели воздерживаться от ответа.</strong> Для неизвестных данных «не знаю» лучше правдоподобной выдумки.</li>
+<li><strong>Считайте точные цифры, URL, названия пакетов, статьи законов и цитаты зонами повышенной проверки.</strong></li>
+<li><strong>Не доверяйте самопроверке модели как единственной защите.</strong> Повторный вызов модели остаётся вероятностной генерацией.</li>
+<li><strong>Оценка уверенности — сигнал для приоритизации проверки, а не доказательство.</strong></li>
+<li><strong>Для задач на основе документов сначала извлекайте подтверждающие данные, затем делайте вывод.</strong></li>
+<li><strong>Используйте веб-поиск и поиск по внешним источникам для актуальных и редких фактов</strong>, но проверяйте, что найденный источник действительно подтверждает утверждение.</li>
+<li><strong>Несколько запусков полезны для обнаружения нестабильности</strong>, но согласие нескольких ответов не равно истине.</li>
+<li><strong>Для проверяемых инженерных фактов предпочитайте детерминированные инструменты.</strong> Реестр пакетов, компилятор, тесты, валидатор схемы и запрос к БД надёжнее повторного вопроса к LLM.</li>
+<li><strong>В CI/CD проверяйте действие до выполнения.</strong> Для npm-пакета — сначала проверка в реестре, потом <code>npm install</code>.</li>
+<li><strong>Используйте Citations API для проверяемости ответов по документам.</strong> Он привязывает ссылки к предоставленным источникам, но не гарантирует корректность интерпретации.</li>
+<li><strong>Не превращайте процент из конкретного теста в универсальную вероятность ошибки.</strong> Всегда фиксируйте название теста, модель, дату, режим и используемую метрику.</li>
+<li><strong>Не полагайтесь на неподтверждённую статистику.</strong> В частности, для числа <code>+34%</code> не удалось подтвердить первичный MIT-источник.</li>
+<li><strong>Для критичных ответов последняя проверка должна происходить вне LLM</strong> — через официальный источник, детерминированную проверку или проверку человеком.</li>
+</ol>
+<p>Короткая эвристика:</p>
+<pre><code class="language-text">LLM хорошо генерирует кандидатов.
+Источник истины должен проверять факты.
+
+Если факт можно проверить кодом или API —
+проверь кодом или API, а не ещё одним промптом.
+</code></pre>
+<h2 id="l5-источники-и-дополнительная-проверка">Источники и дополнительная проверка</h2>
+<ul>
+<li>OpenAI, <strong>Why Language Models Hallucinate</strong>: <a href="https://openai.com/index/why-language-models-hallucinate/" rel="noopener noreferrer" target="_blank">https://openai.com/index/why-language-models-hallucinate/</a></li>
+<li>OpenAI, <strong>GPT-5 System Card — Hallucinations / SimpleQA</strong>: <a href="https://deploymentsafety.openai.com/gpt-5/hallucinations" rel="noopener noreferrer" target="_blank">https://deploymentsafety.openai.com/gpt-5/hallucinations</a></li>
+<li>Anthropic, <strong>Reduce hallucinations</strong>: <a href="https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations</a></li>
+<li>Anthropic, <strong>Citations</strong>: <a href="https://platform.claude.com/docs/en/build-with-claude/citations" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/build-with-claude/citations</a></li>
+<li>npm, <strong>npm view</strong>: <a href="https://docs.npmjs.com/cli/v11/commands/npm-view/" rel="noopener noreferrer" target="_blank">https://docs.npmjs.com/cli/v11/commands/npm-view/</a></li>
+<li>npm, <strong>Registry</strong>: <a href="https://docs.npmjs.com/using-npm/registry.html" rel="noopener noreferrer" target="_blank">https://docs.npmjs.com/using-npm/registry.html</a></li>
+</ul>
+
+</article>
+<article class="lesson" data-lesson="glossary"><div class="glossary-page"><h1>Glossary</h1><p class="glossary-intro">Краткий справочник терминов курса.</p>
 <section class="glossary-section"><h2>Токены и представление текста</h2><div class="glossary-grid">
 <div class="glossary-card"><h3>Tokenizer</h3><p>Компонент, который преобразует исходный текст в последовательность токенов и token IDs по правилам конкретного vocabulary.</p></div>
 <div class="glossary-card"><h3>Token</h3><p>Дискретная текстовая единица после токенизации: слово, часть слова, знак пунктуации, пробел или другой фрагмент.</p></div>
@@ -1115,13 +1466,26 @@ Accept / Retry / Reject
 <div class="glossary-card"><h3>Eval pipeline</h3><p>Автоматизированная проверка model output через schemas, tests и business rules.</p></div>
 </div></section>
 
+<section class="glossary-section"><h2>Галлюцинации, привязка к источникам и проверка фактов</h2><div class="glossary-grid">
+<div class="glossary-card"><h3>Галлюцинация (Hallucination)</h3><p>Правдоподобное, но фактически неверное или не подтверждённое утверждение, сгенерированное моделью.</p></div>
+<div class="glossary-card"><h3>Привязка к источникам (Grounding)</h3><p>Привязка ответа к конкретным внешним данным: документу, результату поиска, БД, результату инструмента или другому источнику истины.</p></div>
+<div class="glossary-card"><h3>Отказ от ответа (Abstention)</h3><p>Осознанный отказ давать конкретный ответ при недостатке данных: «не знаю» / «данных недостаточно».</p></div>
+<div class="glossary-card"><h3>Калибровка (Calibration)</h3><p>Насколько заявленная уверенность соответствует реальной вероятности быть правым.</p></div>
+<div class="glossary-card"><h3>Заявленная моделью уверенность (Self-reported confidence)</h3><p>Уверенность, которую сообщает сама модель. Полезна для приоритизации проверки, но не является независимым доказательством.</p></div>
+<div class="glossary-card"><h3>Фактическая согласованность (Factual consistency)</h3><p>Насколько ответ согласуется с предоставленным исходным документом; это не то же самое, что универсальная фактическая точность.</p></div>
+<div class="glossary-card"><h3>Ссылка на источник (Citation)</h3><p>Указатель на конкретный фрагмент источника, который должен поддерживать утверждение.</p></div>
+<div class="glossary-card"><h3>Citations API</h3><p>Механизм Claude API, который привязывает ссылки к реально предоставленным исходным документам.</p></div>
+<div class="glossary-card"><h3>Детерминированная проверка (Deterministic validation)</h3><p>Проверка через компилятор, тесты, валидатор схемы, реестр или запрос к БД/API.</p></div>
+<div class="glossary-card"><h3>Несколько независимых запусков (Best-of-N)</h3><p>Несколько независимых генераций с последующим сравнением. Расхождение — сигнал риска; совпадение не доказывает истинность.</p></div>
+<div class="glossary-card"><h3>Официальный / первичный источник (Authoritative source)</h3><p>Первичный или официальный источник проверяемого факта: реестр, официальная документация, БД, актуальный API и т. п.</p></div>
+</div></section>
 </div></article><section class="quiz card">
 <div class="quiz-head">
   <div class="quiz-title-row">
     <h2>Тестирование</h2>
-    <button id="resetLesson" class="reset-link" type="button">Сбросить прогресс урока</button>
+    <button id="resetLesson" class="reset-link" type="button">Сбросить прогресс темы</button>
   </div>
-  <div class="footer-note">20 вопросов на урок. Ошибочные и недостаточно освоенные вопросы получают больший вес при повторении. Прогресс хранится локально в браузере.</div>
+  <div class="footer-note">20 вопросов на тему. Ошибочные и недостаточно освоенные вопросы получают больший вес при повторении. Прогресс хранится локально в браузере.</div>
 </div>
 <div id="questionBox" class="question"></div>
 <div class="quiz-bottom-actions">
@@ -1132,7 +1496,8 @@ const Q={
 l1:[["Что такое token в subword-токенизации?",["Числовой индекс vocabulary","Текстовый фрагмент, полученный после токенизации","Embedding-вектор","Вероятность следующего слова"],1,"Token — текстовая единица; числовое представление этой единицы называется Token ID."],["Что такое Token ID?",["Числовой идентификатор токена в vocabulary","UTF-8 код всего предложения","Embedding токена","Количество символов в токене"],0,"Token ID — индекс токена в vocabulary конкретного tokenizer."],["Почему subword tokenization считается компромиссом?",["Каждое слово всегда один токен","Частые последовательности могут быть крупными токенами, а редкие слова разбиваются на части","Каждый символ всегда отдельный токен","Vocabulary вообще не нужен"],1,"Subword сочетает компактность частых последовательностей с возможностью представить редкие слова меньшими фрагментами."],["BPE — это…",["Один из алгоритмов subword tokenization","Тип embedding layer","Алгоритм attention","Способ тарификации API"],0,"BPE — один из подходов к построению subword vocabulary/merge rules."],["Что происходит, если для редкого слова нет одного крупного токена?",["Запрос отклоняется","Tokenizer обучается заново","Слово представляется несколькими меньшими токенами","Слово автоматически переводится"],2,"Vocabulary фиксирован во время inference; используются доступные меньшие токены."],["Почему одинаковое число слов на двух языках может дать разное число токенов?",["Tokenizer по-разному покрывает частые последовательности языков","Пробелы считаются только в одном языке","Модель переводит всё в английский","Каждый Unicode-символ всегда равен токену"],0,"Компактность зависит от vocabulary и статистики tokenizer."],["Что корректно означает измерение 886 против 557 токенов?",["Первый язык всегда дороже ровно в 1.59 раза","Для конкретных текстов и tokenizer отношение было около 1.59","Кириллица всегда ×1.59","Такое же отношение обязательно будет в output"],1,"Это конкретное измерение, а не универсальный коэффициент."],["Почему UUID/base64 могут расходовать много токенов?",["Они всегда тарифицируются ×2","Случайные последовательности часто хуже совпадают с крупными токенами vocabulary","Они обходят tokenizer","Модель преобразует их в изображения"],1,"Нерегулярные последовательности часто дробятся на большее число токенов."],["Tokenizer исправляет опечатку по смыслу?",["Всегда","Нет; он кодирует строку, а интерпретация смысла происходит в модели","Только при temperature=0","Только для английского"],1,"Tokenizer сегментирует/кодирует вход, а контекстный смысл формируется внутри Transformer."],["Какой порядок обработки корректен?",["Text → tokens → token IDs → embeddings → Transformer","Text → embeddings → tokenizer → IDs","IDs → text → Transformer","Transformer → tokenizer → vocabulary"],0,"Tokenizer формирует токены/IDs, затем embedding layer даёт векторы для Transformer."],["Что делает embedding layer?",["Переводит token ID в числовой вектор","Декодирует UTF-8","Выбирает модель","Сжимает HTTP"],0,"Embedding lookup преобразует дискретный ID в вектор, пригодный для нейросетевых вычислений."],["На какой стадии слово «замок» получает конкретное значение из контекста?",["Tokenization","Vocabulary lookup","Contextualization внутри Transformer","Detokenization"],2,"Контекстные представления внутри Transformer уточняют значение по окружению."],["Какие четыре логические стадии обработки полезно различать?",["Tokenization → Embedding → Contextualization → Generation","Training → HTTP → Billing → Cache","Embedding → Tokenization → Storage → Fine-tuning","Vocabulary → RAG → Batch → Decode"],0,"Это четыре разных уровня: кодирование текста, векторизация, контекстное представление и генерация."],["Что делает стадия Generation?",["Формирует следующий token на основе текущего контекста","Строит vocabulary заново","Исправляет UTF-8","Сохраняет долговременную память"],0,"Модель рассчитывает распределение следующего токена и продолжает последовательность autoregressive."],["Что может остановить генерацию?",["Output limit, естественное завершение или stop sequence","Только закрытие браузера","Только исчерпание vocabulary","Только смена языка"],0,"Типичные причины — лимит output, завершение ответа или настроенная stop sequence."],["Почему usage API может быть больше токенов одной user-строки?",["В input также могут входить system instructions, история, tools и служебное форматирование","Потому что TLS считается токенами","CSS считается input","CPU клиента добавляет токены"],0,"Model input шире последнего user message."],["Что лучше использовать для оценки стоимости?",["Количество слов","Количество символов","Фактический token usage конкретного API","Размер файла в KB"],2,"Биллинг определяется токенами по правилам конкретного API."],["Для чего полезен OpenAI Tokenizer web tool?",["Посмотреть практическое разбиение текста на токены у токенизаторов OpenAI","Измерить GPU latency Anthropic","Обучить новый BPE vocabulary","Создать embeddings"],0,"Инструмент показывает, как конкретный текст разбивается на токены."],["Если модели в следующем запросе нужна предыдущая информация, что должно произойти?",["Нужный контекст должен быть снова доступен через историю/memory/retrieval","Модель автоматически хранит все промежуточные embeddings навсегда","Tokenizer запоминает диалог","KV cache хранится как постоянная БД"],0,"Промежуточные вычисления inference не являются долговременной памятью."],["Какой основной принцип token-оптимизации?",["Убирать ненужные токены, сохраняя достаточную информацию для задачи","Всегда переводить всё на английский","Максимально сокращать prompt любой ценой","Подбирать визуально короткие слова"],0,"Оптимизация должна снижать token budget без потери необходимого контекста и качества."]],
 l2:[["Что такое prefill?",["Параллельная обработка заранее известного input-контекста перед генерацией","Перевод token IDs в UTF-8","Удаление истории","Финальный streaming"],0,"Prefill обрабатывает известные input tokens и формирует состояние/KV cache."],["Что означает decode в контексте prefill/decode?",["Последовательная генерация новых output tokens","Только detokenization в UTF-8","Чтение cache","Подсчёт input tokens"],0,"В inference decode — autoregressive generation после prefill."],["Что такое tokenizer decoding / detokenization?",["Обратное преобразование token IDs в bytes/text","Генерация thinking tokens","Prefill","Attention"],0,"Это отдельное значение слова decode: IDs преобразуются обратно в текстовое представление."],["Почему output generation последовательна?",["Token N+1 зависит от уже сгенерированных токенов 1..N","GPU не умеет параллельные матрицы","Tokenizer запрещает concurrency","HTTP передаёт один байт"],0,"Autoregressive dependency делает decode последовательным по длине output."],["Зачем нужен KV cache?",["Чтобы не пересчитывать K/V для уже обработанного prefix на каждом decode step","Чтобы хранить API key","Чтобы хранить vocabulary","Чтобы переводить output"],0,"KV cache уменьшает повторные attention-вычисления."],["Как считается стоимость при цене за 1M tokens?",["tokens / 1_000_000 × price","tokens × price","words / 1000 × price","characters × model size"],0,"Цена за MTok применяется к фактическому числу токенов."],["Что важнее всего помнить о thinking tokens?",["Они входят в billed output","Они бесплатны, если не видны","Они считаются input","Они не входят в max_tokens"],0,"Внутренний reasoning тарифицируется как output."],["500 visible output + 10 000 thinking tokens — сколько output tokens оплачивается?",["500","10 000","10 500","20 000"],2,"Billed output включает reasoning и финальный ответ: 500 + 10 000 = 10 500."],["При $25/MTok сколько стоят 10 500 output tokens?",["$0.002625","$0.02625","$0.2625","$2.625"],2,"10 500 / 1 000 000 × 25 = $0.2625."],["Если thinking отображается как summarized, за что платит клиент?",["За полный объём внутренних thinking tokens, а не только summary","Только за видимое summary","Thinking становится бесплатным","Только за input"],0,"Visible summary и billed reasoning — разные объёмы."],["Что делает display:'omitted' для thinking?",["Скрывает thinking text, но не отменяет billed thinking tokens","Отключает thinking и цену","Переводит thinking в input","Уменьшает output tokens до нуля"],0,"Visibility не изменяет оплату полного thinking процесса."],["Как рекомендуется управлять thinking в Opus/Sonnet 4.6?",["Adaptive thinking + effort","Только фиксированный budget_tokens","Temperature=0","Только max_tokens=1024"],0,"Для 4.6 manual budget_tokens deprecated; рекомендуются adaptive thinking и effort."],["Что означает effort='medium'?",["Мягкий сигнал баланса вычислений, а не гарантированный token budget","Ровно 3000 thinking tokens","Отключение thinking","Ровно 50% context window"],0,"Effort управляет поведением, а фактический thinking usage зависит от задачи."],["К чему относится минимум 1024 thinking tokens?",["К legacy/manual thinking.type='enabled' с budget_tokens","К любому adaptive thinking запросу","К каждому output Claude","К prompt cache"],0,"Минимум 1024 — ограничение manual budget_tokens; adaptive thinking работает иначе."],["Когда разумно использовать high/max effort?",["Для сложного reasoning/architecture/debugging, где качество оправдывает цену","Для любой простой классификации","Всегда по умолчанию для Haiku","Чтобы уменьшить latency"],0,"Глубокий thinking стоит использовать там, где он реально повышает качество."],["Что даёт 5-minute prompt cache hit относительно base input price Claude?",["Около 0.1× base input price","2×","1×","5×"],0,"Cache read стандартно стоит 10% базовой input-цены."],["Sonnet 4.6: 50K cached prefix × 100 запросов. Почему cache может снизить ~$15 до ~$1.67?",["Первый write дороже base, но последующие 99 hits стоят 0.1× input","Output становится бесплатным","Batch всегда включён","Tokenizer удаляет 90% текста"],0,"Cache write оплачивается один раз, последующие cache reads значительно дешевле."],["Что даёт Batch API?",["Около 50% скидки для asynchronous/offline workloads","Ускоряет каждый real-time request в 2 раза","Делает output бесплатным","Убирает thinking"],0,"Batch предназначен для неинтерактивной массовой обработки и снижает цену."],["Какой pipeline разумен по сложности задач?",["Haiku для простого routing/classification, Sonnet для типовых инженерных задач, Opus для сложного анализа","Opus для всего","Haiku для архитектуры, Opus для форматирования","Случайная модель"],0,"Минимально достаточная модель снижает стоимость без ненужной потери качества."],["Что происходит с cache-hit input при сочетании cache read 0.1× и Batch 0.5×?",["Соответствующая cached input часть может стоить около 0.05× base input","Весь запрос становится бесплатным","Output тоже автоматически 0.05×","Cache перестаёт работать"],0,"Pricing modifiers могут складываться: 0.1 × 0.5 = 0.05 для cached input; остальные компоненты считаются отдельно."]],
 l3:[["Что точнее всего описывает context window?",["Максимальный объём активной информации, доступной модели в одном inference","Размер training dataset","Число сообщений в UI","Размер vocabulary"],0,"Context window — ограниченный токенный объём активного контекста."],["Больший context window автоматически означает более высокое качество?",["Да","Нет: вместимость и эффективное использование информации — разные свойства","Да после 128K","Только для coding"],1,"Long context может ухудшать retrieval и focus задолго до hard limit."],["Что проверяет MRCR v2 8-needle?",["Поиск и различение конкретного из нескольких похожих фрагментов в длинном контексте","Скорость tokenizer","Image generation","API throughput"],0,"MRCR — long-context retrieval benchmark с несколькими похожими needles."],["Что означает 91.9% Mean Match Ratio в MRCR?",["Средняя степень совпадения ответов с целевыми фрагментами равна 91.9%","Ровно 91.9% задач полностью правильны","Использовано 91.9% context window","91.9% токенов найдены в vocabulary"],0,"Mean Match Ratio — среднее совпадение с эталонным содержимым, а не обычная accuracy полностью правильных ответов."],["Как изменился MRCR Claude Opus 4.6 между 256K и 1M?",["91.9% → 78.3%","78.3% → 91.9%","90.6% → 65.1%","10.8% → 18.5%"],0,"Benchmark показывает снижение Mean Match Ratio Opus 4.6 при росте input."],["Как изменился MRCR Claude Sonnet 4.6 между 256K и 1M?",["90.6% → 65.1%","65.1% → 90.6%","91.9% → 78.3%","10.8% → 18.5%"],0,"Для Sonnet 4.6 показатель в benchmark снизился с 90.6 до 65.1."],["Что такое context rot?",["Деградация надёжного использования информации по мере роста/зашумления context","Повреждение weights","Ошибка UTF-8","Удаление training data"],0,"Context rot описывает ухудшение recall/focus до hard overflow."],["Какой симптом характерен для context degradation?",["Повторное выполнение уже завершённых действий","Уменьшение input tokens","Ускорение prefill","Меньше tool calls"],0,"Повторы могут означать, что рабочее состояние стало плохо доступно."],["Если агент игнорирует раннюю инструкцию, что проверить первым?",["Не потерялась ли инструкция среди перегруженного context","Capability модели всегда недостаточна","Нужно увеличить temperature","Нужно добавить больше логов"],0,"Нужно различать capability и visibility информации в текущем context."],["Когда использовать /compact?",["Та же задача, но history перегружена","Новая независимая задача","Чтобы удалить repository","Чтобы отключить project memory"],0,"/compact сжимает history для продолжения текущей задачи."],["Когда использовать /clear?",["При переходе к новой независимой задаче","Чтобы сохранить всю history","После каждого tool call","Чтобы увеличить context window"],0,"/clear очищает conversation history."],["Как различать /compact и /clear?",["Та же задача → compact; новая задача → clear/new session","Новая задача → compact; та же → clear","Они идентичны","Обе меняют weights"],0,"Они решают разные задачи context hygiene."],["Как относиться к 500–800 tokens для CLAUDE.md?",["Как к эвристике, не техническому лимиту","Как к жёсткому API limit","Как к обязательному минимуму","Как к размеру KV cache"],0,"Главный критерий — signal-to-noise."],["Что иллюстрирует 2000 tokens CLAUDE.md × 50 запросов ≈ 100K?",["Повторяющийся prefix может создавать большой logical input","CLAUDE.md становится 100K-файлом","Это точный billing всегда","Context window растёт навсегда"],0,"Это оценка накопительного input footprint, не точный billing при любом caching."],["Что означает Lost in the Middle?",["Информация в середине длинного context может извлекаться хуже","Модель вообще не читает середину","Только первый токен влияет","Все модели одинаковы"],0,"Это статистическая позиционная деградация retrieval."],["Где лучше размещать критичные constraints?",["Ясно и заметно, не пряча среди нерелевантного текста","В случайном месте огромного лога","Только в последнем output","В base64"],0,"Высокий signal-to-noise помогает модели использовать критичные правила."],["Как относиться к 15–20 сообщениям на session?",["Как к ориентиру; tokens и качество context важнее числа turns","Как к жёсткому лимиту","После 20 turns модель ломается","Чем больше turns, тем лучше"],0,"Размер сообщений и tool results различается."],["Зачем делить длинную coding-задачу на stages?",["Чтобы фиксировать state во внешних артефактах и не тащить весь старый context","Чтобы увеличить tool calls","Чтобы хранить state только в чате","Чтобы отключить tests"],0,"Код, Git и tests — устойчивое внешнее состояние."],["Зачем subagents для независимых subtasks?",["Чтобы изолировать узкий context каждой подзадачи","Чтобы убрать billing","Чтобы делить один бесконечный context","Чтобы отключить tools"],0,"Изоляция снижает context pollution, хотя subagents имеют собственный usage."],["Какая ментальная модель полезна для context engineering?",["Модель ≈ процессор; context ≈ RAM; orchestration ≈ ОС","Модель ≈ RAM; context ≈ SSD","Context ≈ training dataset","Tokenizer ≈ database"],0,"Аналогия помогает разделять вычисления, рабочую память и управление."]],
-l4:[["Что точнее всего описывает Next Token Prediction?",["Модель сразу создаёт весь ответ","На каждом шаге модель вычисляет распределение следующего токена и добавляет выбранный токен в контекст","Tokenizer выбирает готовое предложение","Модель извлекает абзац из training data"],1,"Autoregressive generation строит ответ последовательно."],["Что такое logits?",["Готовые нормализованные вероятности","Не-нормализованные оценки кандидатов следующего токена","Token IDs prompt","Размер KV cache"],1,"Probability distribution получается из logits после нормализации."],["Что означает высокая next-token probability?",["Фактическую истинность","Высокую согласованность продолжения с текущим контекстом по оценке модели","Гарантию выбора","Частоту в training data один к одному"],1,"Probability не равна truth."],["Почему одинаковые prompt могут дать разные ответы?",["Sampling может выбрать разные токены","Vocabulary создаётся заново","Weights переобучаются","Prompt переводится"],0,"Стохастический выбор одного токена может изменить всю дальнейшую траекторию."],["Почему один другой токен меняет дальнейший ответ?",["Он меняет контекст и последующие logits","Он очищает vocabulary","Он меняет модель","Он отключает prefill"],0,"Каждый generated token становится частью контекста следующего шага."],["Что обычно делает меньшая temperature?",["Концентрирует распределение вокруг top-кандидатов","Увеличивает context window","Отключает tokenizer","Всегда удлиняет ответ"],0,"Меньшая temperature снижает вариативность."],["Что обычно делает большая temperature?",["Повышает относительные шансы альтернатив","Всегда выбирает top-1","Уменьшает output limit","Отключает thinking"],0,"Distribution становится более плоским."],["Что верно про T=0?",["Гарантирует идентичный output","Повышает стабильность, но не гарантирует полную детерминированность","Запрещает output","Всегда доступен"],1,"Anthropic прямо предупреждает, что T=0 не полностью deterministic."],["Как floating-point различия могут повлиять на T=0?",["При почти равных кандидатах микроразница может изменить победителя","Они меняют tokenizer","FP32 всегда случайный","GPU переобучает модель"],0,"Микроразница в logits может сменить top candidate."],["Что делает top-k?",["Оставляет K наиболее вероятных кандидатов","Ограничивает K символов","Выбирает K моделей","Хранит K сообщений"],0,"top-k фильтрует candidate set."],["Что делает top-p?",["Оставляет top-токены до достижения cumulative probability p","Выбирает ровно p токенов","Обрезает prompt","Меняет embeddings"],0,"Это nucleus sampling."],["Какой нюанс важен для новых Claude?",["Sampling параметры доступны всегда","Claude Sonnet 4.6 — последняя Sonnet-модель с temperature/top_p/top_k; в Sonnet 5 non-default значения не принимаются","Claude не использует probabilities","Temperature всегда 0–2"],1,"В Sonnet 5 sampling-параметры убраны: effort управляет thinking-depth, а prompting — поведением ответа."],["Почему строгий prompt повышает стабильность?",["Сужает пространство допустимых outputs","Меняет weights","Уменьшает vocabulary","Гарантирует FP32"],0,"Формат и ограничения уменьшают число допустимых trajectories."],["Что предпочтительнее для machine-readable output?",["Открытый prompt","Structured output/schema + validation","Высокая temperature","Первый случайный ответ"],1,"Формальный контракт надёжнее одной sampling настройки."],["Prompt как 'ручка temperature' — это…",["Полезная аналогия: prompt влияет на вариативность, но не заменяет numeric parameter","Полностью идентичный механизм","Способ реально выставить T=0","Неверно: prompt не влияет"],0,"Prompt управляет пространством ответов, но не является sampling parameter."],["Workflow для brainstorming?",["Широкий prompt → несколько вариантов → ranking","T=0 → принять первый","Schema → запретить варианты","Один deterministic candidate"],0,"Для идей вариативность полезна."],["Workflow для CI/CD или extraction?",["LLM → structured output → deterministic validation → retry/reject","LLM → сразу production","High temperature → принять первый","Только длинный system prompt"],0,"Критичный pipeline обязан валидировать output."],["Что значит 'стохастичность — инструмент'?",["Разная вариативность полезна для разных задач","Любая случайность — баг","Чем выше T, тем лучше","Стохастичность нужна только изображениям"],0,"Brainstorming и automated contract требуют разного поведения."],["Если нужна 100% гарантия формата, на что нельзя полагаться единственно?",["На T=0","На schema validator","На parser","На unit tests"],0,"Гарантию должен обеспечивать deterministic validator."],["Что логировать для воспроизводимости?",["Model, prompt version, sampling settings и eval result","Только ответ","Только символы prompt","Только HTTP status"],0,"Так можно анализировать изменения поведения."]]};
+l4:[["Что точнее всего описывает Next Token Prediction?",["Модель сразу создаёт весь ответ","На каждом шаге модель вычисляет распределение следующего токена и добавляет выбранный токен в контекст","Tokenizer выбирает готовое предложение","Модель извлекает абзац из training data"],1,"Autoregressive generation строит ответ последовательно."],["Что такое logits?",["Готовые нормализованные вероятности","Не-нормализованные оценки кандидатов следующего токена","Token IDs prompt","Размер KV cache"],1,"Probability distribution получается из logits после нормализации."],["Что означает высокая next-token probability?",["Фактическую истинность","Высокую согласованность продолжения с текущим контекстом по оценке модели","Гарантию выбора","Частоту в training data один к одному"],1,"Probability не равна truth."],["Почему одинаковые prompt могут дать разные ответы?",["Sampling может выбрать разные токены","Vocabulary создаётся заново","Weights переобучаются","Prompt переводится"],0,"Стохастический выбор одного токена может изменить всю дальнейшую траекторию."],["Почему один другой токен меняет дальнейший ответ?",["Он меняет контекст и последующие logits","Он очищает vocabulary","Он меняет модель","Он отключает prefill"],0,"Каждый generated token становится частью контекста следующего шага."],["Что обычно делает меньшая temperature?",["Концентрирует распределение вокруг top-кандидатов","Увеличивает context window","Отключает tokenizer","Всегда удлиняет ответ"],0,"Меньшая temperature снижает вариативность."],["Что обычно делает большая temperature?",["Повышает относительные шансы альтернатив","Всегда выбирает top-1","Уменьшает output limit","Отключает thinking"],0,"Distribution становится более плоским."],["Что верно про T=0?",["Гарантирует идентичный output","Повышает стабильность, но не гарантирует полную детерминированность","Запрещает output","Всегда доступен"],1,"Anthropic прямо предупреждает, что T=0 не полностью deterministic."],["Как floating-point различия могут повлиять на T=0?",["При почти равных кандидатах микроразница может изменить победителя","Они меняют tokenizer","FP32 всегда случайный","GPU переобучает модель"],0,"Микроразница в logits может сменить top candidate."],["Что делает top-k?",["Оставляет K наиболее вероятных кандидатов","Ограничивает K символов","Выбирает K моделей","Хранит K сообщений"],0,"top-k фильтрует candidate set."],["Что делает top-p?",["Оставляет top-токены до достижения cumulative probability p","Выбирает ровно p токенов","Обрезает prompt","Меняет embeddings"],0,"Это nucleus sampling."],["Какой нюанс важен для новых Claude?",["Sampling параметры доступны всегда","Claude Sonnet 4.6 — последняя Sonnet-модель с temperature/top_p/top_k; в Sonnet 5 non-default значения не принимаются","Claude не использует probabilities","Temperature всегда 0–2"],1,"В Sonnet 5 sampling-параметры убраны: effort управляет thinking-depth, а prompting — поведением ответа."],["Почему строгий prompt повышает стабильность?",["Сужает пространство допустимых outputs","Меняет weights","Уменьшает vocabulary","Гарантирует FP32"],0,"Формат и ограничения уменьшают число допустимых trajectories."],["Что предпочтительнее для machine-readable output?",["Открытый prompt","Structured output/schema + validation","Высокая temperature","Первый случайный ответ"],1,"Формальный контракт надёжнее одной sampling настройки."],["Prompt как 'ручка temperature' — это…",["Полезная аналогия: prompt влияет на вариативность, но не заменяет numeric parameter","Полностью идентичный механизм","Способ реально выставить T=0","Неверно: prompt не влияет"],0,"Prompt управляет пространством ответов, но не является sampling parameter."],["Workflow для brainstorming?",["Широкий prompt → несколько вариантов → ranking","T=0 → принять первый","Schema → запретить варианты","Один deterministic candidate"],0,"Для идей вариативность полезна."],["Workflow для CI/CD или extraction?",["LLM → structured output → deterministic validation → retry/reject","LLM → сразу production","High temperature → принять первый","Только длинный system prompt"],0,"Критичный pipeline обязан валидировать output."],["Что значит 'стохастичность — инструмент'?",["Разная вариативность полезна для разных задач","Любая случайность — баг","Чем выше T, тем лучше","Стохастичность нужна только изображениям"],0,"Brainstorming и automated contract требуют разного поведения."],["Если нужна 100% гарантия формата, на что нельзя полагаться единственно?",["На T=0","На schema validator","На parser","На unit tests"],0,"Гарантию должен обеспечивать deterministic validator."],["Что логировать для воспроизводимости?",["Model, prompt version, sampling settings и eval result","Только ответ","Только символы prompt","Только HTTP status"],0,"Так можно анализировать изменения поведения."]],
+l5:[["Что точнее всего описывает галлюцинацию LLM?", ["Любой нестандартный ответ модели", "Правдоподобное, но фактически неверное или неподтверждённое утверждение", "Ошибка токенизатора", "Только выдуманная URL-ссылка"], 1, "Галлюцинация — это не просто вариативность, а правдоподобный ответ, который не соответствует фактам или подтверждающим данным."], ["Почему предсказание следующего токена может породить выдуманный ISBN или номер версии?", ["Модель знает формат и может достроить правдоподобное значение без проверенного источника", "Токенизатор всегда заменяет цифры", "ISBN хранится в KV cache", "Temperature автоматически создаёт номера"], 0, "Знание шаблона объекта не означает наличие надёжного факта о конкретном объекте."], ["Почему редкий конкретный факт особенно подвержен галлюцинации?", ["Модель может знать форму объекта, но не иметь надёжного основания для конкретного значения", "Редкие факты всегда отсутствуют в обучающих данных", "Токенизатор удаляет редкие слова", "LLM не умеет генерировать цифры"], 0, "Правдоподобный формат не означает наличие проверенного факта: модель может достроить недостающую деталь по статистическому шаблону."], ["Почему оценивание только по точности может поощрять угадывание?", ["Если ошибка и отказ от ответа дают 0, случайная догадка иногда имеет шанс получить 1", "Потому что тест всегда использует веб-поиск", "Потому что правильный ответ тоже даёт 0", "Потому что LLM не видит вопрос"], 0, "Когда «не знаю» и ошибка оцениваются одинаково, угадывание иногда статистически выгоднее отказа от ответа."], ["Какой приём в промпте напрямую снижает давление «ответить любой ценой»?", ["Запретить модели использовать слово «нет»", "Разрешить ответ «не знаю / данных недостаточно»", "Попросить максимально уверенный тон", "Всегда использовать более длинный ответ"], 1, "Явное разрешение отказаться от ответа — одна из базовых техник снижения риска галлюцинаций."], ["Что означает показатель 40% для gpt-5-thinking в SimpleQA?", ["Универсальную вероятность ошибки GPT-5 во всех задачах", "Долю галлюцинаций в конкретном тесте SimpleQA без веб-поиска", "Долю неверных токенов", "Процент запросов с вызовами инструментов"], 1, "GPT-5 System Card указывает 40% именно для SimpleQA без веб-поиска; это результат конкретного теста и режима."], ["Почему процент из конкретного теста нельзя переносить на все реальные запросы?", ["Показатель зависит от теста, модели и условий запуска", "Потому что любой тест всегда ошибочен", "Потому что проценты применимы только к токенизатору", "Потому что тесты не используют модели"], 0, "Метрика описывает конкретные условия оценивания, а не универсальную вероятность ошибки модели."], ["Что верно о рассуждении модели и фактической корректности?", ["Больше рассуждений автоматически гарантирует истинность", "Рассуждение может улучшать решение задачи, но не заменяет привязку к источникам и проверку фактов", "Рассуждение делает ссылки на источники ненужными", "Thinking tokens являются первичным источником"], 1, "Дополнительное рассуждение не превращает модель в источник истины; фактические утверждения всё ещё требуют подтверждения или внешней проверки."], ["Почему уверенный тон ответа нельзя считать доказательством?", ["Стиль и фактическая корректность могут быть плохо откалиброваны", "Уверенный тон всегда означает галлюцинацию", "Осторожный тон всегда означает истину", "Уверенность зависит только от длины промпта"], 0, "Связность и уверенность формулировки не гарантируют фактическую корректность."], ["Что делать с утверждением «+34% уверенных слов при галлюцинации, MIT», если первичный MIT-источник не найден?", ["Повторять как установленный факт", "Явно пометить как непроверенное и не строить на нём выводы", "Округлить до 35%", "Считать доказательством любой уверенной фразы"], 1, "Непроверенную статистику нельзя превращать в факт; можно сохранять только выводы, которые подтверждаются источниками."], ["Модель предложила незнакомый npm-пакет. Что делать в первую очередь?", ["Имя выглядит реалистично, значит пакет существует", "Проверить пакет через реестр npm", "Попросить модель написать README пакета", "Увеличить effort"], 1, "Существование пакета проверяется через официальный реестр, а не по правдоподобию названия."], ["Фраза «73% разработчиков используют X» дана без источника. Что делать?", ["Принять из-за точности числа", "Запросить и открыть первичный источник", "Снизить temperature", "Заменить 73% на 70%"], 1, "Точная цифра без источника — красный флаг; нужно проверяемое происхождение данных."], ["Почему «идеальная» цитата требует проверки?", ["LLM может сгенерировать правдоподобный текст, похожий на цитату", "Цитаты всегда запрещены", "Токенизатор не умеет кавычки", "Любая цитата обязательно ложная"], 0, "Формат и стилистическая правдоподобность не гарантируют существование текста в источнике."], ["Что верно об оценке уверенности, которую сообщает сама модель?", ["Это математическая гарантия правильности", "Это полезный сигнал для приоритизации проверки, но не независимое доказательство", "Она заменяет модульные тесты", "100% уверенности делает факт истинным"], 1, "Самооценка модели остаётся частью её ответа и может быть плохо откалибрована."], ["Зачем сначала просить прямые цитаты из документа, а потом вывод?", ["Чтобы привязать вывод к конкретным данным из источника", "Чтобы увеличить долю галлюцинаций", "Чтобы обойти токенизатор", "Чтобы сделать ответ длиннее"], 0, "Сначала извлечь подтверждающий фрагмент, затем сделать вывод — это уменьшает пространство для недокументированных домыслов."], ["Что верно о веб-поиске как способе снижения галлюцинаций?", ["Сам факт доступа к веб-поиску гарантирует истину", "Нужно убедиться, что найденный источник действительно подтверждает утверждение", "Веб-поиск нужен только для картинок", "Поиск автоматически проверяет бизнес-правила"], 1, "Поиск помогает только тогда, когда найденные данные релевантны и корректно интерпретированы."], ["Что дают несколько независимых запусков одного промпта?", ["Расхождения выявляют нестабильность, но совпадение не доказывает истину", "100% гарантию при двух одинаковых ответах", "Автоматическую проверку ссылок", "Отмену стоимости токенов"], 0, "Несколько запусков полезны как диагностический сигнал, но модели могут стабильно повторять одну и ту же ошибку."], ["CI-бот генерирует `npm install <package>`. Какая защита наиболее надёжна перед выполнением?", ["Попросить модель ещё раз проверить себя", "Попросить оценку уверенности", "Автоматически выполнить `npm view <package>` и проверить реестр", "Попросить более длинное объяснение"], 2, "Для вопроса существования пакета есть официальный источник — реестр npm; детерминированная предварительная проверка надёжнее второго вызова модели."], ["Что гарантирует Claude Citations API в пределах предоставленных документов?", ["Что любой вывод модели истинен", "Что ссылка указывает на реально предоставленный фрагмент источника", "Что исходный документ безошибочен", "Что URL из памяти модели существует"], 1, "Citations API повышает проверяемость происхождения ответа и привязывает ссылки к предоставленным документам, но не гарантирует правильность интерпретации."], ["Какой общий принцип лучше всего снижает риск галлюцинации в действиях агента?", ["LLM должна быть последней точкой контроля", "LLM предлагает, а официальный источник или детерминированная проверка подтверждает перед выполнением", "Достаточно максимально уверенного промпта", "Нужно всегда запускать одну и ту же модель дважды"], 1, "Для критичных действий последняя проверка должна быть внешней: реестр, компилятор, тесты, схема, БД/API или человек."]]};
 const KEY='agentic-engineering-progress-v2';
 const SESSION_KEY='agentic-engineering-session-v2';
 let lesson='l1';
@@ -1155,20 +1520,54 @@ const loadSessions=()=>{try{return JSON.parse(localStorage.getItem(SESSION_KEY))
 const saveSessions=s=>localStorage.setItem(SESSION_KEY,JSON.stringify(s));
 const id=(l,i)=>`${l}-q${i}`;
 
+function normalizeState(s={}){
+  return Object.assign({
+    attempts:0,
+    correct:0,
+    wrong:0,
+    lastAnswered:null,
+    nextReview:null,
+    masteryLevel:0,
+    streak:0,
+    status:'new'
+  },s);
+}
+
 function state(l,i){
   const p=load();
-  return p[id(l,i)]||{attempts:0,correct:0,wrong:0,lastAnswered:null,status:'new'};
+  return normalizeState(p[id(l,i)]);
 }
 
 function record(l,i,ok){
   const p=load(),k=id(l,i);
-  const s=p[k]||{attempts:0,correct:0,wrong:0,lastAnswered:null,status:'new'};
+  const s=normalizeState(p[k]);
+
   s.attempts++;
-  ok?s.correct++:s.wrong++;
+  if(ok){
+    s.correct++;
+    s.streak++;
+    s.masteryLevel=Math.min(4,s.streak);
+  }else{
+    s.wrong++;
+    s.streak=0;
+    s.masteryLevel=0;
+  }
+
   s.lastAnswered=new Date().toISOString();
+
+  const intervalDays = ok
+    ? (s.streak===1 ? 3 : s.streak===2 ? 7 : s.streak===3 ? 14 : 30)
+    : 1;
+
+  const next=new Date();
+  next.setDate(next.getDate()+intervalDays);
+  s.nextReview=next.toISOString();
+
   const r=s.correct/s.attempts;
-  s.status=s.attempts>=4&&r>=.8&&s.wrong<=1?'mastered':
-           s.attempts>=2&&r>=.6?'learning':'needs-review';
+  s.status=s.streak>=4&&r>=.8?'mastered':
+           s.streak>=2?'learning':
+           ok?'learning':'needs-review';
+
   p[k]=s;
   save(p);
   return s;
@@ -1177,10 +1576,18 @@ function record(l,i,ok){
 function priority(l,i){
   const s=state(l,i);
   if(!s.attempts) return 100+Math.random()*5;
+
   let score=s.wrong*8-s.correct*1.5;
   if(s.status==='needs-review') score+=25;
   else if(s.status==='learning') score+=10;
   else if(s.status==='mastered') score-=20;
+
+  if(s.nextReview){
+    const dueMs=new Date(s.nextReview).getTime()-Date.now();
+    if(dueMs<=0) score+=30;
+    else score-=Math.min(dueMs/86400000,30)*.4;
+  }
+
   if(s.lastAnswered){
     const days=(Date.now()-new Date(s.lastAnswered).getTime())/86400000;
     score+=Math.min(Math.max(days,0),30)*.5;
@@ -1276,6 +1683,14 @@ const labels={
   mastered:'освоен'
 };
 
+function reviewText(s){
+  const streak=s.streak||0;
+  if(!s.nextReview) return `серия: ${streak} · следующее повторение: после первого ответа`;
+  const d=new Date(s.nextReview);
+  const when=d.toLocaleDateString(undefined,{year:'numeric',month:'2-digit',day:'2-digit'});
+  return `серия: ${streak} · уровень: ${s.masteryLevel||0}/4 · следующее повторение: ${when}`;
+}
+
 function renderQ(){
   const session=getSession(lesson);
 
@@ -1284,7 +1699,7 @@ function renderQ(){
     questionBox.innerHTML=`
       <div class="completion">
         <div class="question-title">Проход завершён</div>
-        <p>Все ${Q[lesson].length} вопросов этого урока пройдены.</p>
+        <p>Все ${Q[lesson].length} вопросов текущей темы пройдены.</p>
         <p>Общая точность по всем попыткам: <strong>${st.accuracy}%</strong>. Освоено: <strong>${st.mastered} / ${st.total}</strong>.</p>
         <button id="startNextPass" class="action primary">Начать новый проход</button>
       </div>`;
@@ -1329,7 +1744,7 @@ function renderQ(){
 
   const m=document.createElement('div');
   m.className='meta';
-  m.innerHTML=`Попыток по этому вопросу: ${s.attempts} · верно: ${s.correct} · ошибок: ${s.wrong} <span class="status-pill">${labels[s.status]}</span>`;
+  m.innerHTML=`Попыток по этому вопросу: ${s.attempts} · верно: ${s.correct} · ошибок: ${s.wrong} · ${reviewText(s)} <span class="status-pill">${labels[s.status]}</span>`;
   questionBox.appendChild(m);
 
   nextQuestion.disabled=!session.answeredCurrent;
@@ -1362,7 +1777,7 @@ function answer(i,n){
   f.innerHTML=`<strong>${ok?'Верно.':'Неверно.'}</strong> Правильный ответ: <b>${opts[a]}</b><br>${e}`;
 
   questionBox.querySelector('.meta').innerHTML=
-    `Попыток по этому вопросу: ${s.attempts} · верно: ${s.correct} · ошибок: ${s.wrong} <span class="status-pill">${labels[s.status]}</span>`;
+    `Попыток по этому вопросу: ${s.attempts} · верно: ${s.correct} · ошибок: ${s.wrong} · ${reviewText(s)} <span class="status-pill">${labels[s.status]}</span>`;
 
   nextQuestion.disabled=false;
   nextQuestion.textContent='→';
